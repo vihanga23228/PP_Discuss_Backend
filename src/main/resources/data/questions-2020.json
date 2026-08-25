@@ -1,0 +1,2203 @@
+[
+  {
+    "id": 1,
+    "type": "tf",
+    "stem": "True or false regarding lipids?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Saturated fatty acids contain double bond/s in their carbon chain",
+        "correct": false,
+        "exp": "False — \"saturated\" means fully saturated with hydrogen, i.e. no C=C double bonds. Unsaturated fatty acids are the ones with double bonds.",
+        "exp_si": "වැරදියි — සංතෘප්ත (saturated) මේද අම්ලවල කාබන දාමයේ ද්විත්ව බන්ධන නොමැත. ද්විත්ව බන්ධන ඇත්තේ අසංතෘප්ත (unsaturated) මේද අම්ලවලය."
+      },
+      {
+        "L": "B",
+        "text": "Glyceride is an ester of fatty acids and glycol",
+        "correct": false,
+        "exp": "False — a classic trick. Glycerides are esters of fatty acids with glycerol (a trihydric alcohol), not \"glycol\" (ethylene glycol, a dihydric alcohol used in antifreeze).",
+        "exp_si": "වැරදියි — ග්ලිසරයිඩ (glyceride) යනු මේද අම්ල හා ග්ලිසරෝල් (glycerol) අතර සෑදෙන එස්ටරයකි; \"glycol\" නොවේ."
+      },
+      {
+        "L": "C",
+        "text": "Cholesterol is a precursor of vitamin D",
+        "correct": true,
+        "exp": "True — 7-dehydrocholesterol (derived from cholesterol) is converted to cholecalciferol (vitamin D3) in the skin under UV light.",
+        "exp_si": "නිවැරදියි — කොලෙස්ටරෝල් වලින් සෑදෙන 7-dehydrocholesterol, හිරු එළියේදී සමේ විටමින් D3 බවට පත් වේ."
+      },
+      {
+        "L": "D",
+        "text": "Glycerides are hydrolysed by lipase",
+        "correct": true,
+        "exp": "True — pancreatic lipase hydrolyses triglycerides into monoglycerides and free fatty acids during digestion.",
+        "exp_si": "නිවැරදියි — අග්න්‍යාශයේ ලයිපේස් (lipase) එන්සයිමය ට්‍රයිග්ලිසරයිඩ ජලවිච්ඡේදනය කරයි."
+      },
+      {
+        "L": "E",
+        "text": "One gram of fat gives energy with a value of 4.2 kilocalories",
+        "correct": false,
+        "exp": "False — fat yields about 9 kcal/g. ~4 kcal/g is the value for carbohydrate and protein, not fat.",
+        "exp_si": "වැරදියි — මේදය ග්‍රෑම් 1කින් කැලරි 9ක් පමණ ලැබේ; 4.2 kcal යනු කාබෝහයිඩ්‍රේට් / ප්‍රෝටීන් සඳහා අගයයි."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 2,
+    "type": "tf",
+    "stem": "True or false regarding carbohydrates?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Starch is hydrolysed by amylase",
+        "correct": true,
+        "exp": "True — salivary and pancreatic amylase break the α-1,4 glycosidic bonds in starch.",
+        "exp_si": "නිවැරදියි — ලවණ ග්‍රන්ථි හා අග්න්‍යාශයේ ඇමයිලේස් (amylase) ස්ටාච් (starch) බිඳ දමයි."
+      },
+      {
+        "L": "B",
+        "text": "Chitin is a non-starch polysaccharide",
+        "correct": true,
+        "exp": "True — chitin is a structural polysaccharide (N-acetylglucosamine units) found in fungal cell walls and arthropod exoskeletons, unrelated to starch.",
+        "exp_si": "නිවැරදියි — චිටින් (chitin) ෆංගස් සෛල බිත්ති හා කෘමීන්ගේ බාහිර කවචවල ඇති ස්ටාච් නොවන පොලිසැකරයිඩයකි."
+      },
+      {
+        "L": "C",
+        "text": "Cellulose is hydrolysed by tripsin",
+        "correct": false,
+        "exp": "False — trypsin is a protein-digesting enzyme (pancreatic protease). Cellulose requires cellulase, an enzyme humans lack, which is why cellulose passes through as dietary fibre.",
+        "exp_si": "වැරදියි — ට්‍රිප්සින් (trypsin) ප්‍රෝටීන් දිරවන එන්සයිමයකි. සෙලියුලෝස් (cellulose) දිරවීමට සෙලියුලේස් (cellulase) අවශ්‍ය වන අතර මිනිසාට එය නොමැත."
+      },
+      {
+        "L": "D",
+        "text": "Hemicellulose can be hydrolysed by amylase",
+        "correct": false,
+        "exp": "False — hemicellulose is a distinct structural plant polysaccharide, not an α-1,4 glucan, so amylase does not act on it.",
+        "exp_si": "වැරදියි — හෙමිසෙලියුලෝස් (hemicellulose) ස්ටාච් වර්ගයේ නොවන බැවින් ඇමයිලේස් එය මත ක්‍රියා නොකරයි."
+      },
+      {
+        "L": "E",
+        "text": "Galactose is the end product when maltose hydrolyses",
+        "correct": false,
+        "exp": "False — maltose is a disaccharide of two glucose units, so its hydrolysis yields glucose + glucose. Galactose comes from lactose (glucose + galactose).",
+        "exp_si": "වැරදියි — මෝල්ටෝස් (maltose) ග්ලූකෝස් දෙකකින් සෑදුණු බැවින් එහි ජලවිච්ඡේදනයෙන් ලැබෙන්නේ ග්ලූකෝස් පමණි; ගැලැක්ටෝස් ලැබෙන්නේ ලැක්ටෝස් (lactose) වලින්."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 3,
+    "type": "tf",
+    "stem": "The substances and their uses are True or false?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Kiesulghur — Cementing material in dental practice",
+        "correct": false,
+        "exp": "False — Kieselguhr (diatomaceous earth) is classically used as a filter aid, not a dental cement.",
+        "exp_si": "වැරදියි — Kieselguhr භාවිතා වන්නේ පෙරහන් ද්‍රව්‍යයක් (filter aid) ලෙසය; දන්ත සිමෙන්ති ද්‍රව්‍යයක් ලෙස නොවේ."
+      },
+      {
+        "L": "B",
+        "text": "Colloidal silica — granulating agent",
+        "correct": false,
+        "exp": "False — colloidal silicon dioxide is used as a glidant (improves powder flow), not a granulating agent.",
+        "exp_si": "වැරදියි — Colloidal silica භාවිතා වන්නේ glidant එකක් (කුඩු ගලායාම වැඩි කරන) ලෙසය; ග්‍රැනියුලේෂන් කාරකයක් ලෙස නොවේ."
+      },
+      {
+        "L": "C",
+        "text": "Ferric oxide — colourant",
+        "correct": true,
+        "exp": "True — iron oxides (red/yellow/black) are widely used as pharmaceutical colourants for tablets and capsules.",
+        "exp_si": "නිවැරදියි — ෆෙරික් ඔක්සයිඩ් (Ferric oxide) පෙති/කැප්සියුල සඳහා වර්ණකයක් (colourant) ලෙස භාවිතා වේ."
+      },
+      {
+        "L": "D",
+        "text": "Talc — lubricant",
+        "correct": true,
+        "exp": "True — purified talc is used as a lubricant/glidant in tablet and capsule manufacture.",
+        "exp_si": "නිවැරදියි — ටැල්ක් (talc) පෙති නිෂ්පාදනයේදී ලුබ්‍රිකන්ට් (lubricant) එකක් ලෙස භාවිතා වේ."
+      },
+      {
+        "L": "E",
+        "text": "Zinc oxide — filter aid",
+        "correct": false,
+        "exp": "False — zinc oxide is used as a skin protectant/astringent (e.g. in barrier creams), not a filter aid. Kieselguhr is the filter aid.",
+        "exp_si": "වැරදියි — සින්ක් ඔක්සයිඩ් (Zinc oxide) සම ආරක්ෂිත ක්‍රීම් සඳහා භාවිතා වන අතර පෙරහන් ද්‍රව්‍යයක් නොවේ."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 4,
+    "type": "tf",
+    "stem": "True or false regarding heat transfer?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Heat that moves through a stationary solid object is transfer by convection",
+        "correct": false,
+        "exp": "False — heat moving through a stationary solid is conduction. Convection requires bulk movement of a fluid (liquid or gas).",
+        "exp_si": "වැරදියි — ස්ථාවර ඝන වස්තුවක් හරහා තාපය ගමන් කරන්නේ සන්නයනය (conduction) මගිනි; සංවහනය (convection) සඳහා ද්‍රවයක/වායුවක එකතුව චලනය විය යුතුය."
+      },
+      {
+        "L": "B",
+        "text": "Heat is transferred between solid objects via conduction in dry heat sterilization",
+        "correct": true,
+        "exp": "True — in a hot-air oven, heat reaches instruments largely by conduction/contact and radiation from hot surfaces.",
+        "exp_si": "නිවැරදියි — වියළි තාප විෂබීජහරණයේදී (dry heat sterilization) තාපය බොහෝ දුරට සන්නයනය මගින් සම්ප්‍රේෂණය වේ."
+      },
+      {
+        "L": "C",
+        "text": "Mass heat transfer occurs during convection",
+        "correct": true,
+        "exp": "True — convection is bulk (mass) movement of a heated fluid carrying thermal energy with it.",
+        "exp_si": "නිවැරදියි — සංවහනයේදී (convection) ද්‍රව්‍ය ස්කන්ධයම චලනය වෙමින් තාපය රැගෙන යයි."
+      },
+      {
+        "L": "D",
+        "text": "Individual particles show Brownian motion during convection",
+        "correct": false,
+        "exp": "False — Brownian motion is random particle movement from molecular collisions, characteristic of diffusion/suspensions, not the organised bulk-flow mechanism of convection.",
+        "exp_si": "වැරදියි — බ්‍රවුනියානු චලිතය (Brownian motion) ආවේණික අංශු චලනයකි, එය සංවහනයේ ලක්ෂණයක් නොවේ."
+      },
+      {
+        "L": "E",
+        "text": "Heat transfer may occur by radiation",
+        "correct": true,
+        "exp": "True — radiation (electromagnetic waves) is one of the three classical heat transfer mechanisms, alongside conduction and convection.",
+        "exp_si": "නිවැරදියි — විකිරණය (radiation) ද තාප සම්ප්‍රේෂණයේ එක් ක්‍රමයකි."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 5,
+    "type": "tf",
+    "stem": "True or false regarding temperatures for storage of pharmaceuticals?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "A 'cool place' is where products are stored between 8°C (as stated)",
+        "correct": false,
+        "exp": "False — a 'cool place' is officially defined as 8°C–15°C. Stating just \"8°C\" alone is an incomplete/incorrect range as written.",
+        "exp_si": "වැරදියි — 'සිසිල් ස්ථානයක්' (cool place) නම් 8°C සිට 15°C දක්වා පරාසයයි; තනිව 8°C ලෙස සඳහන් කිරීම නිවැරදි නොවේ."
+      },
+      {
+        "L": "B",
+        "text": "A 'warm place' is between 15°C and 50°C",
+        "correct": false,
+        "exp": "False — a 'warm place' is conventionally 30°C–40°C, not 15–50°C.",
+        "exp_si": "වැරදියි — 'උණුසුම් ස්ථානයක්' (warm place) නම් 30°C සිට 40°C දක්වාය."
+      },
+      {
+        "L": "C",
+        "text": "'Excessive heat' is where temperature is above 50°C",
+        "correct": false,
+        "exp": "False — 'excessive heat' is defined as above 40°C, not 50°C.",
+        "exp_si": "වැරදියි — 'අධික තාපය' (excessive heat) නම් 40°C ට වඩා ඉහළ මට්ටමයි."
+      },
+      {
+        "L": "D",
+        "text": "Heat sensitive products which must not be frozen are stored between 2°C and 8°C",
+        "correct": true,
+        "exp": "True — this is the standard refrigerator/\"cold\" storage range (2–8°C), used for products that must not freeze (e.g. many vaccines, insulin).",
+        "exp_si": "නිවැරදියි — තාප සංවේදී නමුත් තෙතමන් නොවිය යුතු නිෂ්පාදන ශීතකරණයේ 2°C සිට 8°C තුළ ගබඩා කරයි."
+      },
+      {
+        "L": "E",
+        "text": "'Room temperature' is 15°C to 25°C, or up to 30°C",
+        "correct": true,
+        "exp": "True — pharmacopoeial 'room temperature' is typically defined as 15–25°C, with excursions permitted up to 30°C.",
+        "exp_si": "නිවැරදියි — 'කාමර උෂ්ණත්වය' (room temperature) සාමාන්‍යයෙන් 15°C-25°C අතර වන අතර 30°C දක්වා ඉවසිය හැක."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 6,
+    "type": "tf",
+    "stem": "True or false regarding cracking of emulsion?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "It occurs due to the coalescence of disperse phase",
+        "correct": true,
+        "exp": "True — cracking (breaking) is the irreversible coalescence of dispersed droplets into a separate continuous layer.",
+        "exp_si": "නිවැරදියි — Cracking සිදුවන්නේ විසිරුණු අවධියේ බිංදු එකට එකතු වීම (coalescence) නිසාය."
+      },
+      {
+        "L": "B",
+        "text": "It occurs by the addition of monovalent soap to a divalent soap emulsion",
+        "correct": true,
+        "exp": "True — mixing an incompatible emulsifier type (opposite charge/valency) with an existing emulsion destabilises it and can crack it, or invert its phase.",
+        "exp_si": "නිවැරදියි — නොගැලපෙන ඉමල්සිෆයර් වර්ගයක් එකතු කිරීමෙන් ඉමල්ෂන් අස්ථාවර වී cracking සිදුවිය හැක."
+      },
+      {
+        "L": "C",
+        "text": "It occurs by the addition of divalent soap to a monovalent soap emulsion",
+        "correct": true,
+        "exp": "True — same principle in reverse; incompatible emulsifiers of opposing type destabilise the system and can cause cracking/inversion.",
+        "exp_si": "නිවැරදියි — ප්‍රතිලෝමව ද එයම සත්‍යයකි — නොගැලපෙන ඉමල්සිෆයර් එකතු කිරීමෙන් cracking සිදුවේ."
+      },
+      {
+        "L": "D",
+        "text": "Development of bacterial growth causes cracking",
+        "correct": true,
+        "exp": "True — microbial contamination can degrade emulsifying agents (e.g. splitting fats, gums) and break the emulsion.",
+        "exp_si": "නිවැරදියි — බැක්ටීරියා වර්ධනය ඉමල්සිෆයර් විනාශ කර ඉමල්ෂන් බිඳ දමයි."
+      },
+      {
+        "L": "E",
+        "text": "Cracked emulsion is redispersed by gentle shaking",
+        "correct": false,
+        "exp": "False — cracking is an irreversible process; shaking cannot reunite a cracked emulsion. (Simple creaming/flocculation, by contrast, IS reversible by shaking.)",
+        "exp_si": "වැරදියි — Cracking සිදුවීම ආපසු හැරවිය නොහැකි (irreversible) ක්‍රියාවලියකි; සැහැල්ලුවෙන් සොලවා නැවත ඒකාබද්ධ කළ නොහැක."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 7,
+    "type": "tf",
+    "stem": "True or false regarding linctus liquid dosage forms?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "They are prescribed for relief of cough",
+        "correct": true,
+        "exp": "True — a linctus is a viscous oral liquid specifically formulated to soothe cough.",
+        "exp_si": "නිවැරදියි — Linctus කැස්ස සමනය කිරීම සඳහා නියම කරන දුස්සාන්ද්‍ර ද්‍රව ඖෂධයකි."
+      },
+      {
+        "L": "B",
+        "text": "Always contains syrup",
+        "correct": false,
+        "exp": "False — many linctuses are syrup-based, but this is not a universal requirement; sugar-free linctus bases also exist.",
+        "exp_si": "වැරදියි — බොහෝ linctus සිරප් පදනම් වුවත්, සීනි රහිත ආකෘතිද ඇති බැවින් මෙය සැම විටම සත්‍ය නොවේ."
+      },
+      {
+        "L": "C",
+        "text": "Provide demulcent effect on the mucous membrane of the main bronchi",
+        "correct": false,
+        "exp": "False — the demulcent, soothing action of a linctus is on the pharynx/throat mucosa as it is swallowed; it does not reach or act on the bronchi.",
+        "exp_si": "වැරදියි — Linctus හි සන්සුන් කිරීමේ ක්‍රියාව (demulcent effect) ඇත්තේ උගුරේ පටලය මතය; බ්‍රොන්කයි (bronchi) දක්වා ළඟා නොවේ."
+      },
+      {
+        "L": "D",
+        "text": "Are swallowed after diluting with water",
+        "correct": false,
+        "exp": "False — a linctus should be taken undiluted and swallowed slowly, so the viscous liquid coats the throat; diluting it with water defeats its purpose.",
+        "exp_si": "වැරදියි — Linctus දිය කර නොගෙන, ඝන ලෙසින්ම සෙමින් ගිල දැමිය යුතුයි; ජලයෙන් තනුක කිරීම එහි අරමුණට පටහැනියි."
+      },
+      {
+        "L": "E",
+        "text": "Usually contain glycerol",
+        "correct": true,
+        "exp": "True — glycerol is a common demulcent/viscosity-imparting excipient in linctus formulations.",
+        "exp_si": "නිවැරදියි — Linctus වර්ගවල සාමාන්‍යයෙන් ග්ලිසරෝල් (glycerol) අඩංගු වේ."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 8,
+    "type": "tf",
+    "stem": "Regarding percentage calculations in pharmaceutical preparations, True or false?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Percentage w/w expresses the number of grams of active substance in 100g of the final product",
+        "correct": true,
+        "exp": "True — this is the definition of % w/w: grams of solute per 100 g of total final product.",
+        "exp_si": "නිවැරදියි — % w/w යනු අවසාන නිෂ්පාදනයේ ග්‍රෑම් 100ක් තුළ ඇති ක්‍රියාකාරී ද්‍රව්‍යයේ ග්‍රෑම් ගණනයි."
+      },
+      {
+        "L": "B",
+        "text": "1% w/w can be prepared by dissolving 1g of the substance in 99g of base",
+        "correct": true,
+        "exp": "True — 1 g solute + 99 g base = 100 g total product, giving 1 g per 100 g, i.e. 1% w/w.",
+        "exp_si": "නිවැරදියි — ග්‍රෑම් 1ක් ග්‍රෑම් 99ක පදනමක දියකර ග්‍රෑම් 100ක් සෑදීමෙන් 1% w/w ලැබේ."
+      },
+      {
+        "L": "C",
+        "text": "1% w/w means total weight of 100g of solution will have 1g of the solute in 100g of the solvent",
+        "correct": false,
+        "exp": "False — this describes 1g solute PLUS 100g solvent (101g total), which is not 1% w/w. Correctly, 1g solute should be in 100g of total product (i.e. in 99g of solvent/base).",
+        "exp_si": "වැරදියි — මෙසේ නම් මුළු බර ග්‍රෑම් 101ක් වන අතර එය 1% w/w නොවේ; ද්‍රාවකයට ග්‍රෑම් 99ක් තුළ ග්‍රෑම් 1ක් තිබිය යුතුය."
+      },
+      {
+        "L": "D",
+        "text": "1% w/v expresses the number of grams of the active substance in 100g of product",
+        "correct": false,
+        "exp": "False — w/v means grams of active substance per 100 mL of product (a volume), not per 100g (a weight).",
+        "exp_si": "වැරදියි — w/v යනු මිලි ලීටර් 100ක (පරිමාව) ඇති ග්‍රෑම් ගණන මිස ග්‍රෑම් 100ක් (බර) නොවේ."
+      },
+      {
+        "L": "E",
+        "text": "1%v/v solution can be prepared by dissolving 1ml of solute in 100ml of solvent",
+        "correct": false,
+        "exp": "False — this again describes 1mL + 100mL solvent (101mL total). Correct %v/v means 1mL solute made up to a total of 100mL with solvent.",
+        "exp_si": "වැරදියි — මෙය මිලි ලීටර් 101ක් වන අතර, නිවැරදිව නම් මිලි ලීටර් 1ක් මුළු පරිමාව මිලි ලීටර් 100ක් වන පරිදි සකස් කළ යුතුය."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 9,
+    "type": "single",
+    "stem": "50 g of glucose are dissolved in 500 ml of water. Percentage strength in w/w of the above solution is:",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "10 W/V",
+        "correct": false,
+        "exp": null,
+        "exp_si": null
+      },
+      {
+        "L": "B",
+        "text": "50% W/V",
+        "correct": false,
+        "exp": null,
+        "exp_si": null
+      },
+      {
+        "L": "C",
+        "text": "90.9 % W/V",
+        "correct": false,
+        "exp": null,
+        "exp_si": null
+      },
+      {
+        "L": "D",
+        "text": "5 % W/V",
+        "correct": false,
+        "exp": null,
+        "exp_si": null
+      },
+      {
+        "L": "E",
+        "text": "9.09 % W/V",
+        "correct": true,
+        "exp": null,
+        "exp_si": null
+      }
+    ],
+    "exp": "Taking water as ~1 g/mL, 500 mL water weighs 500 g. Total weight of solution = 500 g (water) + 50 g (glucose) = 550 g. %w/w = (50 ÷ 550) × 100 = 9.09%. So the answer is E — even though the option is labelled \"W/V\" in the original paper (a likely typo for W/W), the calculated figure matches option E.",
+    "exp_si": "ජලය ග්‍රෑම් 1/mL ලෙස ගතහොත්, ජලය mL 500ක් ග්‍රෑම් 500ක් වේ. මුළු බර = 500 + 50 = 550 ග්‍රෑම්. %w/w = (50 ÷ 550) × 100 = 9.09%. එබැවින් නිවැරදි පිළිතුර E වේ."
+  },
+  {
+    "id": 10,
+    "type": "tf",
+    "stem": "With reference to solubility, true or false?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Very soluble — less than 1 (part of solvent per part of solute)",
+        "correct": true,
+        "exp": "True — \"very soluble\" = requires less than 1 part solvent per part solute, per BP/USP solubility definitions.",
+        "exp_si": "නිවැරදියි — \"ඉතා ද්‍රාව්‍ය\" (very soluble) යනු ද්‍රාවකයේ කොටස් 1ක් ට වඩා අඩුවෙන් අවශ්‍ය වීමයි."
+      },
+      {
+        "L": "B",
+        "text": "Freely soluble — from 1 to 10",
+        "correct": true,
+        "exp": "True — \"freely soluble\" = 1 to 10 parts solvent needed.",
+        "exp_si": "නිවැරදියි — \"නිදහසේ ද්‍රාව්‍ය\" (freely soluble) යනු කොටස් 1 සිට 10 දක්වා අවශ්‍ය වීමයි."
+      },
+      {
+        "L": "C",
+        "text": "Soluble — from 10 to 30",
+        "correct": true,
+        "exp": "True — \"soluble\" = 10 to 30 parts solvent needed.",
+        "exp_si": "නිවැරදියි — \"ද්‍රාව්‍ය\" (soluble) යනු කොටස් 10 සිට 30 දක්වා අවශ්‍ය වීමයි."
+      },
+      {
+        "L": "D",
+        "text": "Slightly soluble — from 1000 to 10000",
+        "correct": false,
+        "exp": "False — \"slightly soluble\" is actually 100 to 1000 parts. 1000–10000 parts corresponds to \"very slightly soluble\".",
+        "exp_si": "වැරදියි — \"තරමක් ද්‍රාව්‍ය\" (slightly soluble) යනු 100-1000 පරාසයයි; 1000-10000 යනු \"ඉතා අඩුවෙන් ද්‍රාව්‍ය\" සඳහාය."
+      },
+      {
+        "L": "E",
+        "text": "Very slightly soluble — more than 10000",
+        "correct": false,
+        "exp": "False — \"very slightly soluble\" is 1000–10000 parts. More than 10000 parts is classified as \"practically insoluble\".",
+        "exp_si": "වැරදියි — \"ඉතා අඩුවෙන් ද්‍රාව්‍ය\" යනු 1000-10000 පරාසයයි; 10000 ට වඩා වැඩි නම් එය \"ප්‍රායෝගිකව අද්‍රාව්‍ය\" ලෙස වර්ග කෙරේ."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 11,
+    "type": "tf",
+    "stem": "Suitable diluents for capsule blends include the following. True or false?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Purified talc",
+        "correct": false,
+        "exp": "False — talc is used as a glidant/lubricant to aid powder flow, not as a bulk diluent.",
+        "exp_si": "වැරදියි — ටැල්ක් (talc) කුඩු ගලායාම වැඩි කිරීමට (glidant/lubricant) භාවිතා වන අතර තනුක කාරකයක් නොවේ."
+      },
+      {
+        "L": "B",
+        "text": "Ascorbic acid",
+        "correct": false,
+        "exp": "False — ascorbic acid (vitamin C) is an active ingredient/antioxidant, not an inert diluent.",
+        "exp_si": "වැරදියි — ඇස්කෝබික් අම්ලය (vitamin C) ක්‍රියාකාරී අමුද්‍රව්‍යයක් මිස තනුක කාරකයක් නොවේ."
+      },
+      {
+        "L": "C",
+        "text": "Lactose",
+        "correct": true,
+        "exp": "True — lactose is one of the most widely used diluents in capsule and tablet formulation.",
+        "exp_si": "නිවැරදියි — ලැක්ටෝස් (lactose) කැප්සියුල හා පෙති සඳහා බහුලවම භාවිතා වන තනුක කාරකයකි."
+      },
+      {
+        "L": "D",
+        "text": "Carboxymethyl cellulose",
+        "correct": false,
+        "exp": "False — CMC (and its sodium salt) is used as a binder/disintegrant/thickener, not a bulk diluent.",
+        "exp_si": "වැරදියි — CMC බන්ධන කාරකයක් (binder) ලෙස භාවිතා වන අතර තනුක කාරකයක් නොවේ."
+      },
+      {
+        "L": "E",
+        "text": "Tri calcium phosphate",
+        "correct": true,
+        "exp": "True — tricalcium phosphate is a standard inert diluent, especially useful for moisture-sensitive fills.",
+        "exp_si": "නිවැරදියි — Tricalcium phosphate සම්මත තනුක කාරකයකි."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 12,
+    "type": "tf",
+    "stem": "True or false regarding macrogols?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Macrogols are used as bases for suppositories",
+        "correct": true,
+        "exp": "True — macrogol (PEG) bases are a well-known alternative to fatty bases for suppositories, useful when a water-miscible base is needed.",
+        "exp_si": "නිවැරදියි — Macrogol (PEG) සප්පෝසිටරි සඳහා පදනමක් ලෙස භාවිතා වේ."
+      },
+      {
+        "L": "B",
+        "text": "Macrogols are polyethylene glycols",
+        "correct": true,
+        "exp": "True — \"macrogol\" is simply the pharmacopoeial name for polyethylene glycol.",
+        "exp_si": "නිවැරදියි — \"Macrogol\" යනු Polyethylene glycol සඳහා ඖෂධ ග්‍රන්ථියේ නාමයයි."
+      },
+      {
+        "L": "C",
+        "text": "They have laxative effects",
+        "correct": true,
+        "exp": "True — high molecular weight macrogols (e.g. macrogol 3350 in Movicol®) act as osmotic laxatives.",
+        "exp_si": "නිවැරදියි — ඉහළ අණුක බර සහිත macrogol ඔස්මොටික් laxative ලෙස ක්‍රියා කරයි."
+      },
+      {
+        "L": "D",
+        "text": "Microbial contamination is a common problem",
+        "correct": false,
+        "exp": "False — unlike water-based/aqueous bases, macrogols are relatively resistant to microbial growth, so this is not a typical problem.",
+        "exp_si": "වැරදියි — ජලය පදනම් වූ ද්‍රව්‍යවලට වඩා macrogol බැක්ටීරියා වර්ධනයට ඔරොත්තු දෙයි."
+      },
+      {
+        "L": "E",
+        "text": "Macrogol bases may cause irritation to the mucosa",
+        "correct": true,
+        "exp": "True — macrogols are hygroscopic and can draw water from and irritate mucous membranes on contact, especially at higher concentrations.",
+        "exp_si": "නිවැරදියි — Macrogol තෙතමන් අවශෝෂණය කරන (hygroscopic) බැවින් ශ්ලේෂ්මල පටලයට කෝපයක් ඇති කළ හැක."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 13,
+    "type": "tf",
+    "stem": "The following ingredients are correctly matched with their functions/uses in tablet formulation. True or false?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Lactose — Diluent",
+        "correct": true,
+        "exp": "True — lactose is a classic tablet diluent/filler.",
+        "exp_si": "නිවැරදියි — ලැක්ටෝස් සම්මත තනුක කාරකයකි (diluent)."
+      },
+      {
+        "L": "B",
+        "text": "Polyvinyl pyrrolidone (PVP) — Glidant",
+        "correct": false,
+        "exp": "False — PVP (povidone) is used as a binder, not a glidant.",
+        "exp_si": "වැරදියි — PVP (povidone) බන්ධන කාරකයක් (binder) ලෙස භාවිතා වේ; glidant නොවේ."
+      },
+      {
+        "L": "C",
+        "text": "Stearic acid — Lubricant",
+        "correct": true,
+        "exp": "True — stearic acid is a standard tablet lubricant, reducing die-wall friction.",
+        "exp_si": "නිවැරදියි — Stearic acid ලුබ්‍රිකන්ට් (lubricant) එකකි."
+      },
+      {
+        "L": "D",
+        "text": "Colloidal silicon dioxide — Binder",
+        "correct": false,
+        "exp": "False — colloidal silicon dioxide (Aerosil) is a glidant, improving powder flow, not a binder.",
+        "exp_si": "වැරදියි — Colloidal silicon dioxide glidant එකකි; binder නොවේ."
+      },
+      {
+        "L": "E",
+        "text": "Crospovidone — Disintegrant",
+        "correct": true,
+        "exp": "True — crospovidone is a widely used superdisintegrant.",
+        "exp_si": "නිවැරදියි — Crospovidone බහුලව භාවිතා වන disintegrant එකකි."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 14,
+    "type": "tf",
+    "stem": "The following are ingredients of emulsifying wax. True or false?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Hard paraffin",
+        "correct": false,
+        "exp": "False — hard paraffin is not part of emulsifying wax; emulsifying wax is essentially cetostearyl alcohol plus sodium lauryl sulfate.",
+        "exp_si": "වැරදියි — Hard paraffin emulsifying wax හි අංගයක් නොවේ."
+      },
+      {
+        "L": "B",
+        "text": "Sodium lauryl sulphite",
+        "correct": false,
+        "exp": "False — a wording trap. The correct ingredient is sodium lauryl SULPHATE, not \"sulphite\".",
+        "exp_si": "වැරදියි — නිවැරදි නම Sodium lauryl SULPHATE මිස \"sulphite\" නොවේ."
+      },
+      {
+        "L": "C",
+        "text": "Cetostearyl alcohol",
+        "correct": true,
+        "exp": "True — cetostearyl alcohol is the fatty alcohol component of emulsifying wax.",
+        "exp_si": "නිවැරදියි — Cetostearyl alcohol emulsifying wax හි ප්‍රධාන අංගයයි."
+      },
+      {
+        "L": "D",
+        "text": "Liquid paraffin",
+        "correct": false,
+        "exp": "False — liquid paraffin is often used alongside emulsifying wax in creams, but is not itself an ingredient of the wax.",
+        "exp_si": "වැරදියි — Liquid paraffin ක්‍රීම් වල එකට භාවිතා වුවත් wax හි අංගයක් නොවේ."
+      },
+      {
+        "L": "E",
+        "text": "Purified water",
+        "correct": false,
+        "exp": "False — water is not part of the emulsifying wax itself; it is added afterwards when forming the aqueous cream.",
+        "exp_si": "වැරදියි — ජලය wax හි කොටසක් නොවේ; එය පසුව ක්‍රීම් සෑදීමේදී එකතු කරයි."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 15,
+    "type": "tf",
+    "stem": "The following pharmaceutical agents are correctly paired with their synonyms. True or false?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Pyroxylin — Cellulose nitrate",
+        "correct": true,
+        "exp": "True — pyroxylin is another name for cellulose nitrate (used e.g. in collodion).",
+        "exp_si": "නිවැරදියි — Pyroxylin යනු Cellulose nitrate සඳහා තවත් නාමයකි."
+      },
+      {
+        "L": "B",
+        "text": "Macrogol — Polyethylene glycol",
+        "correct": true,
+        "exp": "True — as in Q12, macrogol is the pharmacopoeial synonym for polyethylene glycol.",
+        "exp_si": "නිවැරදියි — Macrogol යනු Polyethylene glycol සඳහා පර්යාය නාමයයි."
+      },
+      {
+        "L": "C",
+        "text": "Epsom salt — Sodium sulphate",
+        "correct": false,
+        "exp": "False — Epsom salt is magnesium sulphate. Sodium sulphate is actually \"Glauber's salt\" (the pairing has been swapped with option E).",
+        "exp_si": "වැරදියි — Epsom salt යනු Magnesium sulphate වේ. Sodium sulphate නම \"Glauber's salt\" ලෙසය (E සමඟ මාරු වී ඇත)."
+      },
+      {
+        "L": "D",
+        "text": "Lanolin — Wool fat",
+        "correct": true,
+        "exp": "True — lanolin is the purified wax/fat obtained from sheep's wool, hence \"wool fat\".",
+        "exp_si": "නිවැරදියි — Lanolin බැටළු ලොම් වලින් ලබාගන්නා මේදයකි (wool fat)."
+      },
+      {
+        "L": "E",
+        "text": "Glauber's salt — Magnesium sulphate",
+        "correct": false,
+        "exp": "False — Glauber's salt is sodium sulphate, not magnesium sulphate (magnesium sulphate is Epsom salt — the pairing has been swapped with option C).",
+        "exp_si": "වැරදියි — Glauber's salt යනු Sodium sulphate වේ; Magnesium sulphate නම Epsom salt (C සමඟ මාරු වී ඇත)."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 16,
+    "type": "tf",
+    "stem": "Benzoyl peroxide:",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "is useful for mild to moderate acne",
+        "correct": true,
+        "exp": "True — benzoyl peroxide is a first-line topical treatment for mild-to-moderate acne, with keratolytic and antibacterial action.",
+        "exp_si": "නිවැරදියි — Benzoyl peroxide මධ්‍යස්ථ මුහුණු කුෂ්ඨ (acne) සඳහා පළමු පෙළේ ප්‍රතිකාරයකි."
+      },
+      {
+        "L": "B",
+        "text": "Is available as cream or gel",
+        "correct": true,
+        "exp": "True — it comes in various topical formulations including gels, creams, and washes.",
+        "exp_si": "නිවැරදියි — එය ක්‍රීම් හෝ ජෙල් ලෙස ලබා ගත හැක."
+      },
+      {
+        "L": "C",
+        "text": "Can bleach hair and coloured fabrics",
+        "correct": true,
+        "exp": "True — this is a well-known practical side effect; it can bleach hair, clothing, and towels on contact.",
+        "exp_si": "නිවැරදියි — එය හිසකෙස් හා වර්ණවත් රෙදි සුදුමැලි (bleach) කළ හැක."
+      },
+      {
+        "L": "D",
+        "text": "Burning, redness of skin are common side-effects",
+        "correct": true,
+        "exp": "True — local irritation, dryness, burning, and erythema are common, especially at treatment initiation.",
+        "exp_si": "නිවැරදියි — දැවීම හා සමේ රතුවීම සුලභ අතුරු ආබාධයි."
+      },
+      {
+        "L": "E",
+        "text": "Contact with eyes and mouth should be avoided",
+        "correct": true,
+        "exp": "True — it is irritant to mucous membranes and must be kept away from eyes, lips, and mouth.",
+        "exp_si": "නිවැරදියි — ඇස් හා මුඛය සමඟ ස්පර්ශය මගහැරිය යුතුය."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 17,
+    "type": "tf",
+    "stem": "The following naturally occurring compounds are correctly paired with the chemical family to which it belongs.",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Opium — glycoside",
+        "correct": false,
+        "exp": "False — opium is characterised by its alkaloid content (morphine, codeine, papaverine), not glycosides.",
+        "exp_si": "වැරදියි — අබිං (opium) ඇල්කලොයිඩ (morphine, codeine) අඩංගු වීමෙන් හඳුනා ගැනේ; ග්ලයිකෝසයිඩ නොවේ."
+      },
+      {
+        "L": "B",
+        "text": "Vinblastine — alkaloid",
+        "correct": true,
+        "exp": "True — vinblastine is a vinca alkaloid derived from Catharanthus roseus.",
+        "exp_si": "නිවැරදියි — Vinblastine Catharanthus roseus වලින් ලබාගත් ඇල්කලොයිඩයකි."
+      },
+      {
+        "L": "C",
+        "text": "Reserpine — terpenoid",
+        "correct": false,
+        "exp": "False — reserpine is an indole alkaloid from Rauwolfia serpentina, not a terpenoid.",
+        "exp_si": "වැරදියි — Reserpine Rauwolfia serpentina වලින් ලබාගත් ඇල්කලොයිඩයකි; terpenoid නොවේ."
+      },
+      {
+        "L": "D",
+        "text": "Cascara — glycoside",
+        "correct": true,
+        "exp": "True — cascara sagrada contains anthraquinone glycosides responsible for its laxative action.",
+        "exp_si": "නිවැරදියි — Cascara හි laxative ක්‍රියාව සඳහා වගකියන anthraquinone ග්ලයිකෝසයිඩ ඇත."
+      },
+      {
+        "L": "E",
+        "text": "Menthol — steroid",
+        "correct": false,
+        "exp": "False — menthol is a monoterpenoid (from peppermint oil), not a steroid.",
+        "exp_si": "වැරදියි — Menthol monoterpenoid එකකි (පුදින තෙල් වලින්); ස්ටෙරොයිඩ් නොවේ."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 18,
+    "type": "tf",
+    "stem": "The following pharmaceutical wastes are correctly paired with each disposal method. True or false?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Pressurized gas containers — Incineration",
+        "correct": false,
+        "exp": "False — pressurised/aerosol containers pose an explosion risk and should NOT be incinerated; they require specific safe disposal, not open burning.",
+        "exp_si": "වැරදියි — පීඩන ගෑස් බහාලුම් පුපුරා යාමේ අවදානම ඇති බැවින් ඉන්සිනරේෂන් නොකළ යුතුය."
+      },
+      {
+        "L": "B",
+        "text": "Sealed ampoules containing heavy metals — Incineration",
+        "correct": false,
+        "exp": "False — heavy metal waste should not be simply incinerated, as this can release toxic metal fumes; it needs specialised/controlled treatment.",
+        "exp_si": "වැරදියි — බර ලෝහ අඩංගු අපද්‍රව්‍ය ඉන්සිනරේෂන් කිරීමෙන් විෂ දුම් නිකුත් විය හැකි බැවින් විශේෂිත ක්‍රමයක් අවශ්‍යයි."
+      },
+      {
+        "L": "C",
+        "text": "PVC and plastic — Burning in open container",
+        "correct": false,
+        "exp": "False — burning PVC/plastic in an open container releases toxic dioxins and hydrochloric acid gas; it requires controlled, high-temperature incineration with proper emission control, not open burning.",
+        "exp_si": "වැරදියි — විවෘත භාජනයක PVC/ප්ලාස්ටික් දැවීමෙන් විෂ වායු නිකුත් වන බැවින් පාලිත ඉන්සිනරේෂන් අවශ්‍යයි."
+      },
+      {
+        "L": "D",
+        "text": "Paper and cardboard — Landfill",
+        "correct": true,
+        "exp": "True — clean paper and cardboard waste is generally suitable for landfill or recycling, unlike hazardous pharmaceutical waste.",
+        "exp_si": "නිවැරදියි — කඩදාසි හා පෙට්ටි අපද්‍රව්‍ය landfill සඳහා සුදුසුය."
+      },
+      {
+        "L": "E",
+        "text": "Reactive chemical — Incineration",
+        "correct": false,
+        "exp": "False — reactive chemicals can be unstable, explosive, or produce dangerous by-products when burned, so they require specialised chemical disposal, not routine incineration.",
+        "exp_si": "වැරදියි — ප්‍රතික්‍රියාශීලී රසායනික ද්‍රව්‍ය දැවීමේදී අනතුරුදායක උපපලදායක ඇති කළ හැකි බැවින් විශේෂිත බැහැර කිරීමක් අවශ්‍යයි."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 19,
+    "type": "tf",
+    "stem": "The following are polymers. True or false?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Cellulose",
+        "correct": true,
+        "exp": "True — cellulose is a natural polysaccharide polymer of glucose units.",
+        "exp_si": "නිවැරදියි — සෙලියුලෝස් ග්ලූකෝස් ඒකක වලින් සෑදුණු ස්වභාවික පොලිමරයකි."
+      },
+      {
+        "L": "B",
+        "text": "Glycine",
+        "correct": false,
+        "exp": "False — glycine is a single amino acid monomer, not itself a polymer.",
+        "exp_si": "වැරදියි — ග්ලයිසීන් තනි ඇමයිනෝ අම්ලයක් (monomer) මිස පොලිමරයක් නොවේ."
+      },
+      {
+        "L": "C",
+        "text": "Starch",
+        "correct": true,
+        "exp": "True — starch is a polysaccharide polymer (amylose/amylopectin).",
+        "exp_si": "නිවැරදියි — ස්ටාච් පොලිසැකරයිඩ පොලිමරයකි."
+      },
+      {
+        "L": "D",
+        "text": "Povidone",
+        "correct": true,
+        "exp": "True — povidone (PVP) is a synthetic polymer of N-vinylpyrrolidone.",
+        "exp_si": "නිවැරදියි — Povidone (PVP) කෘත්‍රිම පොලිමරයකි."
+      },
+      {
+        "L": "E",
+        "text": "Fructose",
+        "correct": false,
+        "exp": "False — fructose is a monosaccharide (single sugar unit), not a polymer.",
+        "exp_si": "වැරදියි — ෆෲක්ටෝස් තනි සීනි ඒකකයක් (monosaccharide) මිස පොලිමරයක් නොවේ."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 20,
+    "type": "tf",
+    "stem": "The following are amphoteric compounds. True or false?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Tetracyclines",
+        "correct": true,
+        "exp": "True — tetracyclines carry both acidic and basic functional groups, making them amphoteric.",
+        "exp_si": "නිවැරදියි — Tetracycline වල අම්ල හා භෂ්ම කාරක කාණ්ඩ දෙකම ඇති බැවින් ampoteric ය."
+      },
+      {
+        "L": "B",
+        "text": "β-aminobenzoic acid (PABA)",
+        "correct": true,
+        "exp": "True — PABA has both a carboxylic acid (-COOH) and an amine (-NH2) group, giving it amphoteric character.",
+        "exp_si": "නිවැරදියි — PABA හි -COOH හා -NH2 කාණ්ඩ දෙකම ඇත."
+      },
+      {
+        "L": "C",
+        "text": "Sulphonamides",
+        "correct": true,
+        "exp": "True — sulphonamides are weakly acidic (sulphonamide N-H) and weakly basic (aromatic amine), so they behave amphoterically.",
+        "exp_si": "නිවැරදියි — Sulphonamide දුර්වල අම්ලික හා දුර්වල භෂ්මිකව ක්‍රියා කරයි."
+      },
+      {
+        "L": "D",
+        "text": "Paracetamol",
+        "correct": false,
+        "exp": "False — paracetamol has a weakly acidic phenolic -OH group but is not typically classed as amphoteric.",
+        "exp_si": "වැරදියි — Paracetamol දුර්වල අම්ලික -OH කාණ්ඩයක් ඇතත් amphoteric ලෙස වර්ග නොකෙරේ."
+      },
+      {
+        "L": "E",
+        "text": "Phenol",
+        "correct": false,
+        "exp": "False — phenol is only weakly acidic; it lacks a basic group and so is not amphoteric.",
+        "exp_si": "වැරදියි — ෆීනෝල් දුර්වල අම්ලික පමණි; භෂ්මික කාණ්ඩයක් නොමැති බැවින් amphoteric නොවේ."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 21,
+    "type": "tf",
+    "stem": "True or false regarding the Antivenom for snake bite in Sri Lanka?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "It is not effective against envenoming in hump-nosed viper (Hypnale hypnale) bites",
+        "correct": true,
+        "exp": "True — the Indian polyvalent antivenom used in Sri Lanka is raised against the \"big four\" Indian snakes and is not effective against hump-nosed viper envenoming, which is managed supportively.",
+        "exp_si": "නිවැරදියි — ශ්‍රී ලංකාවේ භාවිතා කරන ඉන්දියානු polyvalent antivenom, කුනකටුවා (Hypnale hypnale) විෂවීමට ඵලදායී නොවේ."
+      },
+      {
+        "L": "B",
+        "text": "Reassurance of the snake bite victim is recommended before antivenom treatment is started",
+        "correct": true,
+        "exp": "True — anxiety/vasovagal reactions are common; calm reassurance is part of standard initial management alongside monitoring for true envenoming.",
+        "exp_si": "නිවැරදියි — Antivenom ලබා දීමට පෙර රෝගියාට සහතික කිරීම (reassurance) නිර්දේශ කෙරේ."
+      },
+      {
+        "L": "C",
+        "text": "A small test dose of antivenom is recommended before giving the intravenous antivenom",
+        "correct": false,
+        "exp": "False — current guidelines (including WHO/Sri Lankan protocols) advise AGAINST routine test dosing, as it does not reliably predict reactions and delays definitive treatment; antivenom is given with full readiness to treat anaphylaxis instead.",
+        "exp_si": "වැරදියි — වත්මන් මාර්ගෝපදේශ අනුව test dose දීම නිර්දේශ නොකෙරේ; එය ප්‍රතික්‍රියා නිවැරදිව පුරෝකථනය නොකරන අතර ප්‍රතිකාරය ප්‍රමාද කරයි."
+      },
+      {
+        "L": "D",
+        "text": "A dose of 10 vials in 100ml of distilled water is suitable initially as anti-venom therapy",
+        "correct": true,
+        "exp": "True — 10 vials reconstituted and given as an initial intravenous infusion is the standard starting adult dose used in Sri Lanka.",
+        "exp_si": "නිවැරදියි — ශ්‍රී ලංකාවේ ආරම්භක ඩෝස් එක ලෙස vial 10ක් සම්මතයි."
+      },
+      {
+        "L": "E",
+        "text": "Demonstrable coagulopathy is essential before starting antivenom therapy",
+        "correct": false,
+        "exp": "False — antivenom is indicated based on any evidence of systemic envenoming (e.g. neurotoxicity, significant local swelling, coagulopathy), not coagulopathy alone.",
+        "exp_si": "වැරදියි — coagulopathy පමණක් නොව ස්නායු විෂවීම හෝ දැඩි ඉදිමීම වැනි ඕනෑම පද්ධතිමය විෂ ලක්ෂණයක් මත antivenom දිය හැක."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 22,
+    "type": "tf",
+    "stem": "True or false?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Mebeverine hydrochloride is an antimuscarinic antispasmodic",
+        "correct": false,
+        "exp": "False — mebeverine acts directly on intestinal smooth muscle (musculotropic/direct relaxant action), not via antimuscarinic (anticholinergic) receptor blockade.",
+        "exp_si": "වැරදියි — Mebeverine අන්ත්‍ර මාංශ පේශි මතම කෙලින්ම ක්‍රියා කරයි (musculotropic); antimuscarinic ක්‍රියාවක් නොවේ."
+      },
+      {
+        "L": "B",
+        "text": "Cholic acid is useful in the treatment of Hepatitis C",
+        "correct": false,
+        "exp": "False — cholic acid is used for inherited bile acid synthesis disorders; it has no role in Hepatitis C treatment.",
+        "exp_si": "වැරදියි — Cholic acid Hepatitis C ප්‍රතිකාරයට කිසිදු කාර්යභාරයක් නොදක්වයි."
+      },
+      {
+        "L": "C",
+        "text": "Terlipressin acetate is useful in the management of bleeding esophageal varices",
+        "correct": true,
+        "exp": "True — terlipressin, a vasopressin analogue, reduces splanchnic blood flow and portal pressure and is used in acute variceal bleeding.",
+        "exp_si": "නිවැරදියි — Terlipressin ආහාර නාළිකා නහර (esophageal varices) රුධිර වහනයේදී භාවිතා වේ."
+      },
+      {
+        "L": "D",
+        "text": "Orlistat reduces absorption of dietary fat",
+        "correct": true,
+        "exp": "True — orlistat inhibits pancreatic/gastric lipase, reducing fat digestion and absorption; this is its weight-management mechanism.",
+        "exp_si": "නිවැරදියි — Orlistat මේදය අවශෝෂණය අඩු කරයි (lipase වළක්වා)."
+      },
+      {
+        "L": "E",
+        "text": "Proctosedyl® suppositories are useful in the treatment of constipation",
+        "correct": false,
+        "exp": "False — Proctosedyl® (hydrocortisone + cinchocaine) is used for haemorrhoids/anal conditions, not as a treatment for constipation.",
+        "exp_si": "වැරදියි — Proctosedyl® බාවා රෝග (haemorrhoids) සඳහා භාවිතා වන අතර මලබද්ධයට නොවේ."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 23,
+    "type": "tf",
+    "stem": "Regarding treatment with a DIGOXIN are the following statements true or false?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Digoxin has a short half-life",
+        "correct": false,
+        "exp": "False — digoxin has a relatively long half-life (~36–48 hours in normal renal function), which is why once-daily dosing works and why loading/maintenance regimens are used.",
+        "exp_si": "වැරදියි — Digoxin හි ක්‍රියාකාරී අර්ධ ආයු කාලය ( පැය 36-48) සාපේක්ෂව දිගුය."
+      },
+      {
+        "L": "B",
+        "text": "Digoxin is useful to reduce ventricular rate in Atrial fibrillation",
+        "correct": true,
+        "exp": "True — digoxin slows AV nodal conduction and is used for rate control in AF, especially in patients with heart failure.",
+        "exp_si": "නිවැරදියි — Digoxin AF (Atrial fibrillation) හිදී වෙන්ට්‍රිකල් වේගය අඩු කරයි."
+      },
+      {
+        "L": "C",
+        "text": "Blurred vision is a common side-effect",
+        "correct": true,
+        "exp": "True — visual disturbances, including blurred and yellow-green (xanthopsia) vision, are classic digoxin toxicity features.",
+        "exp_si": "නිවැරදියි — බොඳ දර්ශනය (blurred vision) Digoxin විෂවීමේ සුලභ ලක්ෂණයකි."
+      },
+      {
+        "L": "D",
+        "text": "Hypokalemia predisposes to digoxin toxicity",
+        "correct": true,
+        "exp": "True — low potassium increases digoxin binding to Na+/K+-ATPase, greatly increasing the risk of toxicity even at \"therapeutic\" digoxin levels.",
+        "exp_si": "නිවැරදියි — රුධිරයේ පොටෑසියම් අඩුවීම (hypokalemia) Digoxin විෂවීමට හේතු වේ."
+      },
+      {
+        "L": "E",
+        "text": "Digoxin-specific antibody fragments are available for infusion in serious digoxin toxicity",
+        "correct": true,
+        "exp": "True — digoxin-specific antibody fragments (e.g. DigiFab/Digibind) are the definitive antidote for severe, life-threatening digoxin toxicity.",
+        "exp_si": "නිවැරදියි — දරුණු Digoxin විෂවීමේදී විශේෂිත ප්‍රතිදේහ කොටස් (antibody fragments) ලබා දිය හැක."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 24,
+    "type": "tf",
+    "stem": "True or false regarding angina?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Angina results from an imbalance between myocardial oxygen supply and demand",
+        "correct": true,
+        "exp": "True — this is the fundamental pathophysiology of angina: oxygen demand outstrips supply, usually due to coronary atherosclerosis.",
+        "exp_si": "නිවැරදියි — හෘද පේශි වෙත ඔක්සිජන් සැපයුම හා ඉල්ලුම අතර අසමතුලිතතාවයෙන් angina ඇතිවේ."
+      },
+      {
+        "L": "B",
+        "text": "The ECG shows some new ischaemic changes during most attacks of angina",
+        "correct": false,
+        "exp": "False — the resting ECG is frequently normal in stable angina, both between and even during some attacks; ischaemic changes are more reliably seen on exercise testing.",
+        "exp_si": "වැරදියි — ස්ථාවර angina හිදී විවේකී ECG එක බොහෝ විට සාමාන්‍ය පවතී."
+      },
+      {
+        "L": "C",
+        "text": "Chest pain and shortness of breath on effort are the commonest features of angina",
+        "correct": true,
+        "exp": "True — exertional chest pain (often with breathlessness) is the classic presenting symptom of stable angina.",
+        "exp_si": "නිවැරදියි — වෙහෙසේදී පපුවේ වේදනාව හා හුස්ම හිරවීම angina හි වඩාත් සුලභ ලක්ෂණයි."
+      },
+      {
+        "L": "D",
+        "text": "During an attack, angina pain lasts for about 20–25 minutes in most cases",
+        "correct": false,
+        "exp": "False — typical angina episodes last only a few minutes (often 2–10 minutes) and resolve with rest/GTN; pain lasting 20+ minutes raises concern for myocardial infarction, not simple angina.",
+        "exp_si": "වැරදියි — සාමාන්‍ය angina වේදනාව මිනිත්තු කිහිපයක් පවතී; විනාඩි 20කට වඩා පැවතීම හෘදයාබාධයක් (MI) පිළිබඳ සැක උපදවයි."
+      },
+      {
+        "L": "E",
+        "text": "One tablet of isosorbide mononitrate (50 or 60mg) by mouth should be taken immediately for angina pain",
+        "correct": false,
+        "exp": "False — 50–60mg oral isosorbide mononitrate is a modified-release maintenance/prophylactic dose, not an acute treatment. Acute angina pain is relieved with sublingual GTN, which acts rapidly.",
+        "exp_si": "වැරදියි — mg 50-60 isosorbide mononitrate නඩත්තු මාත්‍රාවකි; හදිසි angina සඳහා දිවෙ යටින් GTN භාවිතා කරයි."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 25,
+    "type": "tf",
+    "stem": "The following medicinal drugs and their actions are correctly linked",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Sterculia — Osmotic laxative",
+        "correct": false,
+        "exp": "False — sterculia is a bulk-forming laxative, not osmotic.",
+        "exp_si": "වැරදියි — Sterculia bulk-forming laxative එකකි; osmotic නොවේ."
+      },
+      {
+        "L": "B",
+        "text": "BisacodyL — Stimulant laxative",
+        "correct": true,
+        "exp": "True — bisacodyl is a classic stimulant laxative acting on the colonic mucosa.",
+        "exp_si": "නිවැරදියි — Bisacodyl stimulant laxative එකකි."
+      },
+      {
+        "L": "C",
+        "text": "Simeticone — Stool softener",
+        "correct": false,
+        "exp": "False — simeticone (simethicone) is an anti-foaming agent used for flatulence/wind, not a stool softener.",
+        "exp_si": "වැරදියි — Simeticone වායුව සඳහා anti-foaming කාරකයකි; stool softener නොවේ."
+      },
+      {
+        "L": "D",
+        "text": "Antidiarrhoeal — Loperamide",
+        "correct": true,
+        "exp": "True — loperamide is indeed a widely used antidiarrhoeal (opioid-receptor agonist acting on gut motility).",
+        "exp_si": "නිවැරදියි — Loperamide බහුලව භාවිතා වන ඇන්ටිඩයරියල් (antidiarrhoeal) එකකි."
+      },
+      {
+        "L": "E",
+        "text": "Magnesium trisilicate — Bulk forming laxative",
+        "correct": false,
+        "exp": "False — magnesium trisilicate is an antacid, not a laxative.",
+        "exp_si": "වැරදියි — Magnesium trisilicate ඇන්ටාසිඩ් (antacid) එකකි; laxative නොවේ."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 26,
+    "type": "tf",
+    "stem": "Side-effects of Amiodarone hydrochloride include:",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Acute retention of urine in men",
+        "correct": false,
+        "exp": "False — urinary retention is typically an anticholinergic drug effect, not a recognised amiodarone side effect.",
+        "exp_si": "වැරදියි — මුත්‍රා රඳවා ගැනීම (urinary retention) සාමාන්‍යයෙන් anticholinergic ඖෂධ වල අතුරු ආබාධයකි; Amiodarone වල නොවේ."
+      },
+      {
+        "L": "B",
+        "text": "Hyperthermia",
+        "correct": false,
+        "exp": "False — amiodarone affects thyroid function (causing hypo- or hyperthyroidism) rather than causing hyperthermia directly.",
+        "exp_si": "වැරදියි — Amiodarone තයිරොයිඩ් ග්‍රන්ථියට බලපායි (hypo/hyper thyroidism); hyperthermia ඍජුව ඇති නොකරයි."
+      },
+      {
+        "L": "C",
+        "text": "Bradycardia",
+        "correct": true,
+        "exp": "True — amiodarone commonly causes bradycardia due to its antiarrhythmic/AV-nodal slowing effects.",
+        "exp_si": "නිවැරදියි — Amiodarone හෘද ස්පන්දන වේගය අඩු කරයි (bradycardia)."
+      },
+      {
+        "L": "D",
+        "text": "Hyperthyroidism",
+        "correct": true,
+        "exp": "True — amiodarone-induced thyrotoxicosis is a well-recognised complication due to its high iodine content.",
+        "exp_si": "නිවැරදියි — Amiodarone හි ඉහළ අයඩින් ප්‍රමාණය නිසා hyperthyroidism ඇති කළ හැක."
+      },
+      {
+        "L": "E",
+        "text": "Pneumonitis",
+        "correct": true,
+        "exp": "True — pulmonary toxicity (amiodarone-induced pneumonitis/fibrosis) is a serious, well-known adverse effect requiring monitoring.",
+        "exp_si": "නිවැරදියි — පෙනහළු විෂවීම (pneumonitis/fibrosis) Amiodarone හි බරපතල අතුරු ආබාධයකි."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 27,
+    "type": "tf",
+    "stem": "The following antihypertensive drugs and their descriptions are correctly linked",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Amlodipine — calcium channel blocker",
+        "correct": true,
+        "exp": "True — amlodipine is a dihydropyridine calcium channel blocker.",
+        "exp_si": "නිවැරදියි — Amlodipine කැල්සියම් නාලිකා අවහිර කාරකයකි (CCB)."
+      },
+      {
+        "L": "B",
+        "text": "Atenolol — selective Beta adrenoceptor blocker",
+        "correct": true,
+        "exp": "True — atenolol is a cardioselective (β1-selective) beta-blocker.",
+        "exp_si": "නිවැරදියි — Atenolol තෝරාගත් (selective) බීටා අවහිර කාරකයකි."
+      },
+      {
+        "L": "C",
+        "text": "Propranolol — selective Beta adrenoceptor blocker",
+        "correct": false,
+        "exp": "False — propranolol is a non-selective beta-blocker, acting on both β1 and β2 receptors (unlike atenolol).",
+        "exp_si": "වැරදියි — Propranolol තෝරාගත් නොවන (non-selective) බීටා අවහිර කාරකයකි."
+      },
+      {
+        "L": "D",
+        "text": "Captopril — ACE Inhibitor",
+        "correct": true,
+        "exp": "True — captopril was the first ACE inhibitor developed.",
+        "exp_si": "නිවැරදියි — Captopril ACE Inhibitor කාණ්ඩයේ පළමු ඖෂධයයි."
+      },
+      {
+        "L": "E",
+        "text": "Nifedipine — vasodilator antihypertensive",
+        "correct": true,
+        "exp": "True — nifedipine is a dihydropyridine calcium channel blocker whose predominant effect is arterial vasodilation.",
+        "exp_si": "නිවැරදියි — Nifedipine ධමනි විස්තාරණය (vasodilation) කරන කැල්සියම් නාලිකා අවහිර කාරකයකි."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 28,
+    "type": "tf",
+    "stem": "The principal actions of the given hormones or medicinal drugs are correctly stated",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Antidiuretic hormone acts mainly on the proximal tubules of the nephron",
+        "correct": false,
+        "exp": "False — ADH (vasopressin) acts mainly on the distal convoluted tubule and collecting duct, increasing water reabsorption via aquaporins, not the proximal tubule.",
+        "exp_si": "වැරදියි — ADH ක්‍රියා කරන්නේ distal tubule හා collecting duct මතය; proximal tubule මත නොවේ."
+      },
+      {
+        "L": "B",
+        "text": "Prolactin causes milk ejection during sucking",
+        "correct": false,
+        "exp": "False — oxytocin causes milk ejection (let-down reflex); prolactin stimulates milk production/synthesis, a different function.",
+        "exp_si": "වැරදියි — කිරි නිකුත් කිරීම (milk ejection) Oxytocin මගින් සිදුවේ; Prolactin කිරි නිෂ්පාදනය උත්තේජනය කරයි."
+      },
+      {
+        "L": "C",
+        "text": "Adreno corticotrophic hormone (ACTH) acts on the zona reticularis of the adrenal cortex",
+        "correct": false,
+        "exp": "False — ACTH principally stimulates the zona fasciculata (cortisol production); the zona reticularis (androgens) is a secondary target, but the \"main\" classical action taught is on the fasciculata.",
+        "exp_si": "වැරදියි — ACTH ප්‍රධාන වශයෙන් ක්‍රියා කරන්නේ zona fasciculata මතය (cortisol නිෂ්පාදනය)."
+      },
+      {
+        "L": "D",
+        "text": "Finasteride specifically inhibits enzyme 5 alpha reductase",
+        "correct": true,
+        "exp": "True — finasteride inhibits 5α-reductase, blocking conversion of testosterone to dihydrotestosterone (DHT), used in BPH and male pattern baldness.",
+        "exp_si": "නිවැරදියි — Finasteride 5-alpha reductase එන්සයිමය අවහිර කරයි."
+      },
+      {
+        "L": "E",
+        "text": "Tamsulosin is an alpha-adrenoceptor blocker",
+        "correct": true,
+        "exp": "True — tamsulosin is a selective alpha-1 adrenoceptor blocker used in benign prostatic hyperplasia.",
+        "exp_si": "නිවැරදියි — Tamsulosin ඇල්ෆා-ග්‍රාහක අවහිර කාරකයකි (alpha blocker)."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 29,
+    "type": "tf",
+    "stem": "True or false?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Therapeutic Index is calculated as Dose producing toxic effects / Dose producing therapeutic effects",
+        "correct": true,
+        "exp": "True — this is the standard definition of the Therapeutic Index (TD/ED ratio).",
+        "exp_si": "නිවැරදියි — Therapeutic Index ගණනය කරන්නේ විෂ ආචරණ ඇති කරන මාත්‍රාව ÷ ප්‍රතිකාර ආචරණ ඇති කරන මාත්‍රාව ලෙසය."
+      },
+      {
+        "L": "B",
+        "text": "If the therapeutic index of a drug is 7.0, the index may be regarded as narrow",
+        "correct": false,
+        "exp": "False — a TI of 7.0 is relatively wide/safe. Drugs with a NARROW therapeutic index (e.g. digoxin, lithium, warfarin) typically have a TI close to 1–3, requiring close monitoring.",
+        "exp_si": "වැරදියි — 7.0 ක TI අගයක් සාපේක්ෂව පුළුල් (wide) හා ආරක්ෂිතය; සීමිත (narrow) TI ඖෂධ සාමාන්‍යයෙන් 1-3 ආසන්නයේ ඇත."
+      },
+      {
+        "L": "C",
+        "text": "The oral bioavailabity of lithium is about 100%",
+        "correct": true,
+        "exp": "True — lithium is almost completely absorbed from the GI tract after oral administration.",
+        "exp_si": "නිවැරදියි — Lithium මුඛයෙන් ගැනීමේදී ආසන්න වශයෙන් 100%ක් අවශෝෂණය වේ."
+      },
+      {
+        "L": "D",
+        "text": "The abbreviation (symbol) t1/2 is the time taken for the plasma concentration of a drug to fail (fall) by 50%",
+        "correct": true,
+        "exp": "True — t½ (half-life) is defined as the time for plasma drug concentration to fall by 50%.",
+        "exp_si": "නිවැරදියි — t½ යනු ප්ලාස්මා සාන්ද්‍රණය 50%කින් අඩුවීමට ගතවන කාලයයි."
+      },
+      {
+        "L": "E",
+        "text": "Acute anaphylactic shock is a known side effect of benzathine penicillin",
+        "correct": true,
+        "exp": "True — like other penicillins, benzathine penicillin can cause severe hypersensitivity reactions including anaphylaxis.",
+        "exp_si": "නිවැරදියි — අනෙකුත් පෙනිසිලින් මෙන්ම Benzathine penicillin ද anaphylaxis ඇති කළ හැක."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 30,
+    "type": "tf",
+    "stem": "The following ophthalmic preparations and their principal uses are correctly linked",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Acetylcysteine — tear deficiency",
+        "correct": false,
+        "exp": "False — acetylcysteine eye drops are used to reduce mucus viscosity (e.g. in mucus-related keratopathies); artificial tears/hypromellose are the standard treatment for tear deficiency.",
+        "exp_si": "වැරදියි — Acetylcysteine ශ්ලේෂ්මල දුස්සාන්ද්‍රතාව අඩු කිරීමට භාවිතා වේ; කඳුළු ඌනතාවයට hypromellose/artificial tears භාවිතා වේ."
+      },
+      {
+        "L": "B",
+        "text": "Tobramycin — bacterial eye infections",
+        "correct": true,
+        "exp": "True — tobramycin is an aminoglycoside antibiotic used topically for bacterial conjunctivitis/keratitis.",
+        "exp_si": "නිවැරදියි — Tobramycin බැක්ටීරියා ඇස් ආසාදන සඳහා භාවිතා වේ."
+      },
+      {
+        "L": "C",
+        "text": "Aciclovir — Herpes simplex infection",
+        "correct": true,
+        "exp": "True — aciclovir eye ointment is the standard treatment for herpes simplex keratitis.",
+        "exp_si": "නිවැරදියි — Aciclovir eye ointment Herpes simplex keratitis සඳහා සම්මත ප්‍රතිකාරයයි."
+      },
+      {
+        "L": "D",
+        "text": "Tropicamide — constricts the pupil",
+        "correct": false,
+        "exp": "False — tropicamide is a mydriatic/cycloplegic that DILATES the pupil (used for eye examinations), the opposite of what is stated here.",
+        "exp_si": "වැරදියි — Tropicamide ඇසේ නෙත්තර විශාල කරයි (dilates); සංකෝචනය නොකරයි."
+      },
+      {
+        "L": "E",
+        "text": "Fluorescein — dilates the pupil",
+        "correct": false,
+        "exp": "False — fluorescein is a diagnostic dye used to stain the corneal surface (e.g. to detect abrasions/ulcers); it has no effect on pupil size. The pupil-dilating drug is tropicamide (options D and E have effectively been swapped).",
+        "exp_si": "වැරදියි — Fluorescein කනීනය පාට කිරීමට භාවිතා වන රෝග විනිශ්චය ද්‍රව්‍යයකි; නෙත්තර විශාල කරන්නේ Tropicamide (D සහ E මාරු වී ඇත)."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 31,
+    "type": "tf",
+    "stem": "Regarding left ventricular failure, true or false?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Left ventricular ejection fraction is significantly reduced",
+        "correct": true,
+        "exp": "True — reduced ejection fraction (HFrEF) is the hallmark of systolic left ventricular failure.",
+        "exp_si": "නිවැරදියි — වම් වෙන්ට්‍රිකල් නික්මවීමේ භාගය (ejection fraction) සැලකිය යුතු ලෙස අඩුවේ."
+      },
+      {
+        "L": "B",
+        "text": "Shortness of breath is a common symptom",
+        "correct": true,
+        "exp": "True — dyspnoea (exertional, orthopnoea, paroxysmal nocturnal) is a cardinal symptom of LVF.",
+        "exp_si": "නිවැරදියි — හුස්ම හිරවීම (dyspnoea) LVF හි ප්‍රධාන රෝග ලක්ෂණයකි."
+      },
+      {
+        "L": "C",
+        "text": "An ACE inhibitor or A-2 receptor blocker is mandatory in management",
+        "correct": true,
+        "exp": "True — ACE inhibitors (or ARBs if not tolerated) are a cornerstone, guideline-mandated therapy for heart failure with reduced ejection fraction.",
+        "exp_si": "නිවැරදියි — ACE inhibitor හෝ ARB, chikithsawe අත්‍යවශ්‍ය අංගයකි."
+      },
+      {
+        "L": "D",
+        "text": "A beta-blocker is mandatory in management",
+        "correct": true,
+        "exp": "True — evidence-based beta-blockers (bisoprolol, carvedilol, metoprolol succinate) are a mandatory part of standard chronic heart failure therapy, started cautiously once stable.",
+        "exp_si": "නිවැරදියි — Beta-blocker ප්‍රතිකාරයේ අත්‍යවශ්‍ය අංගයකි."
+      },
+      {
+        "L": "E",
+        "text": "Frusemide is mandatory in management",
+        "correct": false,
+        "exp": "False — furosemide is used for symptomatic relief of fluid overload/congestion, but is not \"mandatory\" in every case (e.g. a patient without congestion may not need a diuretic), unlike ACE inhibitors/beta-blockers which have mortality benefit and are guideline-mandated.",
+        "exp_si": "වැරදියි — Frusemide තරල එකතුවීම (congestion) ඇති විටදී පමණක් අවශ්‍ය වන අතර සෑම විටම අනිවාර්ය නොවේ."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 32,
+    "type": "tf",
+    "stem": "The following are live attenuated vaccines; true or false?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "BCG vaccine",
+        "correct": true,
+        "exp": "True — BCG is a live attenuated strain of Mycobacterium bovis.",
+        "exp_si": "නිවැරදියි — BCG එන්නත ජීවී දුබල කරන ලද (live attenuated) එකකි."
+      },
+      {
+        "L": "B",
+        "text": "Rabies vaccine",
+        "correct": false,
+        "exp": "False — modern human rabies vaccines are inactivated (killed) vaccines, not live.",
+        "exp_si": "වැරදියි — වත්මන් වඳුරු රෝග එන්නත nishkriya (inactivated) කරන ලද්දකි; ජීවී නොවේ."
+      },
+      {
+        "L": "C",
+        "text": "Tetanus vaccine",
+        "correct": false,
+        "exp": "False — tetanus vaccine is a toxoid (inactivated toxin), not a live vaccine.",
+        "exp_si": "වැරදියි — ටිටනස් එන්නත toxoid (nishkriya toxin) එකකි; ජීවී නොවේ."
+      },
+      {
+        "L": "D",
+        "text": "Measles, Mumps, Rubella (MMR) vaccine",
+        "correct": true,
+        "exp": "True — MMR is a combined live attenuated viral vaccine.",
+        "exp_si": "නිවැරදියි — MMR ජීවී දුබල කරන ලද ඒකාබද්ධ එන්නතකි."
+      },
+      {
+        "L": "E",
+        "text": "Hepatitis B vaccine",
+        "correct": false,
+        "exp": "False — Hepatitis B vaccine is a recombinant subunit (surface antigen) vaccine, not live.",
+        "exp_si": "වැරදියි — Hepatitis B එන්නත recombinant subunit එකකි; ජීවී නොවේ."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 33,
+    "type": "tf",
+    "stem": "True or false",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Simeticone is an antacid",
+        "correct": false,
+        "exp": "False — simeticone is an anti-flatulent/defoaming agent (reduces gas bubbles); it is often combined WITH antacids but is not itself an antacid.",
+        "exp_si": "වැරදියි — Simeticone වායුව අඩු කරන කාරකයකි; ඇන්ටාසිඩ් නොවේ."
+      },
+      {
+        "L": "B",
+        "text": "Gastro-intestinal anti-muscarinics are contraindicated in benign prostatic hyperplacia",
+        "correct": true,
+        "exp": "True — antimuscarinics can precipitate urinary retention and are contraindicated (or used with caution) in men with BPH.",
+        "exp_si": "නිවැරදියි — Anti-muscarinic ඖෂධ BPH ඇති පිරිමින්ට contraindicated වේ."
+      },
+      {
+        "L": "C",
+        "text": "Helicobacter pylori infection is the commonest cause of peptic ulcer",
+        "correct": true,
+        "exp": "True — H. pylori infection is the leading cause of peptic ulcer disease worldwide (alongside NSAID use).",
+        "exp_si": "නිවැරදියි — H. pylori ආසාදනය peptic ulcer හි ප්‍රධාන හේතුවයි."
+      },
+      {
+        "L": "D",
+        "text": "Ranitidine is a proton pump inhibitor",
+        "correct": false,
+        "exp": "False — ranitidine is an H2-receptor antagonist, not a proton pump inhibitor (e.g. omeprazole is a PPI).",
+        "exp_si": "වැරදියි — Ranitidine H2-receptor antagonist එකකි; PPI නොවේ."
+      },
+      {
+        "L": "E",
+        "text": "Lactulose is a stimulant laxative",
+        "correct": false,
+        "exp": "False — lactulose is an osmotic laxative, not a stimulant laxative.",
+        "exp_si": "වැරදියි — Lactulose osmotic laxative එකකි; stimulant නොවේ."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 34,
+    "type": "tf",
+    "stem": "Dry mouth is a recognized side-effect of",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Dehydration",
+        "correct": true,
+        "exp": "True — reduced fluid intake/dehydration commonly causes dry mouth.",
+        "exp_si": "නිවැරදියි — ජල හිඟය (dehydration) මුඛය වියළීමට හේතු වේ."
+      },
+      {
+        "L": "B",
+        "text": "Lithium therapy",
+        "correct": true,
+        "exp": "True — dry mouth is a recognised lithium side effect.",
+        "exp_si": "නිවැරදියි — Lithium ප්‍රතිකාරයේදී මුඛය වියළීම හඳුනාගත් අතුරු ආබාධයකි."
+      },
+      {
+        "L": "C",
+        "text": "Antihistamine drug therapy",
+        "correct": true,
+        "exp": "True — antihistamines (especially first-generation, sedating ones) have anticholinergic effects causing dry mouth.",
+        "exp_si": "නිවැරදියි — Antihistamine ඖෂධ (විශේෂයෙන් පළමු පරම්පරාවේ) anticholinergic ආචරණ නිසා මුඛය වියළීම ඇති කරයි."
+      },
+      {
+        "L": "D",
+        "text": "Antiparkinsonian drug therapy",
+        "correct": true,
+        "exp": "True — anticholinergic antiparkinsonian drugs (and to some extent levodopa) commonly cause dry mouth.",
+        "exp_si": "නිවැරදියි — Antiparkinsonian ඖෂධ මුඛය වියළීම ඇති කරයි."
+      },
+      {
+        "L": "E",
+        "text": "Isosorbide mononitrate therapy",
+        "correct": false,
+        "exp": "False — isosorbide mononitrate's typical side effects are headache, flushing, and hypotension, not dry mouth.",
+        "exp_si": "වැරදියි — Isosorbide mononitrate හි සුලභ අතුරු ආබාධ නම් හිසේ රුදාව, රතුවීම හා පීඩන පහත වැටීමයි; මුඛය වියළීම නොවේ."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 35,
+    "type": "tf",
+    "stem": "Olanzapine is",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "a first generation antipsychotic drug",
+        "correct": false,
+        "exp": "False — olanzapine is a second-generation (atypical) antipsychotic, not first-generation.",
+        "exp_si": "වැරදියි — Olanzapine දෙවන පරම්පරාවේ (atypical) ප්‍රතිසයිකෝටික් එකකි."
+      },
+      {
+        "L": "B",
+        "text": "effective in the treatment of schizophrenia",
+        "correct": true,
+        "exp": "True — olanzapine is a well-established treatment for schizophrenia.",
+        "exp_si": "නිවැරදියි — Olanzapine schizophrenia ප්‍රතිකාරයේදී ඵලදායීය."
+      },
+      {
+        "L": "C",
+        "text": "effective as monotherapy for mania",
+        "correct": true,
+        "exp": "True — olanzapine is licensed and effective as monotherapy for acute mania in bipolar disorder.",
+        "exp_si": "නිවැරදියි — Olanzapine mania සඳහා තනි ප්‍රතිකාරයක් (monotherapy) ලෙස ඵලදායීය."
+      },
+      {
+        "L": "D",
+        "text": "known to cause hypercholesterolaemia in long term use",
+        "correct": true,
+        "exp": "True — olanzapine carries a significant risk of metabolic side effects, including dyslipidaemia, weight gain, and diabetes.",
+        "exp_si": "නිවැරදියි — දිගු කාලීන භාවිතයේදී Olanzapine රුධිර කොලෙස්ටරෝල් වැඩි කළ හැක."
+      },
+      {
+        "L": "E",
+        "text": "safe for use in breast-feeding women",
+        "correct": false,
+        "exp": "False — olanzapine is not established as safe in breastfeeding and is generally used only if the benefits are judged to outweigh the risks, under specialist advice.",
+        "exp_si": "වැරදියි — මව්කිරි දෙන කාන්තාවන් තුළ Olanzapine ආරක්ෂිත බව තහවුරු වී නොමැත."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 36,
+    "type": "tf",
+    "stem": "In long term lithium therapy the following safety precautions are recommended",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Measurement of serum free thyroxine every 6 months",
+        "correct": true,
+        "exp": "True — regular thyroid function monitoring (roughly every 6 months, or 6–12 monthly) is recommended, as lithium can cause hypothyroidism.",
+        "exp_si": "නිවැරදියි — Lithium hypothyroidism ඇති කළ හැකි බැවින් මාස 6කට වරක් තයිරොයිඩ් පරීක්ෂණ නිර්දේශ කෙරේ."
+      },
+      {
+        "L": "B",
+        "text": "Estimation of G.F.R. every 4–6 months",
+        "correct": true,
+        "exp": "True — renal function should be monitored regularly, since lithium can affect renal function over long-term use.",
+        "exp_si": "නිවැරදියි — වකුගඩු ක්‍රියාකාරිත්වය (GFR) වරින් වර පරීක්ෂා කළ යුතුයි."
+      },
+      {
+        "L": "C",
+        "text": "Frequent estimation of serum lithium",
+        "correct": true,
+        "exp": "True — because lithium has a narrow therapeutic index, regular serum level monitoring is essential to avoid toxicity.",
+        "exp_si": "නිවැරදියි — Lithium හි සීමිත ආරක්ෂිත පරාසය නිසා නිතර රුධිර මට්ටම් පරීක්ෂා කළ යුතුයි."
+      },
+      {
+        "L": "D",
+        "text": "Blood samples for serum lithium should be collected 6 hours after the last dose",
+        "correct": false,
+        "exp": "False — the standard is to take the sample 12 hours post-dose (typically the next morning after an evening dose), not 6 hours.",
+        "exp_si": "වැරදියි — නියම කාලය නම් අවසන් මාත්‍රාවෙන් පැය 12කට පසුවයි; පැය 6ක් නොවේ."
+      },
+      {
+        "L": "E",
+        "text": "Serum lithium should be between 0.4 and 1.0 mmol/litre",
+        "correct": true,
+        "exp": "True — this is the accepted therapeutic range for serum lithium (with lower targets often used for maintenance and higher for acute mania).",
+        "exp_si": "නිවැරදියි — රුධිර Lithium මට්ටම 0.4-1.0 mmol/L අතර පවතිය යුතුයි."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 37,
+    "type": "tf",
+    "stem": "The following antibacterials and their sites of action are correctly paired",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Pencillins — Bacterial cell wall peptidoglycan synthesis",
+        "correct": true,
+        "exp": "True — penicillins (beta-lactams) inhibit cell wall peptidoglycan cross-linking.",
+        "exp_si": "නිවැරදියි — Penicillin බැක්ටීරියා සෛල බිත්ති peptidoglycan සංශ්ලේෂණය අවහිර කරයි."
+      },
+      {
+        "L": "B",
+        "text": "Trimethoprin — Bacterial protein synthesis inhibition",
+        "correct": false,
+        "exp": "False — trimethoprim inhibits bacterial dihydrofolate reductase, blocking folic acid synthesis (needed for DNA synthesis) — not protein synthesis.",
+        "exp_si": "වැරදියි — Trimethoprim ෆෝලික් අම්ල සංශ්ලේෂණය අවහිර කරයි; ප්‍රෝටීන් සංශ්ලේෂණය නොවේ."
+      },
+      {
+        "L": "C",
+        "text": "Quinolones — Bacterial protein synthesis inhibition",
+        "correct": false,
+        "exp": "False — quinolones inhibit DNA gyrase/topoisomerase IV, blocking bacterial DNA synthesis/replication, not protein synthesis.",
+        "exp_si": "වැරදියි — Quinolone DNA gyrase අවහිර කර DNA සංශ්ලේෂණය නවත්වයි; ප්‍රෝටීන් සංශ්ලේෂණය නොවේ."
+      },
+      {
+        "L": "D",
+        "text": "Macrolides — Action on bacterial DNA synthesis",
+        "correct": false,
+        "exp": "False — macrolides (e.g. erythromycin) inhibit bacterial protein synthesis by binding the 50S ribosomal subunit, not DNA synthesis.",
+        "exp_si": "වැරදියි — Macrolide 50S ribosome හා බැඳී ප්‍රෝටීන් සංශ්ලේෂණය අවහිර කරයි; DNA සංශ්ලේෂණය නොවේ."
+      },
+      {
+        "L": "E",
+        "text": "Cephalosporins — Bacterial cell wall peptidoglycan synthesis",
+        "correct": true,
+        "exp": "True — like penicillins, cephalosporins are beta-lactams that inhibit cell wall peptidoglycan synthesis.",
+        "exp_si": "නිවැරදියි — Cephalosporin ද Penicillin මෙන් සෛල බිත්ති සංශ්ලේෂණය අවහිර කරයි."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 38,
+    "type": "tf",
+    "stem": "True or false regarding levonogestrel tablets for emergency contraception following unprotected sexual intercourse?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "The drug is a oestrogen-progesterogen combined preparation",
+        "correct": false,
+        "exp": "False — levonorgestrel emergency contraception is a progestogen-ONLY preparation; it contains no oestrogen.",
+        "exp_si": "වැරදියි — Levonorgestrel progestogen-පමණක් අඩංගු ඖෂධයකි; ඊස්ට්‍රජන් නොමැත."
+      },
+      {
+        "L": "B",
+        "text": "Breast-feeding is a contraindication",
+        "correct": false,
+        "exp": "False — levonorgestrel emergency contraception is not contraindicated during breastfeeding.",
+        "exp_si": "වැරදියි — මව්කිරි දෙන කාන්තාවන්ට Levonorgestrel contraindicated නොවේ."
+      },
+      {
+        "L": "C",
+        "text": "Is recommended to be taken as soon as possible after sexual intercourse",
+        "correct": true,
+        "exp": "True — efficacy is highest the sooner it is taken after unprotected intercourse.",
+        "exp_si": "නිවැරදියි — ලිංගික සංසර්ගයෙන් පසු හැකි ඉක්මණින් ගැනීම නිර්දේශ කෙරේ."
+      },
+      {
+        "L": "D",
+        "text": "Efficacy of levonogestrel emergency contraception is reduced with 24 hours delay",
+        "correct": true,
+        "exp": "True — effectiveness declines progressively the longer treatment is delayed after intercourse.",
+        "exp_si": "නිවැරදියි — කාලය ප්‍රමාද වන තරමට ඵලදායීතාවය අඩුවේ."
+      },
+      {
+        "L": "E",
+        "text": "Dose is 1.5 mg for one tablet",
+        "correct": true,
+        "exp": "True — the standard single-dose levonorgestrel emergency contraceptive tablet contains 1.5 mg.",
+        "exp_si": "නිවැරදියි — සම්මත ඒක මාත්‍රාව mg 1.5කි."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 39,
+    "type": "tf",
+    "stem": "Aciclovir (also spelt as Acyclovir) tablet",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "eradicates herpes virus in cases of genital infection",
+        "correct": false,
+        "exp": "False — aciclovir suppresses viral replication and controls symptoms/outbreaks, but it does not eradicate the virus, which remains latent in nerve ganglia.",
+        "exp_si": "වැරදියි — Aciclovir වයිරස් වර්ධනය මර්දනය කරයි, නමුත් වයිරසය සම්පූර්ණයෙන් තුරන් (eradicate) නොකරයි; එය ස්නායු ගැන්ග්ලියාවේ ගුප්ත ව පවතී."
+      },
+      {
+        "L": "B",
+        "text": "is effective in varicella zoster infection",
+        "correct": true,
+        "exp": "True — aciclovir is used to treat chickenpox and shingles caused by varicella zoster virus.",
+        "exp_si": "නිවැරදියි — Aciclovir කුරුලෑ (chickenpox) හා ෂින්ගල්ස් සඳහා ඵලදායීය."
+      },
+      {
+        "L": "C",
+        "text": "is available as intravenous injection",
+        "correct": true,
+        "exp": "True — IV aciclovir is used for severe infections (e.g. herpes encephalitis, immunocompromised patients).",
+        "exp_si": "නිවැරදියි — දරුණු ආසාදනවලට IV Aciclovir පිළියෙළක් ලෙස ලබා ගත හැක."
+      },
+      {
+        "L": "D",
+        "text": "if GFR is above 30 ml/min/1.73m² in adults, normal dosage is recommended",
+        "correct": true,
+        "exp": "True — aciclovir requires dose reduction as renal function declines; above roughly this threshold, standard oral dosing is generally used, with adjustment needed at lower GFR.",
+        "exp_si": "නිවැරදියි — GFR 30 ට වඩා ඉහළ නම් සාමාන්‍ය මාත්‍රාව භාවිතා කළ හැක; අඩු GFR හිදී මාත්‍රාව අඩු කළ යුතුය."
+      },
+      {
+        "L": "E",
+        "text": "is available in ointment form for eye infections with herpes virus",
+        "correct": true,
+        "exp": "True — aciclovir eye ointment is used to treat herpes simplex keratitis.",
+        "exp_si": "නිවැරදියි — Aciclovir eye ointment Herpes ඇස් ආසාදනවලට භාවිතා වේ."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 40,
+    "type": "tf",
+    "stem": "The following injectable preparations are proteins. True or false?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Insulin",
+        "correct": true,
+        "exp": "True — insulin is a peptide/protein hormone.",
+        "exp_si": "නිවැරදියි — ඉන්සියුලින් ප්‍රෝටීන් හෝමෝනයකි."
+      },
+      {
+        "L": "B",
+        "text": "Mannitol",
+        "correct": false,
+        "exp": "False — mannitol is a sugar alcohol (osmotic diuretic), not a protein.",
+        "exp_si": "වැරදියි — Mannitol සීනි ඇල්කොහොල් (osmotic diuretic) එකකි; ප්‍රෝටීන් නොවේ."
+      },
+      {
+        "L": "C",
+        "text": "R-DNA human growth hormone",
+        "correct": true,
+        "exp": "True — recombinant human growth hormone is a protein produced via genetic engineering.",
+        "exp_si": "නිවැරදියි — Recombinant growth hormone ප්‍රෝටීනයකි."
+      },
+      {
+        "L": "D",
+        "text": "Hydrocortisone",
+        "correct": false,
+        "exp": "False — hydrocortisone is a steroid hormone, not a protein.",
+        "exp_si": "වැරදියි — Hydrocortisone ස්ටෙරොයිඩ් හෝමෝනයකි; ප්‍රෝටීන් නොවේ."
+      },
+      {
+        "L": "E",
+        "text": "Antisnake venom serum",
+        "correct": true,
+        "exp": "True — antivenom serum contains antibody (immunoglobulin) proteins raised against snake venom.",
+        "exp_si": "නිවැරදියි — Antivenom serum හි ප්‍රතිදේහ (antibody) ප්‍රෝටීන් අඩංගු වේ."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 41,
+    "type": "tf",
+    "stem": "Movements possible at the knee joint include",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Circumduction",
+        "correct": false,
+        "exp": "False — the knee is essentially a hinge (modified hinge) joint; circumduction is not a movement it performs.",
+        "exp_si": "වැරදියි — දණහිස ප්‍රධාන වශයෙන් hinge සන්ධියකි; circumduction සිදු නොකරයි."
+      },
+      {
+        "L": "B",
+        "text": "Abduction",
+        "correct": false,
+        "exp": "False — abduction is not a knee movement (it is seen at ball-and-socket joints like the hip/shoulder).",
+        "exp_si": "වැරදියි — Abduction දණහිසේ සිදු නොවේ."
+      },
+      {
+        "L": "C",
+        "text": "Flexion",
+        "correct": true,
+        "exp": "True — flexion (bending the knee) is a primary movement of the knee joint.",
+        "exp_si": "නිවැරදියි — දණහිස නැමීම (flexion) ප්‍රධාන චලනයකි."
+      },
+      {
+        "L": "D",
+        "text": "Extension",
+        "correct": true,
+        "exp": "True — extension (straightening the knee) is a primary movement of the knee joint.",
+        "exp_si": "නිවැරදියි — දණහිස කෙළින් කිරීම (extension) ප්‍රධාන චලනයකි."
+      },
+      {
+        "L": "E",
+        "text": "Adduction",
+        "correct": false,
+        "exp": "False — adduction is not a movement performed at the knee joint itself.",
+        "exp_si": "වැරදියි — Adduction දණහිසේ සිදු නොවේ."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 42,
+    "type": "tf",
+    "stem": "Following are components of the Upper Respiratory Tract, True or false?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Alveoli",
+        "correct": false,
+        "exp": "False — alveoli belong to the lower respiratory tract (the lungs).",
+        "exp_si": "වැරදියි — ඇල්වියෝලි (alveoli) පහළ ශ්වසන පද්ධතියට (පෙනහළු) අයත් වේ."
+      },
+      {
+        "L": "B",
+        "text": "Lobar bronchi",
+        "correct": false,
+        "exp": "False — bronchi are part of the lower respiratory tract.",
+        "exp_si": "වැරදියි — Bronchi පහළ ශ්වසන පද්ධතියට අයත් වේ."
+      },
+      {
+        "L": "C",
+        "text": "Trachea",
+        "correct": false,
+        "exp": "False — the trachea is conventionally classified as part of the lower respiratory tract (upper tract = nose, pharynx, larynx).",
+        "exp_si": "වැරදියි — ශ්වාසනාලය (trachea) සාම්ප්‍රදායිකව පහළ ශ්වසන පද්ධතියට අයත් ලෙස වර්ග කෙරේ."
+      },
+      {
+        "L": "D",
+        "text": "Terminal bronchioles",
+        "correct": false,
+        "exp": "False — terminal bronchioles are part of the lower respiratory tract.",
+        "exp_si": "වැරදියි — Terminal bronchioles පහළ ශ්වසන පද්ධතියට අයත් වේ."
+      },
+      {
+        "L": "E",
+        "text": "Paranasal sinus",
+        "correct": true,
+        "exp": "True — the paranasal sinuses are part of the upper respiratory tract, along with the nose, pharynx, and larynx.",
+        "exp_si": "නිවැරදියි — Paranasal sinus ඉහළ ශ්වසන පද්ධතියට අයත් වේ."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 43,
+    "type": "tf",
+    "stem": "Following features are present in cardiac muscle cells",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Cross-striation",
+        "correct": true,
+        "exp": "True — cardiac muscle is striated, like skeletal muscle, due to its sarcomere organisation.",
+        "exp_si": "නිවැරදියි — හෘද මාංශ පේශි ලාක්ෂණික ලෙස ඉරි සහිතය (striated)."
+      },
+      {
+        "L": "B",
+        "text": "Branching",
+        "correct": true,
+        "exp": "True — cardiac myocytes characteristically branch and interconnect, unlike skeletal muscle fibres.",
+        "exp_si": "නිවැරදියි — හෘද පේශි සෛල අතු බෙදී එකිනෙකට සම්බන්ධ වේ."
+      },
+      {
+        "L": "C",
+        "text": "Multiple nuclei",
+        "correct": false,
+        "exp": "False — cardiac muscle cells typically have a single (occasionally two) centrally-placed nucleus; having MANY nuclei (a syncytium) is characteristic of skeletal muscle fibres.",
+        "exp_si": "වැරදියි — හෘද පේශි සෛලවල සාමාන්‍යයෙන් නියුක්ලියස් එකක් (හෝ දෙකක්) පමණි; බහු නියුක්ලියස් ඇත්තේ අස්ථි පේශිවලය."
+      },
+      {
+        "L": "D",
+        "text": "Spindle shaped cells",
+        "correct": false,
+        "exp": "False — cardiac cells are branched and roughly cylindrical, not spindle-shaped (spindle shape is characteristic of smooth muscle).",
+        "exp_si": "වැරදියි — හෘද සෛල අතු බෙදුණු සිලින්ඩරාකාරයෙන් ඇත; spindle හැඩය ඇත්තේ සුමට පේශිවලය."
+      },
+      {
+        "L": "E",
+        "text": "Intercalated discs",
+        "correct": true,
+        "exp": "True — intercalated discs are a hallmark feature unique to cardiac muscle, connecting adjacent cardiomyocytes.",
+        "exp_si": "නිවැරදියි — Intercalated discs හෘද පේශිවලට ම ආවේණික ලක්ෂණයකි."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 44,
+    "type": "tf",
+    "stem": "Following are upper limb muscles",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Biceps",
+        "correct": true,
+        "exp": "True — biceps brachii is an upper limb (arm) muscle.",
+        "exp_si": "නිවැරදියි — Biceps brachii ඉහළ අත් පේශියකි."
+      },
+      {
+        "L": "B",
+        "text": "Gastrocnemius",
+        "correct": false,
+        "exp": "False — gastrocnemius is a lower limb (calf) muscle.",
+        "exp_si": "වැරදියි — Gastrocnemius පහළ අත් පා (කලවා පිට) පේශියකි."
+      },
+      {
+        "L": "C",
+        "text": "Soleus",
+        "correct": false,
+        "exp": "False — soleus is a lower limb (calf) muscle.",
+        "exp_si": "වැරදියි — Soleus පහළ අත් පා පේශියකි."
+      },
+      {
+        "L": "D",
+        "text": "Quadratus femoris",
+        "correct": false,
+        "exp": "False — quadratus femoris is a lower limb (hip) muscle.",
+        "exp_si": "වැරදියි — Quadratus femoris ඉණ ප්‍රදේශයේ පහළ අත් පා පේශියකි."
+      },
+      {
+        "L": "E",
+        "text": "Triceps",
+        "correct": true,
+        "exp": "True — triceps brachii is an upper limb (arm) muscle.",
+        "exp_si": "නිවැරදියි — Triceps brachii ඉහළ අත් පේශියකි."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 45,
+    "type": "tf",
+    "stem": "Following components of a cell contain DNA",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Golgi apparatus",
+        "correct": false,
+        "exp": "False — the Golgi apparatus processes/packages proteins and lipids; it contains no DNA.",
+        "exp_si": "වැරදියි — Golgi apparatus හි DNA නොමැත."
+      },
+      {
+        "L": "B",
+        "text": "Mitochondria",
+        "correct": true,
+        "exp": "True — mitochondria contain their own circular mitochondrial DNA (mtDNA).",
+        "exp_si": "නිවැරදියි — මයිටොකොන්ඩ්‍රියාවේ තමන්ගේම DNA (mtDNA) ඇත."
+      },
+      {
+        "L": "C",
+        "text": "Plasma membrane",
+        "correct": false,
+        "exp": "False — the plasma membrane is a lipid bilayer with embedded proteins; it does not contain DNA.",
+        "exp_si": "වැරදියි — ප්ලාස්මා පටලයේ DNA නොමැත."
+      },
+      {
+        "L": "D",
+        "text": "Nucleus",
+        "correct": true,
+        "exp": "True — the nucleus houses the majority of the cell's DNA (chromosomes).",
+        "exp_si": "නිවැරදියි — නියුක්ලියසයේ සෛලයේ බහුතර DNA ප්‍රමාණය ඇත."
+      },
+      {
+        "L": "E",
+        "text": "Ribosomes",
+        "correct": false,
+        "exp": "False — ribosomes are made of rRNA and protein, not DNA.",
+        "exp_si": "වැරදියි — රයිබසෝම rRNA හා ප්‍රෝටීන් වලින් සෑදී ඇත; DNA නොමැත."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 46,
+    "type": "tf",
+    "stem": "Which of the following are likely to be present in the fluid in distal convoluted tubules of the kidneys of a normal healthy person?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Red blood cells",
+        "correct": false,
+        "exp": "False — RBCs should not normally cross the filtration barrier; their presence in the DCT fluid/urine would indicate pathology (haematuria).",
+        "exp_si": "වැරදියි — රතු රුධිර සෛල සාමාන්‍යයෙන් පෙරහන් බාධකය හරහා ගමන් නොකළ යුතුය; තිබීම රෝගී තත්ත්වයක් (haematuria) පෙන්නුම් කරයි."
+      },
+      {
+        "L": "B",
+        "text": "Urea",
+        "correct": true,
+        "exp": "True — urea is filtered and only partially reabsorbed, so it is normally present in tubular fluid on its way to excretion.",
+        "exp_si": "නිවැරදියි — යූරියා පෙරහන් වී අර්ධ වශයෙන් ප්‍රතිශෝෂණය වන බැවින් සාමාන්‍යයෙන් tubule තුළ පවතී."
+      },
+      {
+        "L": "C",
+        "text": "Creatinine",
+        "correct": true,
+        "exp": "True — creatinine is filtered and essentially not reabsorbed, so it remains in the tubular fluid (this is why it's used to estimate GFR).",
+        "exp_si": "නිවැරදියි — Creatinine පෙරහන් වී පාහේ ප්‍රතිශෝෂණය නොවන බැවින් tubule තුළ රැඳේ (එබැවින්ම GFR තක්සේරු කිරීමට භාවිතා වේ)."
+      },
+      {
+        "L": "D",
+        "text": "Amino acids",
+        "correct": false,
+        "exp": "False — amino acids are almost completely reabsorbed in the proximal convoluted tubule, so in a healthy person very little/none should remain by the distal tubule.",
+        "exp_si": "වැරදියි — ඇමයිනෝ අම්ල proximal tubule තුළදීම පාහේ සම්පූර්ණයෙන් ප්‍රතිශෝෂණය වේ."
+      },
+      {
+        "L": "E",
+        "text": "Glucose",
+        "correct": false,
+        "exp": "False — glucose is normally completely reabsorbed in the proximal convoluted tubule in a healthy person and should not be present in fluid reaching the distal tubule.",
+        "exp_si": "වැරදියි — සෞඛ්‍ය සම්පන්න පුද්ගලයෙකුගේ ග්ලූකෝස් proximal tubule තුළදීම සම්පූර්ණයෙන් ප්‍රතිශෝෂණය වේ."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 47,
+    "type": "tf",
+    "stem": "The following regions of the central nervous system are correctly matched with their functions. True or false?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Brainstem — regulation of respiration",
+        "correct": true,
+        "exp": "True — the medulla oblongata (part of the brainstem) houses the respiratory centres that regulate breathing.",
+        "exp_si": "නිවැරදියි — මොළයේ කඳ (brainstem) කොටසක් වන medulla, ශ්වසනය පාලනය කරයි."
+      },
+      {
+        "L": "B",
+        "text": "Basal ganglia — maintain posture",
+        "correct": true,
+        "exp": "True — the basal ganglia are heavily involved in controlling posture and coordinating voluntary movement.",
+        "exp_si": "නිවැරදියි — Basal ganglia ශරීර ඉරියව්ව (posture) පාලනයේ වැදගත් කාර්යභාරයක් ඉටු කරයි."
+      },
+      {
+        "L": "C",
+        "text": "Frontal lobe — speech",
+        "correct": true,
+        "exp": "True — Broca's area, responsible for speech production, is located in the frontal lobe.",
+        "exp_si": "නිවැරදියි — කථනය සඳහා වගකියන Broca කලාපය frontal lobe තුළ පිහිටා ඇත."
+      },
+      {
+        "L": "D",
+        "text": "Occipital lobe — hearing",
+        "correct": false,
+        "exp": "False — the occipital lobe is responsible for vision, not hearing. The auditory (hearing) centre is in the temporal lobe.",
+        "exp_si": "වැරදියි — Occipital lobe දෘෂ්ටිය සඳහා වගකියයි; ශ්‍රවණය සඳහා වගකියන්නේ temporal lobe."
+      },
+      {
+        "L": "E",
+        "text": "Hypothalamus — regulation of appetite",
+        "correct": true,
+        "exp": "True — the hypothalamus contains centres regulating hunger/satiety, along with temperature, thirst, and other homeostatic functions.",
+        "exp_si": "නිවැරදියි — Hypothalamus ආහාර රුචිය (appetite) පාලනය කරයි."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 48,
+    "type": "tf",
+    "stem": "Enzymes required for protein digestion include",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Amylase",
+        "correct": false,
+        "exp": "False — amylase digests carbohydrates (starch), not protein.",
+        "exp_si": "වැරදියි — Amylase කාබෝහයිඩ්‍රේට් (ස්ටාච්) දිරවයි; ප්‍රෝටීන් නොවේ."
+      },
+      {
+        "L": "B",
+        "text": "Lipase",
+        "correct": false,
+        "exp": "False — lipase digests fats, not protein.",
+        "exp_si": "වැරදියි — Lipase මේදය දිරවයි; ප්‍රෝටීන් නොවේ."
+      },
+      {
+        "L": "C",
+        "text": "Pepsin",
+        "correct": true,
+        "exp": "True — pepsin, secreted by the stomach, is a key protein-digesting enzyme.",
+        "exp_si": "නිවැරදියි — Pepsin ආමාශයෙන් නිකුත් වන ප්‍රධාන ප්‍රෝටීන් දිරවන එන්සයිමයයි."
+      },
+      {
+        "L": "D",
+        "text": "Renin",
+        "correct": false,
+        "exp": "False — (kidney) renin is an enzyme involved in blood pressure regulation via the renin-angiotensin system; it plays no role in protein digestion.",
+        "exp_si": "වැරදියි — වකුගඩු Renin රුධිර පීඩනය පාලනයේ (renin-angiotensin පද්ධතිය) කාර්යභාරයක් දරයි; ප්‍රෝටීන් දිරවීමට සම්බන්ධ නොවේ."
+      },
+      {
+        "L": "E",
+        "text": "Trypsin",
+        "correct": true,
+        "exp": "True — trypsin, secreted by the pancreas, is a major protein-digesting enzyme in the small intestine.",
+        "exp_si": "නිවැරදියි — Trypsin අග්න්‍යාශයෙන් නිකුත් වන ප්‍රධාන ප්‍රෝටීන් දිරවන එන්සයිමයයි."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 49,
+    "type": "tf",
+    "stem": "Which of the following are secreted into the nephrons of a healthy adult's kidney?",
+    "note": null,
+    "options": [
+      {
+        "L": "A",
+        "text": "Glucose",
+        "correct": false,
+        "exp": "False — glucose is filtered and then reabsorbed, not secreted, in a normal healthy kidney.",
+        "exp_si": "වැරදියි — ග්ලූකෝස් පෙරහන් වී ප්‍රතිශෝෂණය වේ; ස්‍රාවය නොවේ."
+      },
+      {
+        "L": "B",
+        "text": "Ammonia",
+        "correct": true,
+        "exp": "True — ammonia is actively secreted by tubular cells (as part of ammonium excretion) for acid-base balance.",
+        "exp_si": "නිවැරදියි — ඇමෝනියා අම්ල-භෂ්ම සමතුලිතතාවය සඳහා tubule සෛල මගින් ක්‍රියාශීලීව ස්‍රාවය කෙරේ."
+      },
+      {
+        "L": "C",
+        "text": "Calcium ions",
+        "correct": false,
+        "exp": "False — calcium is filtered and mostly reabsorbed; it is not a substance actively secreted into the nephron.",
+        "exp_si": "වැරදියි — කැල්සියම් පෙරහන් වී බහුතරයක් ප්‍රතිශෝෂණය වේ; ස්‍රාවය නොකෙරේ."
+      },
+      {
+        "L": "D",
+        "text": "Hydrogen ions",
+        "correct": true,
+        "exp": "True — H+ ions are actively secreted by the tubules as part of acid-base regulation.",
+        "exp_si": "නිවැරදියි — H+ අයන අම්ල-භෂ්ම නියාමනය සඳහා ක්‍රියාශීලීව ස්‍රාවය කෙරේ."
+      },
+      {
+        "L": "E",
+        "text": "Sodium ions",
+        "correct": false,
+        "exp": "False — sodium is predominantly reabsorbed along the nephron, not secreted (aside from minor exchange linked to potassium/H+ secretion).",
+        "exp_si": "වැරදියි — සෝඩියම් ප්‍රධාන වශයෙන් ප්‍රතිශෝෂණය වේ; ස්‍රාවය නොකෙරේ."
+      }
+    ],
+    "exp": null
+  },
+  {
+    "id": 50,
+    "type": "tf",
+    "stem": "Respiration is stimulated by an increase in plasma",
+    "note": "(Note: the original paper mislabels two options as 'C' — read as B and C below)",
+    "options": [
+      {
+        "L": "A",
+        "text": "carbon dioxide partial pressure",
+        "correct": true,
+        "exp": "True — a rise in arterial pCO2 is the most powerful physiological stimulus for increased ventilation, acting via central chemoreceptors.",
+        "exp_si": "නිවැරදියි — රුධිරයේ CO2 පීඩනය ඉහළ යාම ශ්වසනය උත්තේජනය කරන ප්‍රබලම සාධකයයි."
+      },
+      {
+        "L": "B",
+        "text": "concentration of bicarbonate ions",
+        "correct": false,
+        "exp": "False — a rise in bicarbonate alone is not a direct respiratory stimulant; it is changes in CO2/H+ (pH) that drive the chemoreceptor response.",
+        "exp_si": "වැරදියි — බයිකාබනේට් වැඩිවීම කෙලින්ම ශ්වසන උත්තේජකයක් නොවේ."
+      },
+      {
+        "L": "C",
+        "text": "concentration of chloride ions",
+        "correct": false,
+        "exp": "False — plasma chloride concentration is not a recognised respiratory stimulant.",
+        "exp_si": "වැරදියි — ක්ලෝරයිඩ් අයන සාන්ද්‍රණය ශ්වසන උත්තේජකයක් ලෙස හඳුනා ගෙන නොමැත."
+      },
+      {
+        "L": "D",
+        "text": "oxygen partial pressure",
+        "correct": false,
+        "exp": "False — respiration is stimulated by a DECREASE (not increase) in arterial pO2, sensed by peripheral chemoreceptors; this is normally a weaker/backup drive compared to CO2.",
+        "exp_si": "වැරදියි — ශ්වසනය උත්තේජනය වන්නේ O2 පීඩනය අඩුවීමෙන් මිස වැඩිවීමෙන් නොවේ."
+      },
+      {
+        "L": "E",
+        "text": "pH",
+        "correct": false,
+        "exp": "False — respiration is stimulated by a DECREASE in plasma pH (i.e. acidosis/rising H+), not an increase. A rising pH would reduce respiratory drive.",
+        "exp_si": "වැරදියි — ශ්වසනය උත්තේජනය වන්නේ pH අඩුවීමෙන් (අම්ලීකරණය) මිස වැඩිවීමෙන් නොවේ."
+      }
+    ],
+    "exp": null
+  }
+]

@@ -1,0 +1,4 @@
+# Loads .env before the application context starts, so ${VAR} placeholders in
+# application.properties can resolve from it.
+org.springframework.boot.EnvironmentPostProcessor=\
+com.local.pp_backen.config.DotenvEnvironmentPostProcessor

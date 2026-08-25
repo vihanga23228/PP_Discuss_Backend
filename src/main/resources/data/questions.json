@@ -1,0 +1,325 @@
+[
+  {
+    "id": 1,
+    "type": "tf",
+    "stem": "True or false regarding lipids?",
+    "note": null,
+    "options": [
+      {"L": "A", "text": "Saturated fatty acids contain double bond/s in their carbon chain", "correct": false, "exp": "False — saturated means fully saturated with hydrogen, i.e. no C=C double bonds.", "exp_si": "වැරදියි — සංතෘප්ත (saturated) මේද අම්ලවල කාබන දාමයේ ද්විත්ව බන්ධන නොමැත."},
+      {"L": "B", "text": "Glyceride is an ester of fatty acids and glycol", "correct": false, "exp": "False — glycerides are esters of fatty acids with glycerol, not glycol.", "exp_si": "වැරදියි — ග්ලිසරයිඩ (glyceride) යනු මේද අම්ල හා ග්ලිසරෝල් (glycerol) අතර සෑදෙන එස්ටරයකි."},
+      {"L": "C", "text": "Cholesterol is a precursor of vitamin D", "correct": true, "exp": "True — 7-dehydrocholesterol (derived from cholesterol) is converted to cholecalciferol (vitamin D3) in the skin under UV light.", "exp_si": "නිවැරදියි — කොලෙස්ටරෝල් වලින් සෑදෙන 7-dehydrocholesterol, හිරු එළියේදී සමේ විටමින් D3 බවට පත් වේ."},
+      {"L": "D", "text": "Glycerides are hydrolysed by lipase", "correct": true, "exp": "True — pancreatic lipase hydrolyses triglycerides into monoglycerides and free fatty acids during digestion.", "exp_si": "නිවැරදියි — අග්න්යාශයේ ලයිපේස් (lipase) එන්සයිමය ට්රයිග්ලිසරයිඩ ජලවිච්ඡේදනය කරයි."},
+      {"L": "E", "text": "One gram of fat gives energy with a value of 4.2 kilocalories", "correct": false, "exp": "False — fat yields about 9 kcal/g. ~4 kcal/g is for carbohydrate and protein.", "exp_si": "වැරදියි — මේදය ග්රෑම් 1කින් කැලරි 9ක් පමණ ලැබේ."}
+    ],
+    "exp": null
+  },
+  {
+    "id": 2,
+    "type": "tf",
+    "stem": "True or false regarding carbohydrates?",
+    "note": null,
+    "options": [
+      {"L": "A", "text": "Starch is hydrolysed by amylase", "correct": true, "exp": "True — salivary and pancreatic amylase break the α-1,4 glycosidic bonds in starch.", "exp_si": "නිවැරදියි — ලවණ ග්රන්ථි හා අග්න්යාශයේ ඇමයිලේස් (amylase) ස්ටාච් (starch) බිඳ දමයි."},
+      {"L": "B", "text": "Chitin is a non-starch polysaccharide", "correct": true, "exp": "True — chitin is a structural polysaccharide found in fungal cell walls and arthropod exoskeletons.", "exp_si": "නිවැරදියි — චිටින් (chitin) ස්ටාච් නොවන පොලිසැකරයිඩයකි."},
+      {"L": "C", "text": "Cellulose is hydrolysed by tripsin", "correct": false, "exp": "False — trypsin is a protein-digesting enzyme. Cellulose requires cellulase.", "exp_si": "වැරදියි — ට්රිප්සින් (trypsin) ප්රෝටීන් දිරවන එන්සයිමයකි."},
+      {"L": "D", "text": "Hemicellulose can be hydrolysed by amylase", "correct": false, "exp": "False — hemicellulose is not an α-1,4 glucan, so amylase does not act on it.", "exp_si": "වැරදියි — හෙමිසෙලියුලෝස් (hemicellulose) ස්ටාච් වර්ගයේ නොවන බැවින් ඇමයිලේස් එය මත ක්රියා නොකරයි."},
+      {"L": "E", "text": "Galactose is the end product when maltose hydrolyses", "correct": false, "exp": "False — maltose hydrolysis yields glucose + glucose. Galactose comes from lactose.", "exp_si": "වැරදියි — මෝල්ටෝස් (maltose) ග්ලූකෝස් දෙකකින් සෑදුණු බැවින් එහි ජලවිච්ඡේදනයෙන් ලැබෙන්නේ ග්ලූකෝස් පමණි."}
+    ],
+    "exp": null
+  },
+  {
+    "id": 3,
+    "type": "tf",
+    "stem": "The substances and their uses are True or false?",
+    "note": null,
+    "options": [
+      {"L": "A", "text": "Kiesulghur — Cementing material in dental practice", "correct": false, "exp": "False — Kieselguhr is used as a filter aid, not a dental cement.", "exp_si": "වැරදියි — Kieselguhr භාවිතා වන්නේ පෙරහන් ද්රව්යයක් ලෙසය."},
+      {"L": "B", "text": "Colloidal silica — granulating agent", "correct": false, "exp": "False — colloidal silicon dioxide is used as a glidant, not a granulating agent.", "exp_si": "වැරදියි — Colloidal silica භාවිතා වන්නේ glidant එකක් ලෙසය."},
+      {"L": "C", "text": "Ferric oxide — colourant", "correct": true, "exp": "True — iron oxides are widely used as pharmaceutical colourants.", "exp_si": "නිවැරදියි — ෆෙරික් ඔක්සයිඩ් වර්ණකයක් ලෙස භාවිතා වේ."},
+      {"L": "D", "text": "Talc — lubricant", "correct": true, "exp": "True — purified talc is used as a lubricant/glidant in tablet manufacture.", "exp_si": "නිවැරදියි — ටැල්ක් ලුබ්රිකන්ට් එකක් ලෙස භාවිතා වේ."},
+      {"L": "E", "text": "Zinc oxide — filter aid", "correct": false, "exp": "False — zinc oxide is used as a skin protectant/astringent, not a filter aid.", "exp_si": "වැරදියි — සින්ක් ඔක්සයිඩ් සම ආරක්ෂිත ක්රීම් සඳහා භාවිතා වේ."}
+    ],
+    "exp": null
+  },
+  {
+    "id": 4,
+    "type": "tf",
+    "stem": "True or false regarding heat transfer?",
+    "note": null,
+    "options": [
+      {"L": "A", "text": "Heat that moves through a stationary solid object is transfer by convection", "correct": false, "exp": "False — heat through a stationary solid is conduction.", "exp_si": "වැරදියි — ස්ථාවර ඝන වස්තුවක් හරහා තාපය ගමන් කරන්නේ සන්නයනය මගිනි."},
+      {"L": "B", "text": "Heat is transferred between solid objects via conduction in dry heat sterilization", "correct": true, "exp": "True — in a hot-air oven, heat reaches instruments by conduction.", "exp_si": "නිවැරදියි — වියළි තාප විෂබීජහරණයේදී තාපය සන්නයනය මගින් සම්ප්රේෂණය වේ."},
+      {"L": "C", "text": "Mass heat transfer occurs during convection", "correct": true, "exp": "True — convection is bulk movement of heated fluid carrying thermal energy.", "exp_si": "නිවැරදියි — සංවහනයේදී ද්රව්ය ස්කන්ධයම චලනය වෙමින් තාපය රැගෙන යයි."},
+      {"L": "D", "text": "Individual particles show Brownian motion during convection", "correct": false, "exp": "False — Brownian motion is random particle movement, not convection.", "exp_si": "වැරදියි — බ්රවුනියානු චලිතය සංවහනයේ ලක්ෂණයක් නොවේ."},
+      {"L": "E", "text": "Heat transfer may occur by radiation", "correct": true, "exp": "True — radiation is one of the three classical heat transfer mechanisms.", "exp_si": "නිවැරදියි — විකිරණය ද තාප සම්ප්රේෂණයේ එක් ක්රමයකි."}
+    ],
+    "exp": null
+  },
+  {
+    "id": 5,
+    "type": "tf",
+    "stem": "True or false regarding temperatures for storage of pharmaceuticals?",
+    "note": null,
+    "options": [
+      {"L": "A", "text": "A 'cool place' is where products are stored between 8°C (as stated)", "correct": false, "exp": "False — a 'cool place' is 8°C–15°C. Stating just 8°C alone is incomplete.", "exp_si": "වැරදියි — 'සිසිල් ස්ථානයක්' නම් 8°C සිට 15°C දක්වා පරාසයයි."},
+      {"L": "B", "text": "A 'warm place' is between 15°C and 50°C", "correct": false, "exp": "False — a 'warm place' is conventionally 30°C–40°C.", "exp_si": "වැරදියි — 'උණුසුම් ස්ථානයක්' නම් 30°C සිට 40°C දක්වාය."},
+      {"L": "C", "text": "'Excessive heat' is where temperature is above 50°C", "correct": false, "exp": "False — 'excessive heat' is defined as above 40°C.", "exp_si": "වැරදියි — 'අධික තාපය' නම් 40°C ට වඩා ඉහළ මට්ටමයි."},
+      {"L": "D", "text": "Heat sensitive products which must not be frozen are stored between 2°C and 8°C", "correct": true, "exp": "True — standard refrigerator/cold storage range (2–8°C).", "exp_si": "නිවැරදියි — තාප සංවේදී නිෂ්පාදන ශීතකරණයේ 2°C සිට 8°C තුළ ගබඩා කරයි."},
+      {"L": "E", "text": "'Room temperature' is 15°C to 25°C, or up to 30°C", "correct": true, "exp": "True — pharmacopoeial 'room temperature' is 15–25°C, with excursions up to 30°C.", "exp_si": "නිවැරදියි — 'කාමර උෂ්ණත්වය' 15°C-25°C අතර වන අතර 30°C දක්වා ඉවසිය හැක."}
+    ],
+    "exp": null
+  },
+  {
+    "id": 6,
+    "type": "tf",
+    "stem": "True or false regarding cracking of emulsion?",
+    "note": null,
+    "options": [
+      {"L": "A", "text": "It occurs due to the coalescence of disperse phase", "correct": true, "exp": "True — cracking is the irreversible coalescence of dispersed droplets.", "exp_si": "නිවැරදියි — Cracking සිදුවන්නේ බිංදු එකට එකතු වීම නිසාය."},
+      {"L": "B", "text": "It occurs by the addition of monovalent soap to a divalent soap emulsion", "correct": true, "exp": "True — incompatible emulsifier types destabilise emulsions.", "exp_si": "නිවැරදියි — නොගැලපෙන ඉමල්සිෆයර් එකතු කිරීමෙන් cracking සිදුවිය හැක."},
+      {"L": "C", "text": "It occurs by the addition of divalent soap to a monovalent soap emulsion", "correct": true, "exp": "True — same principle in reverse.", "exp_si": "නිවැරදියි — ප්රතිලෝමව ද එයම සත්යයකි."},
+      {"L": "D", "text": "Development of bacterial growth causes cracking", "correct": true, "exp": "True — microbial contamination can degrade emulsifying agents.", "exp_si": "නිවැරදියි — බැක්ටීරියා වර්ධනය ඉමල්සිෆයර් විනාශ කරයි."},
+      {"L": "E", "text": "Cracked emulsion is redispersed by gentle shaking", "correct": false, "exp": "False — cracking is irreversible.", "exp_si": "වැරදියි — Cracking ආපසු හැරවිය නොහැකි ක්රියාවලියකි."}
+    ],
+    "exp": null
+  },
+  {
+    "id": 7,
+    "type": "tf",
+    "stem": "True or false regarding linctus liquid dosage forms?",
+    "note": null,
+    "options": [
+      {"L": "A", "text": "They are prescribed for relief of cough", "correct": true, "exp": "True — a linctus is formulated to soothe cough.", "exp_si": "නිවැරදියි — Linctus කැස්ස සමනය කිරීම සඳහා නියම කරයි."},
+      {"L": "B", "text": "Always contains syrup", "correct": false, "exp": "False — sugar-free linctus bases also exist.", "exp_si": "වැරදියි — සීනි රහිත ආකෘතිද ඇත."},
+      {"L": "C", "text": "Provide demulcent effect on the mucous membrane of the main bronchi", "correct": false, "exp": "False — the demulcent action is on the pharynx/throat, not the bronchi.", "exp_si": "වැරදියි — Linctus හි සන්සුන් කිරීමේ ක්රියාව ඇත්තේ උගුරේ පටලය මතය."},
+      {"L": "D", "text": "Are swallowed after diluting with water", "correct": false, "exp": "False — linctus should be taken undiluted and swallowed slowly.", "exp_si": "වැරදියි — Linctus දිය කර නොගෙන සෙමින් ගිල දැමිය යුතුයි."},
+      {"L": "E", "text": "Usually contain glycerol", "correct": true, "exp": "True — glycerol is a common excipient in linctus formulations.", "exp_si": "නිවැරදියි — Linctus වර්ගවල ග්ලිසරෝල් අඩංගු වේ."}
+    ],
+    "exp": null
+  },
+  {
+    "id": 8,
+    "type": "tf",
+    "stem": "Regarding percentage calculations in pharmaceutical preparations, True or false?",
+    "note": null,
+    "options": [
+      {"L": "A", "text": "Percentage w/w expresses the number of grams of active substance in 100g of the final product", "correct": true, "exp": "True — this is the definition of % w/w.", "exp_si": "නිවැරදියි — % w/w යනු අවසාන නිෂ්පාදනයේ ග්රෑම් 100ක් තුළ ඇති ද්රව්යයේ ග්රෑම් ගණනයි."},
+      {"L": "B", "text": "1% w/w can be prepared by dissolving 1g of the substance in 99g of base", "correct": true, "exp": "True — 1g + 99g = 100g total, giving 1% w/w.", "exp_si": "නිවැරදියි — ග්රෑම් 1ක් ග්රෑම් 99ක පදනමක දියකර 1% w/w ලැබේ."},
+      {"L": "C", "text": "1% w/w means total weight of 100g of solution will have 1g of the solute in 100g of the solvent", "correct": false, "exp": "False — that would be 1g plus 100g = 101g total, not 1% w/w.", "exp_si": "වැරදියි — මෙසේ නම් මුළු බර ග්රෑම් 101ක් වන අතර එය 1% w/w නොවේ."},
+      {"L": "D", "text": "1% w/v expresses the number of grams of the active substance in 100g of product", "correct": false, "exp": "False — w/v means grams per 100 mL (volume), not per 100g (weight).", "exp_si": "වැරදියි — w/v යනු මිලි ලීටර් 100ක ඇති ග්රෑම් ගණන මිස ග්රෑම් 100ක් නොවේ."},
+      {"L": "E", "text": "1%v/v solution can be prepared by dissolving 1ml of solute in 100ml of solvent", "correct": false, "exp": "False — 1mL + 100mL = 101mL total. Correct is 1mL made up to 100mL.", "exp_si": "වැරදියි — මෙය මිලි ලීටර් 101ක් වේ; නිවැරදිව නම් මුළු පරිමාව 100mL විය යුතුය."}
+    ],
+    "exp": null
+  },
+  {
+    "id": 9,
+    "type": "single",
+    "stem": "50 g of glucose are dissolved in 500 ml of water. Percentage strength in w/w of the above solution is:",
+    "note": null,
+    "options": [
+      {"L": "A", "text": "10 W/V", "correct": false, "exp": null, "exp_si": null},
+      {"L": "B", "text": "50% W/V", "correct": false, "exp": null, "exp_si": null},
+      {"L": "C", "text": "90.9 % W/V", "correct": false, "exp": null, "exp_si": null},
+      {"L": "D", "text": "5 % W/V", "correct": false, "exp": null, "exp_si": null},
+      {"L": "E", "text": "9.09 % W/V", "correct": true, "exp": null, "exp_si": null}
+    ],
+    "exp": "Total weight = 500g + 50g = 550g. %w/w = (50/550) × 100 = 9.09%.",
+    "exp_si": "මුළු බර = 500 + 50 = 550 ග්රෑම්. %w/w = (50 ÷ 550) × 100 = 9.09%."
+  },
+  {
+    "id": 10,
+    "type": "tf",
+    "stem": "With reference to solubility, true or false?",
+    "note": null,
+    "options": [
+      {"L": "A", "text": "Very soluble — less than 1 (part of solvent per part of solute)", "correct": true, "exp": "True — requires less than 1 part solvent per part solute.", "exp_si": "නිවැරදියි — ද්රාවකයේ කොටස් 1ක් ට වඩා අඩුවෙන් අවශ්ය වීමයි."},
+      {"L": "B", "text": "Freely soluble — from 1 to 10", "correct": true, "exp": "True — 1 to 10 parts solvent needed.", "exp_si": "නිවැරදියි — කොටස් 1 සිට 10 දක්වා අවශ්ය වීමයි."},
+      {"L": "C", "text": "Soluble — from 10 to 30", "correct": true, "exp": "True — 10 to 30 parts solvent needed.", "exp_si": "නිවැරදියි — කොටස් 10 සිට 30 දක්වා අවශ්ය වීමයි."},
+      {"L": "D", "text": "Slightly soluble — from 1000 to 10000", "correct": false, "exp": "False — slightly soluble is 100 to 1000. 1000–10000 is very slightly soluble.", "exp_si": "වැරදියි — තරමක් ද්රාව්ය යනු 100-1000 පරාසයයි."},
+      {"L": "E", "text": "Very slightly soluble — more than 10000", "correct": false, "exp": "False — very slightly soluble is 1000–10000. More than 10000 is practically insoluble.", "exp_si": "වැරදියි — ඉතා අඩුවෙන් ද්රාව්ය යනු 1000-10000 පරාසයයි."}
+    ],
+    "exp": null
+  },
+  {
+    "id": 11,
+    "type": "tf",
+    "stem": "Suitable diluents for capsule blends include the following. True or false?",
+    "note": null,
+    "options": [
+      {"L": "A", "text": "Purified talc", "correct": false, "exp": "False — talc is a glidant/lubricant, not a diluent.", "exp_si": "වැරදියි — ටැල්ක් glidant/lubricant එකක් මිස තනුක කාරකයක් නොවේ."},
+      {"L": "B", "text": "Ascorbic acid", "correct": false, "exp": "False — ascorbic acid is an active ingredient, not a diluent.", "exp_si": "වැරදියි — ඇස්කෝබික් අම්ලය ක්රියාකාරී අමුද්රව්යයකි."},
+      {"L": "C", "text": "Lactose", "correct": true, "exp": "True — lactose is one of the most widely used diluents.", "exp_si": "නිවැරදියි — ලැක්ටෝස් බහුලවම භාවිතා වන තනුක කාරකයකි."},
+      {"L": "D", "text": "Carboxymethyl cellulose", "correct": false, "exp": "False — CMC is a binder/disintegrant/thickener, not a diluent.", "exp_si": "වැරදියි — CMC බන්ධන කාරකයක් ලෙස භාවිතා වේ."},
+      {"L": "E", "text": "Tri calcium phosphate", "correct": true, "exp": "True — tricalcium phosphate is a standard diluent.", "exp_si": "නිවැරදියි — Tricalcium phosphate සම්මත තනුක කාරකයකි."}
+    ],
+    "exp": null
+  },
+  {
+    "id": 12,
+    "type": "tf",
+    "stem": "True or false regarding macrogols?",
+    "note": null,
+    "options": [
+      {"L": "A", "text": "Macrogols are used as bases for suppositories", "correct": true, "exp": "True — macrogol bases are an alternative to fatty bases for suppositories.", "exp_si": "නිවැරදියි — Macrogol සප්පෝසිටරි සඳහා පදනමක් ලෙස භාවිතා වේ."},
+      {"L": "B", "text": "Macrogols are polyethylene glycols", "correct": true, "exp": "True — macrogol is the pharmacopoeial name for PEG.", "exp_si": "නිවැරදියි — Macrogol යනු Polyethylene glycol සඳහා නාමයයි."},
+      {"L": "C", "text": "They have laxative effects", "correct": true, "exp": "True — high MW macrogols act as osmotic laxatives.", "exp_si": "නිවැරදියි — ඉහළ අණුක බර සහිත macrogol ඔස්මොටික් laxative ලෙස ක්රියා කරයි."},
+      {"L": "D", "text": "Microbial contamination is a common problem", "correct": false, "exp": "False — macrogols are relatively resistant to microbial growth.", "exp_si": "වැරදියි — macrogol බැක්ටීරියා වර්ධනයට ඔරොත්තු දෙයි."},
+      {"L": "E", "text": "Macrogol bases may cause irritation to the mucosa", "correct": true, "exp": "True — macrogols are hygroscopic and can irritate mucous membranes.", "exp_si": "නිවැරදියි — Macrogol ශ්ලේෂ්මල පටලයට කෝපයක් ඇති කළ හැක."}
+    ],
+    "exp": null
+  },
+  {
+    "id": 13,
+    "type": "tf",
+    "stem": "The following ingredients are correctly matched with their functions/uses in tablet formulation. True or false?",
+    "note": null,
+    "options": [
+      {"L": "A", "text": "Lactose — Diluent", "correct": true, "exp": "True — lactose is a classic tablet diluent.", "exp_si": "නිවැරදියි — ලැක්ටෝස් සම්මත තනුක කාරකයකි."},
+      {"L": "B", "text": "Polyvinyl pyrrolidone (PVP) — Glidant", "correct": false, "exp": "False — PVP is a binder, not a glidant.", "exp_si": "වැරදියි — PVP බන්ධන කාරකයක් ලෙස භාවිතා වේ."},
+      {"L": "C", "text": "Stearic acid — Lubricant", "correct": true, "exp": "True — stearic acid is a standard tablet lubricant.", "exp_si": "නිවැරදියි — Stearic acid ලුබ්රිකන්ට් එකකි."},
+      {"L": "D", "text": "Colloidal silicon dioxide — Binder", "correct": false, "exp": "False — colloidal silicon dioxide is a glidant, not a binder.", "exp_si": "වැරදියි — Colloidal silicon dioxide glidant එකකි."},
+      {"L": "E", "text": "Crospovidone — Disintegrant", "correct": true, "exp": "True — crospovidone is a widely used superdisintegrant.", "exp_si": "නිවැරදියි — Crospovidone බහුලව භාවිතා වන disintegrant එකකි."}
+    ],
+    "exp": null
+  },
+  {
+    "id": 14,
+    "type": "tf",
+    "stem": "The following are ingredients of emulsifying wax. True or false?",
+    "note": null,
+    "options": [
+      {"L": "A", "text": "Hard paraffin", "correct": false, "exp": "False — hard paraffin is not part of emulsifying wax.", "exp_si": "වැරදියි — Hard paraffin emulsifying wax හි අංගයක් නොවේ."},
+      {"L": "B", "text": "Sodium lauryl sulphite", "correct": false, "exp": "False — the correct ingredient is sodium lauryl SULPHATE, not sulphite.", "exp_si": "වැරදියි — නිවැරදි නම Sodium lauryl SULPHATE මිස sulphite නොවේ."},
+      {"L": "C", "text": "Cetostearyl alcohol", "correct": true, "exp": "True — cetostearyl alcohol is the fatty alcohol component.", "exp_si": "නිවැරදියි — Cetostearyl alcohol emulsifying wax හි ප්රධාන අංගයයි."},
+      {"L": "D", "text": "Liquid paraffin", "correct": false, "exp": "False — liquid paraffin is not an ingredient of the wax itself.", "exp_si": "වැරදියි — Liquid paraffin wax හි අංගයක් නොවේ."},
+      {"L": "E", "text": "Purified water", "correct": false, "exp": "False — water is not part of the emulsifying wax.", "exp_si": "වැරදියි — ජලය wax හි කොටසක් නොවේ."}
+    ],
+    "exp": null
+  },
+  {
+    "id": 15,
+    "type": "tf",
+    "stem": "The following pharmaceutical agents are correctly paired with their synonyms. True or false?",
+    "note": null,
+    "options": [
+      {"L": "A", "text": "Pyroxylin — Cellulose nitrate", "correct": true, "exp": "True — pyroxylin is another name for cellulose nitrate.", "exp_si": "නිවැරදියි — Pyroxylin යනු Cellulose nitrate සඳහා තවත් නාමයකි."},
+      {"L": "B", "text": "Macrogol — Polyethylene glycol", "correct": true, "exp": "True — macrogol is the pharmacopoeial synonym for PEG.", "exp_si": "නිවැරදියි — Macrogol යනු PEG සඳහා පර්යාය නාමයයි."},
+      {"L": "C", "text": "Epsom salt — Sodium sulphate", "correct": false, "exp": "False — Epsom salt is magnesium sulphate.", "exp_si": "වැරදියි — Epsom salt යනු Magnesium sulphate වේ."},
+      {"L": "D", "text": "Lanolin — Wool fat", "correct": true, "exp": "True — lanolin is the purified fat from sheep's wool.", "exp_si": "නිවැරදියි — Lanolin බැටළු ලොම් වලින් ලබාගන්නා මේදයකි."},
+      {"L": "E", "text": "Glauber's salt — Magnesium sulphate", "correct": false, "exp": "False — Glauber's salt is sodium sulphate.", "exp_si": "වැරදියි — Glauber's salt යනු Sodium sulphate වේ."}
+    ],
+    "exp": null
+  },
+  {
+    "id": 16,
+    "type": "tf",
+    "stem": "Benzoyl peroxide:",
+    "note": null,
+    "options": [
+      {"L": "A", "text": "is useful for mild to moderate acne", "correct": true, "exp": "True — first-line topical treatment for mild-to-moderate acne.", "exp_si": "නිවැරදියි — Benzoyl peroxide මධ්යස්ථ acne සඳහා පළමු පෙළේ ප්රතිකාරයකි."},
+      {"L": "B", "text": "Is available as cream or gel", "correct": true, "exp": "True — available in gels, creams, and washes.", "exp_si": "නිවැරදියි — ක්රීම් හෝ ජෙල් ලෙස ලබා ගත හැක."},
+      {"L": "C", "text": "Can bleach hair and coloured fabrics", "correct": true, "exp": "True — it can bleach hair, clothing, and towels.", "exp_si": "නිවැරදියි — හිසකෙස් හා වර්ණවත් රෙදි සුදුමැලි කළ හැක."},
+      {"L": "D", "text": "Burning, redness of skin are common side-effects", "correct": true, "exp": "True — local irritation, dryness, burning are common.", "exp_si": "නිවැරදියි — දැවීම හා සමේ රතුවීම සුලභ අතුරු ආබාධයි."},
+      {"L": "E", "text": "Contact with eyes and mouth should be avoided", "correct": true, "exp": "True — it is irritant to mucous membranes.", "exp_si": "නිවැරදියි — ඇස් හා මුඛය සමඟ ස්පර්ශය මගහැරිය යුතුය."}
+    ],
+    "exp": null
+  },
+  {
+    "id": 17,
+    "type": "tf",
+    "stem": "The following naturally occurring compounds are correctly paired with the chemical family to which it belongs.",
+    "note": null,
+    "options": [
+      {"L": "A", "text": "Opium — glycoside", "correct": false, "exp": "False — opium contains alkaloids (morphine, codeine), not glycosides.", "exp_si": "වැරදියි — අබිං ඇල්කලොයිඩ අඩංගු වේ; ග්ලයිකෝසයිඩ නොවේ."},
+      {"L": "B", "text": "Vinblastine — alkaloid", "correct": true, "exp": "True — vinblastine is a vinca alkaloid.", "exp_si": "නිවැරදියි — Vinblastine ඇල්කලොයිඩයකි."},
+      {"L": "C", "text": "Reserpine — terpenoid", "correct": false, "exp": "False — reserpine is an indole alkaloid, not a terpenoid.", "exp_si": "වැරදියි — Reserpine ඇල්කලොයිඩයකි; terpenoid නොවේ."},
+      {"L": "D", "text": "Cascara — glycoside", "correct": true, "exp": "True — cascara contains anthraquinone glycosides.", "exp_si": "නිවැරදියි — Cascara හි anthraquinone ග්ලයිකෝසයිඩ ඇත."},
+      {"L": "E", "text": "Menthol — steroid", "correct": false, "exp": "False — menthol is a monoterpenoid, not a steroid.", "exp_si": "වැරදියි — Menthol monoterpenoid එකකි."}
+    ],
+    "exp": null
+  },
+  {
+    "id": 18,
+    "type": "tf",
+    "stem": "The following pharmaceutical wastes are correctly paired with each disposal method. True or false?",
+    "note": null,
+    "options": [
+      {"L": "A", "text": "Pressurized gas containers — Incineration", "correct": false, "exp": "False — pressurised containers pose explosion risk and should NOT be incinerated.", "exp_si": "වැරදියි — පීඩන ගෑස් බහාලුම් ඉන්සිනරේෂන් නොකළ යුතුය."},
+      {"L": "B", "text": "Sealed ampoules containing heavy metals — Incineration", "correct": false, "exp": "False — heavy metal waste should not be incinerated; needs specialised treatment.", "exp_si": "වැරදියි — බර ලෝහ අඩංගු අපද්රව්ය විශේෂිත ක්රමයක් අවශ්යයි."},
+      {"L": "C", "text": "PVC and plastic — Burning in open container", "correct": false, "exp": "False — burning PVC releases toxic dioxins; requires controlled incineration.", "exp_si": "වැරදියි — විවෘත භාජනයක PVC දැවීමෙන් විෂ වායු නිකුත් වේ."},
+      {"L": "D", "text": "Paper and cardboard — Landfill", "correct": true, "exp": "True — clean paper and cardboard are suitable for landfill.", "exp_si": "නිවැරදියි — කඩදාසි හා පෙට්ටි landfill සඳහා සුදුසුය."},
+      {"L": "E", "text": "Reactive chemical — Incineration", "correct": false, "exp": "False — reactive chemicals require specialised disposal, not routine incineration.", "exp_si": "වැරදියි — ප්රතික්රියාශීලී රසායනික විශේෂිත බැහැර කිරීමක් අවශ්යයි."}
+    ],
+    "exp": null
+  },
+  {
+    "id": 19,
+    "type": "tf",
+    "stem": "The following are polymers. True or false?",
+    "note": null,
+    "options": [
+      {"L": "A", "text": "Cellulose", "correct": true, "exp": "True — cellulose is a natural polysaccharide polymer.", "exp_si": "නිවැරදියි — සෙලියුලෝස් ස්වභාවික පොලිමරයකි."},
+      {"L": "B", "text": "Glycine", "correct": false, "exp": "False — glycine is a single amino acid monomer.", "exp_si": "වැරදියි — ග්ලයිසීන් තනි ඇමයිනෝ අම්ලයකි."},
+      {"L": "C", "text": "Starch", "correct": true, "exp": "True — starch is a polysaccharide polymer.", "exp_si": "නිවැරදියි — ස්ටාච් පොලිසැකරයිඩ පොලිමරයකි."},
+      {"L": "D", "text": "Povidone", "correct": true, "exp": "True — povidone (PVP) is a synthetic polymer.", "exp_si": "නිවැරදියි — Povidone කෘත්රිම පොලිමරයකි."},
+      {"L": "E", "text": "Fructose", "correct": false, "exp": "False — fructose is a monosaccharide, not a polymer.", "exp_si": "වැරදියි — ෆෲක්ටෝස් තනි සීනි ඒකකයකි."}
+    ],
+    "exp": null
+  },
+  {
+    "id": 20,
+    "type": "tf",
+    "stem": "The following are amphoteric compounds. True or false?",
+    "note": null,
+    "options": [
+      {"L": "A", "text": "Tetracyclines", "correct": true, "exp": "True — tetracyclines have both acidic and basic groups.", "exp_si": "නිවැරදියි — Tetracycline අම්ල හා භෂ්ම කාරක කාණ්ඩ දෙකම ඇත."},
+      {"L": "B", "text": "β-aminobenzoic acid (PABA)", "correct": true, "exp": "True — PABA has both -COOH and -NH2 groups.", "exp_si": "නිවැරදියි — PABA හි -COOH හා -NH2 කාණ්ඩ දෙකම ඇත."},
+      {"L": "C", "text": "Sulphonamides", "correct": true, "exp": "True — sulphonamides behave amphoterically.", "exp_si": "නිවැරදියි — Sulphonamide දුර්වල අම්ලික හා දුර්වල භෂ්මිකව ක්රියා කරයි."},
+      {"L": "D", "text": "Paracetamol", "correct": false, "exp": "False — paracetamol is not typically classed as amphoteric.", "exp_si": "වැරදියි — Paracetamol amphoteric ලෙස වර්ග නොකෙරේ."},
+      {"L": "E", "text": "Phenol", "correct": false, "exp": "False — phenol is only weakly acidic, lacks a basic group.", "exp_si": "වැරදියි — ෆීනෝල් දුර්වල අම්ලික පමණි."}
+    ],
+    "exp": null
+  },
+  {
+    "id": 21,
+    "type": "tf",
+    "stem": "True or false regarding the Antivenom for snake bite in Sri Lanka?",
+    "note": null,
+    "options": [
+      {"L": "A", "text": "It is not effective against envenoming in hump-nosed viper (Hypnale hypnale) bites", "correct": true, "exp": "True — the Indian polyvalent antivenom is not effective against hump-nosed viper.", "exp_si": "නිවැරදියි — ශ්රී ලංකාවේ භාවිතා කරන antivenom කුනකටුවා විෂවීමට ඵලදායී නොවේ."},
+      {"L": "B", "text": "Reassurance of the snake bite victim is recommended before antivenom treatment is started", "correct": true, "exp": "True — calm reassurance is part of standard initial management.", "exp_si": "නිවැරදියි — Antivenom ලබා දීමට පෙර රෝගියාට සහතික කිරීම නිර්දේශ කෙරේ."},
+      {"L": "C", "text": "A small test dose of antivenom is recommended before giving the intravenous antivenom", "correct": false, "exp": "False — current guidelines advise AGAINST routine test dosing.", "exp_si": "වැරදියි — වත්මන් මාර්ගෝපදේශ අනුව test dose දීම නිර්දේශ නොකෙරේ."},
+      {"L": "D", "text": "A dose of 10 vials in 100ml of distilled water is suitable initially as anti-venom therapy", "correct": true, "exp": "True — 10 vials is the standard starting dose in Sri Lanka.", "exp_si": "නිවැරදියි — ශ්රී ලංකාවේ ආරම්භක ඩෝස් එක ලෙස vial 10ක් සම්මතයි."},
+      {"L": "E", "text": "Demonstrable coagulopathy is essential before starting antivenom therapy", "correct": false, "exp": "False — antivenom is indicated for any evidence of systemic envenoming, not coagulopathy alone.", "exp_si": "වැරදියි — coagulopathy පමණක් නොව ඕනෑම පද්ධතිමය විෂ ලක්ෂණයක් මත antivenom දිය හැක."}
+    ],
+    "exp": null
+  },
+  {
+    "id": 22,
+    "type": "tf",
+    "stem": "True or false?",
+    "note": null,
+    "options": [
+      {"L": "A", "text": "Mebeverine hydrochloride is an antimuscarinic antispasmodic", "correct": false, "exp": "False — mebeverine acts directly on smooth muscle (musculotropic), not antimuscarinic.", "exp_si": "වැරදියි — Mebeverine මාංශ පේශි මතම කෙලින්ම ක්රියා කරයි."},
+      {"L": "B", "text": "Cholic acid is useful in the treatment of Hepatitis C", "correct": false, "exp": "False — cholic acid is for bile acid synthesis disorders, not Hepatitis C.", "exp_si": "වැරදියි — Cholic acid Hepatitis C ප්රතිකාරයට කිසිදු කාර්යභාරයක් නොදක්වයි."},
+      {"L": "C", "text": "Terlipressin acetate is useful in the management of bleeding esophageal varices", "correct": true, "exp": "True — terlipressin reduces splanchnic blood flow and portal pressure.", "exp_si": "නිවැරදියි — Terlipressin esophageal varices රුධිර වහනයේදී භාවිතා වේ."},
+      {"L": "D", "text": "Orlistat reduces absorption of dietary fat", "correct": true, "exp": "True — orlistat inhibits lipase, reducing fat absorption.", "exp_si": "නිවැරදියි — Orlistat මේදය අවශෝෂණය අඩු කරයි."},
+      {"L": "E", "text": "Proctosedyl® suppositories are useful in the treatment of constipation", "correct": false, "exp": "False — Proctosedyl® is for haemorrhoids, not constipation.", "exp_si": "වැරදියි — Proctosedyl® බාවා රෝග සඳහා භාවිතා වේ."}
+    ],
+    "exp": null
+  },
+  {
+    "id": 23,
+    "type": "tf",
+    "stem": "Regarding treatment with a DIGOXIN are the following statements true or false?",
+    "note": null,
+    "options": [
+      {"L": "A", "text": "Digoxin has a short half-life", "correct": false, "exp": "False — digoxin has a long half-life (~36–48 hours).", "exp_si": "වැරදියි — Digoxin හි අර්ධ ආයු කාලය පැය 36-48 පමණ දිගුය."},
+      {"L": "B", "text": "Digoxin is useful to reduce ventricular rate in Atrial fibrillation", "correct": true, "exp": "True — digoxin slows AV nodal conduction.", "exp_si": "නිවැරදියි — Digoxin AF හිදී වෙන්ට්රිකල් වේගය අඩු කරයි."},
+      {"L": "C", "text": "Blurred vision is a common side-effect", "correct": true, "exp": "True — visual disturbances are classic digoxin toxicity features.", "exp_si": "නිවැරදියි — බොඳ දර්ශනය Digoxin විෂවීමේ සුලභ ලක්ෂණයකි."},
+      {"L": "D", "text": "Hypokalemia predisposes to digoxin toxicity", "correct": true, "exp": "True — low potassium increases digoxin toxicity risk.", "exp_si": "නිවැරදියි — අඩු පොටෑසියම් Digoxin විෂ වීමේ අවදානම වැඩි කරයි."},
+      {"L": "E", "text": "Digoxin toxicity is treated with potassium supplements", "correct": true, "exp": "True — correcting hypokalemia is part of managing digoxin toxicity.", "exp_si": "නිවැරදියි — Digoxin විෂ වීමේදී පොටෑසියම් අතිරේක ලබා දීම ප්රතිකාරයේ කොටසකි."}
+    ],
+    "exp": null
+  }
+]
