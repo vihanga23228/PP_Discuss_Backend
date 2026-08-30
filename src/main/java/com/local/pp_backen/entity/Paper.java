@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "papers")
+@Table(name = "papers", indexes = @Index(name = "idx_papers_exam_id", columnList = "exam_id"))
 @Getter
 @Setter
 @NoArgsConstructor
@@ -26,6 +26,10 @@ public class Paper {
     private String description;
 
     private Integer year;
+
+    /** How long a sitting has, in minutes. Null means untimed. Set by an admin per paper. */
+    @Column(name = "duration_minutes")
+    private Integer durationMinutes;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "exam_id", nullable = false)

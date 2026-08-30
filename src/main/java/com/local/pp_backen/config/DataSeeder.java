@@ -168,6 +168,7 @@ public class DataSeeder implements CommandLineRunner {
                 .title(seed.title())
                 .description(seed.description())
                 .year(seed.year())
+                .durationMinutes(180)
                 .exam(exam)
                 .build());
 

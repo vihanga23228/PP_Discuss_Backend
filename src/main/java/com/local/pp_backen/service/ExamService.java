@@ -7,6 +7,7 @@ import com.local.pp_backen.entity.Paper;
 import com.local.pp_backen.entity.Subject;
 import com.local.pp_backen.exception.ResourceNotFoundException;
 import com.local.pp_backen.repository.ExamRepository;
+import com.local.pp_backen.repository.ExamRepository.ExamCounts;
 import com.local.pp_backen.repository.PaperRepository;
 import com.local.pp_backen.repository.SubjectRepository;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,8 @@ import org.springframework.util.StringUtils;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
@@ -36,11 +39,20 @@ public class ExamService {
         this.paperService = paperService;
     }
 
+    /**
+     * Listing exams used to hydrate every paper (and every question on it) per exam just to
+     * count sizes — an N+1 that got very expensive once the DB moved off localhost.
+     * {@code countsPerExam()} gets every exam's counts in one aggregate query instead.
+     */
     @Transactional(readOnly = true)
     public List<ExamResponse> getAllExams() {
-        return examRepository.findAll().stream()
+        List<Exam> exams = examRepository.findAll();
+        Map<Long, ExamCounts> counts = examRepository.countsPerExam().stream()
+                .collect(Collectors.toMap(ExamCounts::getExamId, Function.identity()));
+
+        return exams.stream()
                 .sorted(Comparator.comparing(Exam::getTitle, String.CASE_INSENSITIVE_ORDER))
-                .map(this::toResponse)
+                .map(exam -> toResponse(exam, counts.get(exam.getId())))
                 .collect(Collectors.toList());
     }
 
@@ -50,23 +62,32 @@ public class ExamService {
         if (!subjectRepository.existsById(subjectId)) {
             throw new ResourceNotFoundException("Subject", "id", subjectId);
         }
-        return examRepository.findBySubjectId(subjectId).stream()
+        List<Exam> exams = examRepository.findBySubjectId(subjectId);
+        Map<Long, ExamCounts> counts = examRepository.countsPerExam().stream()
+                .collect(Collectors.toMap(ExamCounts::getExamId, Function.identity()));
+
+        return exams.stream()
                 .sorted(Comparator.comparing(Exam::getTitle, String.CASE_INSENSITIVE_ORDER))
-                .map(this::toResponse)
+                .map(exam -> toResponse(exam, counts.get(exam.getId())))
                 .collect(Collectors.toList());
     }
 
     /** Exams that predate subjects, so the admin can file them somewhere. */
     @Transactional(readOnly = true)
     public List<ExamResponse> getUnassignedExams() {
-        return examRepository.findBySubjectIsNull().stream()
-                .map(this::toResponse)
+        List<Exam> exams = examRepository.findBySubjectIsNull();
+        Map<Long, ExamCounts> counts = examRepository.countsPerExam().stream()
+                .collect(Collectors.toMap(ExamCounts::getExamId, Function.identity()));
+
+        return exams.stream()
+                .map(exam -> toResponse(exam, counts.get(exam.getId())))
                 .collect(Collectors.toList());
     }
 
     @Transactional(readOnly = true)
     public ExamResponse getExamById(Long id) {
-        return toResponse(require(id));
+        Exam exam = require(id);
+        return toResponse(exam, examRepository.countsForExam(id));
     }
 
     public ExamResponse createExam(ExamRequest request) {
@@ -84,7 +105,8 @@ public class ExamService {
                 .subject(requireSubject(request.getSubjectId()))
                 .build();
 
-        return toResponse(examRepository.save(exam));
+        // A brand-new exam has nothing under it yet — no need to round-trip for a count of zero.
+        return toResponse(examRepository.save(exam), null);
     }
 
     /** Renames the exam, and can move it to a different subject. */
@@ -102,7 +124,8 @@ public class ExamService {
             exam.setSubject(requireSubject(request.getSubjectId()));
         }
 
-        return toResponse(examRepository.save(exam));
+        Exam saved = examRepository.save(exam);
+        return toResponse(saved, examRepository.countsForExam(id));
     }
 
     public void deleteExam(Long id) {
@@ -130,12 +153,8 @@ public class ExamService {
                 .orElseThrow(() -> new ResourceNotFoundException("Subject", "id", subjectId));
     }
 
-    private ExamResponse toResponse(Exam exam) {
-        List<Paper> papers = exam.getPapers() != null ? exam.getPapers() : List.of();
-        int questions = papers.stream()
-                .mapToInt(p -> p.getQuestions() != null ? p.getQuestions().size() : 0)
-                .sum();
-
+    /** {@code counts} is null for an exam known to have nothing under it yet (just created). */
+    private ExamResponse toResponse(Exam exam, ExamCounts counts) {
         return ExamResponse.builder()
                 .id(exam.getId())
                 .title(exam.getTitle())
@@ -143,8 +162,8 @@ public class ExamService {
                 .subjectId(exam.getSubject() != null ? exam.getSubject().getId() : null)
                 .subjectName(exam.getSubject() != null ? exam.getSubject().getName() : null)
                 .createdAt(exam.getCreatedAt())
-                .paperCount(papers.size())
-                .questionCount(questions)
+                .paperCount(counts != null ? counts.getPaperCount().intValue() : 0)
+                .questionCount(counts != null ? counts.getQuestionCount().intValue() : 0)
                 .build();
     }
 

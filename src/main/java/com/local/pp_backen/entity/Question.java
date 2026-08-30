@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "questions")
+@Table(name = "questions", indexes = @Index(name = "idx_questions_paper_id", columnList = "paper_id"))
 @Getter
 @Setter
 @NoArgsConstructor

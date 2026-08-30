@@ -3,17 +3,19 @@ package com.local.pp_backen.service;
 import com.local.pp_backen.dto.subject.SubjectRequest;
 import com.local.pp_backen.dto.subject.SubjectResponse;
 import com.local.pp_backen.entity.Exam;
-import com.local.pp_backen.entity.Paper;
 import com.local.pp_backen.entity.Subject;
 import com.local.pp_backen.exception.ResourceNotFoundException;
 import com.local.pp_backen.repository.ExamRepository;
 import com.local.pp_backen.repository.SubjectRepository;
+import com.local.pp_backen.repository.SubjectRepository.SubjectCounts;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
@@ -32,17 +34,27 @@ public class SubjectService {
         this.examService = examService;
     }
 
+    /**
+     * Listing subjects used to trigger a full exam -> paper -> question hydration per subject
+     * just to count sizes (an N+1 that got very expensive once the DB moved off localhost).
+     * {@code countsPerSubject()} gets every subject's counts in one aggregate query instead.
+     */
     @Transactional(readOnly = true)
     public List<SubjectResponse> getAllSubjects() {
-        return subjectRepository.findAll().stream()
+        List<Subject> subjects = subjectRepository.findAll();
+        Map<Long, SubjectCounts> counts = subjectRepository.countsPerSubject().stream()
+                .collect(Collectors.toMap(SubjectCounts::getSubjectId, Function.identity()));
+
+        return subjects.stream()
                 .sorted(Comparator.comparing(Subject::getName, String.CASE_INSENSITIVE_ORDER))
-                .map(this::toResponse)
+                .map(subject -> toResponse(subject, counts.get(subject.getId())))
                 .collect(Collectors.toList());
     }
 
     @Transactional(readOnly = true)
     public SubjectResponse getSubjectById(Long id) {
-        return toResponse(require(id));
+        Subject subject = require(id);
+        return toResponse(subject, subjectRepository.countsForSubject(id));
     }
 
     public SubjectResponse createSubject(SubjectRequest request) {
@@ -56,7 +68,8 @@ public class SubjectService {
                 .description(trimToNull(request.getDescription()))
                 .build();
 
-        return toResponse(subjectRepository.save(subject));
+        // A brand-new subject has nothing under it yet — no need to round-trip for a count of zero.
+        return toResponse(subjectRepository.save(subject), null);
     }
 
     /** Renaming is the common case here, so a clash is reported against the other subject. */
@@ -70,7 +83,8 @@ public class SubjectService {
 
         subject.setName(name);
         subject.setDescription(trimToNull(request.getDescription()));
-        return toResponse(subjectRepository.save(subject));
+        Subject saved = subjectRepository.save(subject);
+        return toResponse(saved, subjectRepository.countsForSubject(id));
     }
 
     /**
@@ -91,27 +105,16 @@ public class SubjectService {
                 .orElseThrow(() -> new ResourceNotFoundException("Subject", "id", id));
     }
 
-    SubjectResponse toResponse(Subject subject) {
-        List<Exam> exams = examRepository.findBySubjectId(subject.getId());
-
-        int papers = 0;
-        int questions = 0;
-        for (Exam exam : exams) {
-            if (exam.getPapers() == null) continue;
-            papers += exam.getPapers().size();
-            for (Paper paper : exam.getPapers()) {
-                questions += paper.getQuestions() != null ? paper.getQuestions().size() : 0;
-            }
-        }
-
+    /** {@code counts} is null for a subject known to have nothing under it yet (just created). */
+    SubjectResponse toResponse(Subject subject, SubjectCounts counts) {
         return SubjectResponse.builder()
                 .id(subject.getId())
                 .name(subject.getName())
                 .description(subject.getDescription())
                 .createdAt(subject.getCreatedAt())
-                .examCount(exams.size())
-                .paperCount(papers)
-                .questionCount(questions)
+                .examCount(counts != null ? counts.getExamCount().intValue() : 0)
+                .paperCount(counts != null ? counts.getPaperCount().intValue() : 0)
+                .questionCount(counts != null ? counts.getQuestionCount().intValue() : 0)
                 .build();
     }
 

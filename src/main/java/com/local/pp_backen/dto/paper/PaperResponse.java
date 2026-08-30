@@ -11,6 +11,7 @@ public class PaperResponse {
     private String title;
     private String description;
     private Integer year;
+    private Integer durationMinutes;
     private Long examId;
     private String examTitle;
     private Long subjectId;
