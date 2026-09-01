@@ -1,0 +1,15 @@
+# Build output and caches — the image builds these itself
+build/
+.gradle/
+bin/
+out/
+
+# Local-only
+.git/
+.idea/
+.vscode/
+.env
+media/
+
+# Docs
+*.md
