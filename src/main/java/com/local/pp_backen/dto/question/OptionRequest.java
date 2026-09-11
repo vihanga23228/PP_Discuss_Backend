@@ -7,6 +7,13 @@ import lombok.Data;
 @Data
 public class OptionRequest {
 
+    /**
+     * Identifies an existing option so an update can edit it in place. Recorded
+     * answers reference option ids, so replacing the rows on every edit would
+     * break the attempts students have already made. Null means a new option.
+     */
+    private Long id;
+
     @NotBlank(message = "Option label is required")
     private String label;
 

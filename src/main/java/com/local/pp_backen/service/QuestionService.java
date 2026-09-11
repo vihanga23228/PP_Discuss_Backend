@@ -6,6 +6,7 @@ import com.local.pp_backen.entity.Paper;
 import com.local.pp_backen.entity.Question;
 import com.local.pp_backen.entity.Subject;
 import com.local.pp_backen.exception.ResourceNotFoundException;
+import com.local.pp_backen.repository.OptionRepository;
 import com.local.pp_backen.repository.PaperRepository;
 import com.local.pp_backen.repository.QuestionRepository;
 import com.local.pp_backen.repository.SubjectRepository;
@@ -14,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -23,13 +25,16 @@ public class QuestionService {
     private final QuestionRepository questionRepository;
     private final PaperRepository paperRepository;
     private final SubjectRepository subjectRepository;
+    private final OptionRepository optionRepository;
 
     public QuestionService(QuestionRepository questionRepository,
                            PaperRepository paperRepository,
-                           SubjectRepository subjectRepository) {
+                           SubjectRepository subjectRepository,
+                           OptionRepository optionRepository) {
         this.questionRepository = questionRepository;
         this.paperRepository = paperRepository;
         this.subjectRepository = subjectRepository;
+        this.optionRepository = optionRepository;
     }
 
     public List<QuestionResponse> getAllQuestions(Long paperId, Long subjectId) {
@@ -107,21 +112,47 @@ public class QuestionService {
             question.setPaper(paper);
         }
 
-        // Replace options
-        question.getOptions().clear();
+        // Merge the options rather than replacing them. Clearing the collection
+        // deletes the rows, and quiz_answer_selections references option ids with
+        // no cascade, so a wholesale replace fails outright on any question a
+        // student has already answered — and would discard their answer if it did
+        // succeed. Editing in place keeps every id stable.
+        Map<Long, Option> existing = question.getOptions().stream()
+                .collect(Collectors.toMap(Option::getId, o -> o));
+
+        List<Option> merged = new ArrayList<>();
         for (OptionRequest optReq : request.getOptions()) {
-            Option option = Option.builder()
-                    .label(optReq.getLabel())
-                    .text(optReq.getText())
-                    .textSi(optReq.getTextSi())
-                    .imageUrl(optReq.getImageUrl())
-                    .correct(optReq.getCorrect())
-                    .explanationEn(optReq.getExplanationEn())
-                    .explanationSi(optReq.getExplanationSi())
-                    .question(question)
-                    .build();
-            question.getOptions().add(option);
+            Option option = optReq.getId() == null ? null : existing.remove(optReq.getId());
+            if (option == null) {
+                option = new Option();
+                option.setQuestion(question);
+            }
+            option.setLabel(optReq.getLabel());
+            option.setText(optReq.getText());
+            option.setTextSi(optReq.getTextSi());
+            option.setImageUrl(optReq.getImageUrl());
+            option.setCorrect(optReq.getCorrect());
+            option.setExplanationEn(optReq.getExplanationEn());
+            option.setExplanationSi(optReq.getExplanationSi());
+            merged.add(option);
         }
+
+        // Whatever the request left out is being deleted. Refuse if an answer
+        // depends on it: silently rewriting somebody's attempt is worse than
+        // making the admin decide.
+        for (Option removed : existing.values()) {
+            if (optionRepository.isAnswered(removed.getId())) {
+                throw new IllegalArgumentException(
+                        "Option \"" + removed.getLabel() + "\" cannot be removed because students "
+                                + "have already answered this question with it. Edit its text instead.");
+            }
+        }
+
+        // Mutate the managed collection in place. clear() followed by addAll()
+        // would make orphanRemoval delete every row and re-insert it, which is
+        // the very thing this merge exists to avoid.
+        question.getOptions().removeIf(o -> existing.containsKey(o.getId()));
+        merged.stream().filter(o -> o.getId() == null).forEach(question.getOptions()::add);
 
         question = questionRepository.save(question);
         return toResponse(question);
