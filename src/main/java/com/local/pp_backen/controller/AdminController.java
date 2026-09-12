@@ -105,6 +105,26 @@ public class AdminController {
         return ResponseEntity.accepted().body(Map.of("jobId", jobId));
     }
 
+    /**
+     * Uploads a marking scheme / answer sheet. Poll the same status endpoint; when
+     * it is DONE the job carries `answers` instead of `questions`.
+     */
+    @PostMapping("/papers/extract-answers")
+    public ResponseEntity<Map<String, String>> extractAnswers(@RequestParam("file") MultipartFile file)
+            throws IOException {
+
+        if (file.isEmpty()) {
+            throw new IllegalArgumentException("Choose the marking scheme PDF to upload.");
+        }
+        String name = file.getOriginalFilename() == null ? "answers.pdf" : file.getOriginalFilename();
+        if (!name.toLowerCase().endsWith(".pdf")) {
+            throw new IllegalArgumentException("The marking scheme must be a PDF.");
+        }
+
+        return ResponseEntity.accepted()
+                .body(Map.of("jobId", extractionService.startAnswerKey(file.getBytes(), name)));
+    }
+
     @GetMapping("/papers/extract/{jobId}")
     public ResponseEntity<ExtractionJobResponse> extractionStatus(@PathVariable String jobId) {
         return ResponseEntity.ok(extractionService.status(jobId));

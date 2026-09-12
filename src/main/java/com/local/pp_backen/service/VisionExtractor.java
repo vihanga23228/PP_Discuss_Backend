@@ -71,6 +71,45 @@ public class VisionExtractor {
             - Do NOT work out the correct answers. The marking scheme is entered separately.
             """;
 
+    private static final String ANSWER_KEY_PROMPT = """
+            You are reading a marking scheme / answer sheet for a multiple-choice exam
+            paper. For each question it states the correct option, and often prints the
+            working or reasoning beside it.
+
+            Return ONLY valid JSON — no prose, no markdown fences — matching this schema:
+
+            {
+              "answers": [
+                {
+                  "number": 7,
+                  "answer": "3",
+                  "explanation": "...",
+                  "explanation_si": "...",
+                  "confidence": "high"
+                }
+              ]
+            }
+
+            RULES
+            - "number" is the question number as printed. Every question the sheet covers
+              must appear exactly once.
+            - "answer" is the correct option's label exactly as the sheet prints it — "3",
+              "C", "(4)". Strip surrounding brackets. If the sheet marks more than one
+              option correct, give an array: "answer": ["2", "4"].
+            - "explanation" is the reasoning printed for that question, transcribed
+              verbatim. Put the ENGLISH reasoning here and the SINHALA reasoning in
+              "explanation_si". If only one language is printed, fill that field and set
+              the other to null. Never translate between them.
+            - If the sheet gives no reasoning for a question — only a letter or digit —
+              set both explanation fields to null. Do NOT invent or derive reasoning, and
+              do not solve the question yourself.
+            - Transcribe formulae as plain Unicode: Ω, μ, π, θ, ², ³, ⁻¹, ×, ÷, √, ≤, ≥,
+              ±, °C, ½. No LaTeX, no dollar signs, and no backslashes anywhere — a
+              backslash breaks the JSON.
+            - "confidence" is "high", "medium" or "low". Use low when the printed answer
+              is ambiguous, handwritten, or you cannot tell which question it belongs to.
+            """;
+
     private static final String GEMINI_ENDPOINT =
             "https://generativelanguage.googleapis.com/v1beta/models/%s:generateContent?key=%s";
 
@@ -215,14 +254,72 @@ public class VisionExtractor {
                 .map(p -> rasterizer.toJpeg(p.png(), 0.85f))
                 .toList();
 
-        String raw = provider == Provider.ANTHROPIC
-                ? callAnthropic(pages, images)
-                : callGemini(pages, images);
-
+        String raw = ask(pages, images, SCHEMA_PROMPT);
         return parse(raw);
     }
 
-    private String callAnthropic(List<PdfRasterizer.RenderedPage> pages, List<byte[]> images) {
+    /** One question's entry in the marking scheme. */
+    public record ExtractedAnswer(int number,
+                                  List<String> answers,
+                                  String explanation,
+                                  String explanationSi,
+                                  String confidence) {
+    }
+
+    /**
+     * Reads a marking scheme or answer sheet: which option is correct for each
+     * question, and the worked reasoning printed beside it.
+     */
+    public List<ExtractedAnswer> extractAnswers(List<PdfRasterizer.RenderedPage> pages) {
+        if (!isConfigured()) {
+            throw new IllegalStateException("Vision extraction is not configured.");
+        }
+
+        List<byte[]> images = pages.stream()
+                .map(p -> rasterizer.toJpeg(p.png(), 0.85f))
+                .toList();
+
+        return parseAnswers(ask(pages, images, ANSWER_KEY_PROMPT));
+    }
+
+    /** Sends the pages to whichever provider is configured, with the given prompt. */
+    private String ask(List<PdfRasterizer.RenderedPage> pages, List<byte[]> images, String prompt) {
+        return provider == Provider.ANTHROPIC
+                ? callAnthropic(pages, images, prompt)
+                : callGemini(pages, images, prompt);
+    }
+
+    private List<ExtractedAnswer> parseAnswers(String raw) {
+        JsonNode root = readJson(raw);
+        List<ExtractedAnswer> answers = new ArrayList<>();
+
+        for (JsonNode a : root.path("answers")) {
+            int number = a.path("number").asInt(0);
+            if (number <= 0) continue;
+
+            List<String> labels = new ArrayList<>();
+            JsonNode answerNode = a.path("answer");
+            if (answerNode.isArray()) {
+                answerNode.forEach(n -> labels.add(n.asText("").trim()));
+            } else if (StringUtils.hasText(answerNode.asText(""))) {
+                labels.add(answerNode.asText().trim());
+            }
+
+            answers.add(new ExtractedAnswer(
+                    number,
+                    labels.stream().filter(StringUtils::hasText).toList(),
+                    blankToNull(a.path("explanation").asText("")),
+                    blankToNull(a.path("explanation_si").asText("")),
+                    a.path("confidence").asText("high")));
+        }
+        return answers;
+    }
+
+    private static String blankToNull(String value) {
+        return StringUtils.hasText(value) ? value.trim() : null;
+    }
+
+    private String callAnthropic(List<PdfRasterizer.RenderedPage> pages, List<byte[]> images, String prompt) {
         List<Map<String, Object>> content = new ArrayList<>();
         for (int i = 0; i < pages.size(); i++) {
             content.add(Map.of("type", "text", "text", "PAGE " + pages.get(i).number() + ":"));
@@ -233,7 +330,7 @@ public class VisionExtractor {
                             "media_type", "image/jpeg",
                             "data", Base64.getEncoder().encodeToString(images.get(i)))));
         }
-        content.add(Map.of("type", "text", "text", SCHEMA_PROMPT));
+        content.add(Map.of("type", "text", "text", prompt));
 
         Map<String, Object> body = Map.of(
                 "model", model,
@@ -248,7 +345,7 @@ public class VisionExtractor {
         return response.path("content").path(0).path("text").asText("");
     }
 
-    private String callGemini(List<PdfRasterizer.RenderedPage> pages, List<byte[]> images) {
+    private String callGemini(List<PdfRasterizer.RenderedPage> pages, List<byte[]> images, String prompt) {
         List<Map<String, Object>> parts = new ArrayList<>();
         for (int i = 0; i < pages.size(); i++) {
             parts.add(Map.of("text", "PAGE " + pages.get(i).number() + ":"));
@@ -256,7 +353,7 @@ public class VisionExtractor {
                     "mime_type", "image/jpeg",
                     "data", Base64.getEncoder().encodeToString(images.get(i)))));
         }
-        parts.add(Map.of("text", SCHEMA_PROMPT));
+        parts.add(Map.of("text", prompt));
 
         Map<String, Object> body = Map.of(
                 "contents", List.of(Map.of("role", "user", "parts", parts)),
@@ -409,8 +506,12 @@ public class VisionExtractor {
         return trimmed.length() > 300 ? trimmed.substring(0, 300) + "…" : trimmed;
     }
 
-    /** Tolerates the model wrapping its JSON in a markdown fence. */
-    PageResult parse(String raw) {
+    /**
+     * Tolerates the model wrapping its JSON in a markdown fence, and repairs the
+     * stray backslashes it occasionally slips in despite being told not to.
+     * Shared by the question and marking-scheme parsers.
+     */
+    JsonNode readJson(String raw) {
         String json = raw.trim();
         if (json.startsWith("```")) {
             int firstBreak = json.indexOf('\n');
@@ -420,15 +521,15 @@ public class VisionExtractor {
             }
         }
 
-        JsonNode root;
         try {
-            root = mapper.readTree(json);
+            return mapper.readTree(json);
         } catch (Exception first) {
-            // Models sometimes slip LaTeX through despite the instruction, and a lone
-            // backslash is an illegal JSON escape. Repair it rather than lose the page.
+            // A lone backslash is an illegal JSON escape. Repair it rather than
+            // lose the page.
             try {
-                root = mapper.readTree(escapeStrayBackslashes(json));
+                JsonNode repaired = mapper.readTree(escapeStrayBackslashes(json));
                 log.warn("Repaired stray backslashes in the model's JSON.");
+                return repaired;
             } catch (Exception second) {
                 throw new IllegalStateException(
                         "The vision model did not return usable JSON (" + first.getMessage()
@@ -436,6 +537,10 @@ public class VisionExtractor {
                         + json.substring(0, Math.min(200, json.length())));
             }
         }
+    }
+
+    PageResult parse(String raw) {
+        JsonNode root = readJson(raw);
 
         List<ExtractedQuestion> questions = new ArrayList<>();
         for (JsonNode q : root.path("questions")) {

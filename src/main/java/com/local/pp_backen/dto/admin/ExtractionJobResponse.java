@@ -31,6 +31,9 @@ public class ExtractionJobResponse {
     /** Draft questions in the importer's own shape, ready to edit and publish */
     private List<Map<String, Object>> questions;
 
+    /** Set instead of questions when the upload was a marking scheme. */
+    private List<Map<String, Object>> answers;
+
     /** Blocking problems — the draft should not be published until these are cleared */
     private List<String> errors;
 

@@ -64,6 +64,8 @@ public class PaperExtractionService {
         volatile List<String> errors = List.of();
         volatile List<String> warnings = List.of();
         volatile List<Integer> needsReview = List.of();
+        /** Populated instead of `questions` when the upload was a marking scheme. */
+        volatile List<Map<String, Object>> answers = List.of();
         String fileName;
         String model;
     }
@@ -94,6 +96,87 @@ public class PaperExtractionService {
         return jobId;
     }
 
+    /**
+     * Reads a marking scheme: which option each question's answer is, and the
+     * reasoning printed beside it. Runs as its own job so the console can poll it
+     * with the same code that polls a paper extraction.
+     */
+    public String startAnswerKey(byte[] pdfBytes, String fileName) {
+        if (!extractor.isConfigured()) {
+            throw new IllegalArgumentException(
+                    "Vision extraction is not configured, so a marking scheme cannot be read. "
+                    + "Paste the answers into the box instead.");
+        }
+
+        String jobId = "key-" + UUID.randomUUID().toString().substring(0, 12);
+        Job job = new Job();
+        job.fileName = fileName;
+        job.model = extractor.modelName();
+        jobs.put(jobId, job);
+
+        pool.submit(() -> runAnswerKey(jobId, job, pdfBytes));
+        return jobId;
+    }
+
+    private void runAnswerKey(String jobId, Job job, byte[] pdfBytes) {
+        try {
+            job.message = "Rendering the marking scheme…";
+            List<PdfRasterizer.RenderedPage> pages = rasterizer.rasterise(pdfBytes, (done, total) -> {
+                job.pagesTotal = total;
+                job.message = "Rendered page " + done + " of " + total + "…";
+            });
+            job.pagesTotal = pages.size();
+
+            Map<Integer, Map<String, Object>> byNumber = new TreeMap<>();
+            List<String> warnings = new ArrayList<>();
+
+            // A page at a time: a marking scheme is dense, and one page per call keeps
+            // each response inside the token limit.
+            for (int i = 0; i < pages.size(); i++) {
+                job.message = "Reading page " + (i + 1) + " of " + pages.size() + "…";
+                try {
+                    for (VisionExtractor.ExtractedAnswer a
+                            : extractor.extractAnswers(List.of(pages.get(i)))) {
+                        Map<String, Object> entry = new LinkedHashMap<>();
+                        entry.put("number", a.number());
+                        entry.put("answers", a.answers());
+                        entry.put("exp", a.explanation());
+                        entry.put("exp_si", a.explanationSi());
+                        entry.put("confidence", a.confidence());
+                        // Later pages win only if the earlier entry had no reasoning.
+                        Map<String, Object> existing = byNumber.get(a.number());
+                        if (existing == null || existing.get("exp") == null) {
+                            byNumber.put(a.number(), entry);
+                        }
+                    }
+                } catch (Exception e) {
+                    warnings.add("Page " + (i + 1) + " could not be read: " + e.getMessage());
+                }
+                job.pagesDone = i + 1;
+            }
+
+            if (byNumber.isEmpty()) {
+                job.status = ExtractionJobResponse.Status.FAILED;
+                job.message = "No answers could be read from that file.";
+                job.errors = warnings.isEmpty() ? List.of("Nothing was recognised as a marking scheme.") : warnings;
+                return;
+            }
+
+            long withReasoning = byNumber.values().stream().filter(e -> e.get("exp") != null
+                    || e.get("exp_si") != null).count();
+
+            job.answers = List.copyOf(byNumber.values());
+            job.warnings = warnings;
+            job.status = ExtractionJobResponse.Status.DONE;
+            job.message = byNumber.size() + " answers read, " + withReasoning + " with reasoning.";
+        } catch (Exception e) {
+            log.warn("Marking scheme job {} failed", jobId, e);
+            job.status = ExtractionJobResponse.Status.FAILED;
+            job.message = "Reading the marking scheme failed.";
+            job.errors = List.of(String.valueOf(e.getMessage()));
+        }
+    }
+
     public ExtractionJobResponse status(String jobId) {
         Job job = jobs.get(jobId);
         if (job == null) {
@@ -110,6 +193,7 @@ public class PaperExtractionService {
                 .mock(job.mock)
                 .pageImages(job.pageImages)
                 .questions(job.questions)
+                .answers(job.answers)
                 .errors(job.errors)
                 .warnings(job.warnings)
                 .needsReview(job.needsReview)
