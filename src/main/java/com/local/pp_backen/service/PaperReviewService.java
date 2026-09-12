@@ -47,11 +47,21 @@ public class PaperReviewService {
                 .orElseThrow(() -> new ResourceNotFoundException("Paper", "id", paperId));
 
         List<Question> questions = questionRepository.findByPaperId(paperId);
+
+        // Whether to expect Sinhala at all is a property of the paper, not of one
+        // question. Several papers were deliberately transcribed in English only,
+        // and flagging all fifty for missing Sinhala buries the real problems.
+        // Only call it missing when most of the paper does have it.
+        long withSinhala = questions.stream()
+                .filter(q -> StringUtils.hasText(q.getStemSi()))
+                .count();
+        boolean bilingual = !questions.isEmpty() && withSinhala * 2 > questions.size();
+
         List<PaperReviewResponse.QuestionFlags> flagged = new ArrayList<>();
 
         for (int i = 0; i < questions.size(); i++) {
             Question q = questions.get(i);
-            List<String> reasons = reasonsFor(q);
+            List<String> reasons = reasonsFor(q, bilingual);
             if (reasons.isEmpty()) continue;
 
             flagged.add(PaperReviewResponse.QuestionFlags.builder()
@@ -72,7 +82,7 @@ public class PaperReviewService {
                 .build();
     }
 
-    private List<String> reasonsFor(Question q) {
+    private List<String> reasonsFor(Question q, boolean bilingual) {
         List<String> reasons = new ArrayList<>();
         List<Option> options = q.getOptions();
         boolean trueFalse = "tf".equals(q.getType());
@@ -100,7 +110,7 @@ public class PaperReviewService {
         if (!StringUtils.hasText(q.getStem())) {
             reasons.add("No question text");
         }
-        if (!StringUtils.hasText(q.getStemSi())) {
+        if (bilingual && !StringUtils.hasText(q.getStemSi())) {
             reasons.add("No Sinhala text");
         }
 
