@@ -2,6 +2,7 @@ package com.local.pp_backen.controller;
 
 import com.local.pp_backen.dto.admin.*;
 import com.local.pp_backen.service.AdminService;
+import com.local.pp_backen.service.MediaUploadService;
 import com.local.pp_backen.service.PaperExtractionService;
 import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
@@ -19,10 +20,25 @@ public class AdminController {
 
     private final AdminService adminService;
     private final PaperExtractionService extractionService;
+    private final MediaUploadService mediaUploadService;
 
-    public AdminController(AdminService adminService, PaperExtractionService extractionService) {
+    public AdminController(AdminService adminService,
+                           PaperExtractionService extractionService,
+                           MediaUploadService mediaUploadService) {
         this.adminService = adminService;
         this.extractionService = extractionService;
+        this.mediaUploadService = mediaUploadService;
+    }
+
+    /**
+     * Takes a screenshot pasted or picked in the console and returns the URL to
+     * store on the question. Kept in the database, because the host's disk is
+     * wiped on every redeploy.
+     */
+    @PostMapping("/media")
+    public ResponseEntity<Map<String, String>> uploadImage(@RequestParam("file") MultipartFile file)
+            throws IOException {
+        return ResponseEntity.ok(Map.of("url", mediaUploadService.store(file)));
     }
 
     @GetMapping("/stats")

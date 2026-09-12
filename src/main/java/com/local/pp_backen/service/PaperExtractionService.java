@@ -258,16 +258,18 @@ public class PaperExtractionService {
         Map<String, Object> draft = new LinkedHashMap<>();
         draft.put("number", q.number());
 
-        // The importer stores English in `stem` and the original language in `stem_si`
+        // Only the Sinhala is transcribed now, and it goes in both fields: `stem` is
+        // the column the paper always renders, and `stem_si` is what the Sinhala
+        // toggle reads. Leaving `stem` empty would show a blank question.
         String original = blankToNull(q.questionText());
-        String english = blankToNull(q.questionTextEn());
-        draft.put("stem", english != null ? english : original);
-        draft.put("stem_si", Objects.equals(original, english) ? null : original);
+        draft.put("stem", original);
+        draft.put("stem_si", original);
         draft.put("type", "single");
 
-        if (q.hasFigure() && q.figureBox() != null) {
-            crop(jobId, "q" + q.number(), q.figureBox(), pages).ifPresent(url -> draft.put("image", url));
-        }
+        // Figures are no longer cropped out of the page. The model only flags that a
+        // question has one; a person attaches the screenshot in the review step,
+        // which is both more accurate than an auto-crop and survives a redeploy,
+        // since uploads are stored in the database rather than on the disk.
 
         List<Map<String, Object>> options = new ArrayList<>();
         for (int i = 0; i < q.options().size(); i++) {
@@ -276,15 +278,9 @@ public class PaperExtractionService {
             option.put("L", blankToNull(o.label()) != null ? o.label() : String.valueOf(i + 1));
 
             String optOriginal = blankToNull(o.text());
-            String optEnglish = blankToNull(o.textEn());
-            option.put("text", optEnglish != null ? optEnglish : Objects.toString(optOriginal, ""));
-            option.put("text_si", Objects.equals(optOriginal, optEnglish) ? null : optOriginal);
+            option.put("text", Objects.toString(optOriginal, ""));
+            option.put("text_si", optOriginal);
             option.put("correct", false);
-
-            if (q.optionsAreFigures() && i < q.optionFigureBoxes().size()) {
-                crop(jobId, "q" + q.number() + "-opt" + (i + 1), q.optionFigureBoxes().get(i), pages)
-                        .ifPresent(url -> option.put("image", url));
-            }
             options.add(option);
         }
         draft.put("options", options);
@@ -293,7 +289,7 @@ public class PaperExtractionService {
         draft.put("confidence", q.confidence());
         draft.put("optionsAreFigures", q.optionsAreFigures());
         draft.put("truncated", q.truncated());
-        draft.put("sourcePage", q.figureBox() != null ? q.figureBox().page() : null);
+        draft.put("hasFigure", q.hasFigure());
         return draft;
     }
 
@@ -368,19 +364,13 @@ public class PaperExtractionService {
                 needsReview.add(number);
             }
 
+            // Diagrams are no longer cropped automatically, so this is a to-do list
+            // rather than a failure: it tells the reviewer which questions still need
+            // a screenshot attached before the paper is published.
             VisionExtractor.ExtractedQuestion source = byNumber.get(number);
             if (source != null && source.hasFigure() && draft.get("image") == null) {
-                warnings.add("Q" + number + ": a diagram was expected but none could be cropped.");
+                warnings.add("Q" + number + ": has a diagram — attach a screenshot.");
                 needsReview.add(number);
-            }
-            if (source != null && source.optionsAreFigures()) {
-                long cropped = options == null ? 0
-                        : options.stream().filter(o -> o.get("image") != null).count();
-                if (cropped < 5) {
-                    warnings.add("Q" + number + ": answers are diagrams but only "
-                            + cropped + " of 5 were cropped.");
-                    needsReview.add(number);
-                }
             }
         }
 

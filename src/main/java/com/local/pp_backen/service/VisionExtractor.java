@@ -39,12 +39,8 @@ public class VisionExtractor {
                 {
                   "number": 7,
                   "question_text": "...",
-                  "question_text_en": "...",
-                  "options": [ { "label": "1", "text": "8 N m", "text_en": "8 N m" } ],
+                  "options": [ { "label": "1", "text": "8 N m" } ],
                   "has_figure": true,
-                  "figure_box": { "page": 2, "x0": 0.55, "y0": 0.12, "x1": 0.95, "y1": 0.34 },
-                  "options_are_figures": false,
-                  "option_figure_boxes": [],
                   "truncated": false,
                   "confidence": "high"
                 }
@@ -53,26 +49,25 @@ public class VisionExtractor {
             }
 
             RULES
-            - Transcribe "question_text" and every option EXACTLY as printed, in the
-              original language of the paper. Do not translate, summarise or fix typos.
-            - Additionally give "question_text_en" and each option's "text_en" as a faithful
-              English translation. If the paper is already in English, repeat the same text.
+            - These papers are printed in Sinhala. Transcribe the SINHALA text only, exactly
+              as printed. Where a question also carries an English translation, ignore the
+              English entirely and return only the Sinhala.
+            - If a question is printed in English alone, transcribe that English as-is.
+              Never translate in either direction, and do not summarise or fix typos.
             - Never invent content. If something is unreadable write "[unreadable]".
             - Write mathematics as plain Unicode text, exactly as it should appear on
               screen: Ω, μ, π, θ, ², ³, ⁻¹, ×, ÷, √, ≤, ≥, ±, °C, ½.
               Do NOT use LaTeX, dollar signs, or backslashes anywhere in your output —
               this is displayed as plain text, and a backslash also breaks the JSON.
-            - "figure_box" locates a diagram as FRACTIONS of the page (0 to 1), with "page"
-              being the page number printed in the image caption I give you. Give the box
-              generously — include axis labels and captions. Omit the field when there is
-              no figure.
-            - If the answer options are themselves diagrams or graphs labelled (1)–(5), set
-              "options_are_figures": true, leave each option's text empty, and give one box
-              per option in "option_figure_boxes", in order.
+            - Do NOT attempt to locate, describe or reproduce diagrams. Just set
+              "has_figure": true when the question has one, so a person knows to attach a
+              screenshot afterwards. Never output coordinates.
+            - If the answer options are themselves diagrams, still set "has_figure": true
+              and leave each option's text empty.
             - Set "truncated": true when a question starts on one page and runs onto the
               next, and transcribe only what you can see.
             - "confidence" is "high", "medium" or "low" — use low whenever you are unsure of
-              a character, a number, or which figure belongs to the question.
+              a character or a number.
             - Do NOT work out the correct answers. The marking scheme is entered separately.
             """;
 

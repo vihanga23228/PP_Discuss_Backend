@@ -1,6 +1,7 @@
 package com.local.pp_backen.controller;
 
 import com.local.pp_backen.service.MediaStorageService;
+import com.local.pp_backen.service.MediaUploadService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -8,6 +9,7 @@ import org.springframework.http.CacheControl;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,9 +24,25 @@ import java.time.Duration;
 public class MediaController {
 
     private final MediaStorageService storage;
+    private final MediaUploadService uploads;
 
-    public MediaController(MediaStorageService storage) {
+    public MediaController(MediaStorageService storage, MediaUploadService uploads) {
         this.storage = storage;
+        this.uploads = uploads;
+    }
+
+    /**
+     * Hand-uploaded images, served from the database. Mapped ahead of the
+     * catch-all below because Spring prefers the more specific pattern.
+     */
+    @GetMapping("/db/{id}")
+    public ResponseEntity<byte[]> fromDatabase(@PathVariable String id) {
+        return uploads.find(id)
+                .map(file -> ResponseEntity.ok()
+                        .contentType(MediaType.parseMediaType(file.getContentType()))
+                        .cacheControl(CacheControl.maxAge(Duration.ofDays(365)).cachePublic())
+                        .body(file.getData()))
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @GetMapping("/**")
