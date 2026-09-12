@@ -4,6 +4,7 @@ import com.local.pp_backen.dto.admin.*;
 import com.local.pp_backen.service.AdminService;
 import com.local.pp_backen.service.MediaUploadService;
 import com.local.pp_backen.service.PaperExtractionService;
+import com.local.pp_backen.service.PaperReviewService;
 import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.util.Map;
@@ -21,13 +22,26 @@ public class AdminController {
     private final AdminService adminService;
     private final PaperExtractionService extractionService;
     private final MediaUploadService mediaUploadService;
+    private final PaperReviewService paperReviewService;
 
     public AdminController(AdminService adminService,
                            PaperExtractionService extractionService,
-                           MediaUploadService mediaUploadService) {
+                           MediaUploadService mediaUploadService,
+                           PaperReviewService paperReviewService) {
         this.adminService = adminService;
         this.extractionService = extractionService;
         this.mediaUploadService = mediaUploadService;
+        this.paperReviewService = paperReviewService;
+    }
+
+    /**
+     * Which questions in a published paper still need fixing by hand, and why.
+     * Only the flagged ones come back — on a 50-question paper the useful answer
+     * is the short list to work through.
+     */
+    @GetMapping("/papers/{paperId}/review")
+    public ResponseEntity<PaperReviewResponse> paperReview(@PathVariable Long paperId) {
+        return ResponseEntity.ok(paperReviewService.review(paperId));
     }
 
     /**
