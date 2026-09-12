@@ -40,8 +40,12 @@ public class MediaFile {
     @Column(name = "size_bytes", nullable = false)
     private long sizeBytes;
 
-    @Lob
-    @Column(nullable = false)
+    /**
+     * Deliberately not @Lob: Hibernate 6 maps a @Lob byte[] to a PostgreSQL large
+     * object (oid), which needs the large-object API and a transaction just to
+     * read. A plain byte[] maps to bytea and behaves like any other column.
+     */
+    @Column(nullable = false, columnDefinition = "bytea")
     private byte[] data;
 
     @Column(name = "created_at", nullable = false)
