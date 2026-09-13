@@ -82,6 +82,14 @@ public class PaperExtractionService {
         return extractor.quotaResetsAt();
     }
 
+    public int requestsToday() {
+        return extractor.requestsToday();
+    }
+
+    public Integer knownDailyLimit() {
+        return extractor.knownDailyLimit();
+    }
+
     /**
      * @param mock when true, skips the vision call and produces a small sample draft so the
      *             review and publish flow can be exercised without an API key

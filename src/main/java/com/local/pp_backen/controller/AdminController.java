@@ -91,8 +91,10 @@ public class AdminController {
         Map<String, Object> body = new java.util.HashMap<>();
         body.put("vision", extractionService.isConfigured());
         body.put("quotaExhausted", extractionService.isDailyQuotaExhausted());
-        // Null when the quota is fine; HashMap is used because Map.of rejects nulls.
         body.put("quotaResetsAt", java.util.Objects.toString(extractionService.quotaResetsAt(), null));
+        body.put("requestsToday", extractionService.requestsToday());
+        // Null until a rejection tells us the cap; HashMap because Map.of rejects nulls.
+        body.put("dailyLimit", extractionService.knownDailyLimit());
         return ResponseEntity.ok(body);
     }
 

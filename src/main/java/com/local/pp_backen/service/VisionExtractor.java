@@ -155,18 +155,53 @@ public class VisionExtractor {
     /** Google's free-tier counters roll over at midnight Pacific. */
     private static final java.time.ZoneId QUOTA_ZONE = java.time.ZoneId.of("America/Los_Angeles");
 
+    /**
+     * Requests sent since the counter's day began, so the console can show what
+     * is left before someone commits to a long PDF. Counted here rather than
+     * asked of the provider, which exposes no "usage so far" endpoint.
+     */
+    private final java.util.concurrent.atomic.AtomicInteger requestsToday =
+            new java.util.concurrent.atomic.AtomicInteger();
+
+    /** The Pacific date {@link #requestsToday} belongs to. */
+    private volatile java.time.LocalDate countedDay = today();
+
+    /** The cap, once a rejection has told us what it is. Free tier is 20. */
+    private volatile Integer knownDailyLimit;
+
+    private static java.time.LocalDate today() {
+        return java.time.LocalDate.now(QUOTA_ZONE);
+    }
+
+    /** Rolls the counter over when the provider's day has changed. */
+    private synchronized void countRequest() {
+        java.time.LocalDate now = today();
+        if (!now.equals(countedDay)) {
+            countedDay = now;
+            requestsToday.set(0);
+        }
+        requestsToday.incrementAndGet();
+    }
+
     /** Whether the daily allowance is known to be spent and has not yet reset. */
     public boolean isDailyQuotaExhausted() {
         java.time.Instant at = quotaExhaustedAt;
         return at != null && java.time.Instant.now().isBefore(resetAfter(at));
     }
 
-    /** When the allowance next rolls over, or null if it is not currently spent. */
+    /** When the allowance next rolls over. Always known, spent or not. */
     public java.time.Instant quotaResetsAt() {
-        java.time.Instant at = quotaExhaustedAt;
-        if (at == null) return null;
-        java.time.Instant reset = resetAfter(at);
-        return java.time.Instant.now().isBefore(reset) ? reset : null;
+        return resetAfter(java.time.Instant.now());
+    }
+
+    /** How many requests this key has spent since the provider's day began. */
+    public int requestsToday() {
+        return today().equals(countedDay) ? requestsToday.get() : 0;
+    }
+
+    /** The daily cap if a rejection has revealed it, otherwise null. */
+    public Integer knownDailyLimit() {
+        return knownDailyLimit;
     }
 
     private static java.time.Instant resetAfter(java.time.Instant at) {
@@ -212,6 +247,7 @@ public class VisionExtractor {
             }
         }
         lastRequestAt = System.currentTimeMillis();
+        countRequest();
     }
 
     /**
@@ -521,7 +557,16 @@ public class VisionExtractor {
             for (JsonNode detail : body.path("error").path("details")) {
                 for (JsonNode violation : detail.path("violations")) {
                     String value = violation.path("quotaValue").asText("");
-                    if (StringUtils.hasText(value)) limit = value + " requests ";
+                    if (StringUtils.hasText(value)) {
+                        limit = value + " requests ";
+                        // Remember it, so the console can show "17 of 20" rather
+                        // than a bare count with nothing to measure it against.
+                        try {
+                            knownDailyLimit = Integer.parseInt(value.trim());
+                        } catch (NumberFormatException ignored) {
+                            // A non-numeric cap is no worse than not knowing it.
+                        }
+                    }
                 }
             }
         } catch (Exception ignored) {
