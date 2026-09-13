@@ -27,9 +27,6 @@ public class PaperExtractionService {
 
     private static final Logger log = LoggerFactory.getLogger(PaperExtractionService.class);
 
-    /** Figures are cropped with this much of the page added on every side. */
-    private static final double FIGURE_PADDING = 0.015;
-
     private final PdfRasterizer rasterizer;
     private final VisionExtractor extractor;
     private final MediaStorageService media;
@@ -74,6 +71,15 @@ public class PaperExtractionService {
 
     public boolean isConfigured() {
         return extractor.isConfigured();
+    }
+
+    /** Whether the model's daily allowance is spent, so the console can say so. */
+    public boolean isDailyQuotaExhausted() {
+        return extractor.isDailyQuotaExhausted();
+    }
+
+    public java.time.Instant quotaResetsAt() {
+        return extractor.quotaResetsAt();
     }
 
     /**
@@ -411,19 +417,6 @@ public class PaperExtractionService {
         draft.put("truncated", q.truncated());
         draft.put("hasFigure", q.hasFigure());
         return draft;
-    }
-
-    private Optional<String> crop(String jobId, String name, VisionExtractor.FigureBox box,
-                                  Map<Integer, PdfRasterizer.RenderedPage> pages) {
-        PdfRasterizer.RenderedPage page = pages.get(box.page());
-        if (page == null) return Optional.empty();
-        try {
-            byte[] png = rasterizer.crop(page, box.x0(), box.y0(), box.x1(), box.y1(), FIGURE_PADDING);
-            return Optional.of(media.write(jobId, name + ".png", png));
-        } catch (Exception e) {
-            log.warn("Could not crop {} on page {}: {}", name, box.page(), e.getMessage());
-            return Optional.empty();
-        }
     }
 
     // --- validation --------------------------------------------------------

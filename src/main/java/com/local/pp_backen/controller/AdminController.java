@@ -81,10 +81,19 @@ public class AdminController {
         return ResponseEntity.noContent().build();
     }
 
-    /** Whether the console should offer PDF extraction, and in which mode. */
+    /**
+     * Whether the console should offer extraction, and in which mode. Also
+     * reports a spent daily quota, so the upload page can say so before someone
+     * picks a file and waits through rasterising to be told.
+     */
     @GetMapping("/import/capabilities")
     public ResponseEntity<Map<String, Object>> importCapabilities() {
-        return ResponseEntity.ok(Map.of("vision", extractionService.isConfigured()));
+        Map<String, Object> body = new java.util.HashMap<>();
+        body.put("vision", extractionService.isConfigured());
+        body.put("quotaExhausted", extractionService.isDailyQuotaExhausted());
+        // Null when the quota is fine; HashMap is used because Map.of rejects nulls.
+        body.put("quotaResetsAt", java.util.Objects.toString(extractionService.quotaResetsAt(), null));
+        return ResponseEntity.ok(body);
     }
 
     /** Uploads a PDF and starts extraction. Returns straight away with a job id. */

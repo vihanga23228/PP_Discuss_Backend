@@ -142,6 +142,37 @@ public class VisionExtractor {
     /** When the last request went out, used to pace the next one. */
     private long lastRequestAt = 0;
 
+    /**
+     * When the provider last said the daily allowance was gone.
+     *
+     * <p>Remembering it lets the console say so on the upload page rather than
+     * letting someone pick a file, wait through rasterising, and only then be
+     * told. Not persisted: a restart simply forgets, and the next call finds out
+     * again at the cost of one request.
+     */
+    private volatile java.time.Instant quotaExhaustedAt;
+
+    /** Google's free-tier counters roll over at midnight Pacific. */
+    private static final java.time.ZoneId QUOTA_ZONE = java.time.ZoneId.of("America/Los_Angeles");
+
+    /** Whether the daily allowance is known to be spent and has not yet reset. */
+    public boolean isDailyQuotaExhausted() {
+        java.time.Instant at = quotaExhaustedAt;
+        return at != null && java.time.Instant.now().isBefore(resetAfter(at));
+    }
+
+    /** When the allowance next rolls over, or null if it is not currently spent. */
+    public java.time.Instant quotaResetsAt() {
+        java.time.Instant at = quotaExhaustedAt;
+        if (at == null) return null;
+        java.time.Instant reset = resetAfter(at);
+        return java.time.Instant.now().isBefore(reset) ? reset : null;
+    }
+
+    private static java.time.Instant resetAfter(java.time.Instant at) {
+        return at.atZone(QUOTA_ZONE).toLocalDate().plusDays(1).atStartOfDay(QUOTA_ZONE).toInstant();
+    }
+
     public VisionExtractor(PdfRasterizer rasterizer,
                            @Value("${app.import.api-key:${app.import.anthropic-api-key:}}") String apiKey,
                            @Value("${app.import.provider:auto}") String configuredProvider,
@@ -417,7 +448,9 @@ public class VisionExtractor {
                 // retry spends one of the requests that are already gone. Five
                 // attempts a page turns a 2-page paper into 10 wasted calls out of a
                 // 20-a-day allowance. Stop at the first one and say so plainly.
-                if (isDailyQuotaExhausted(e)) {
+                if (isDailyQuotaResponse(e)) {
+                    // Remember it so the upload page can say so before anyone picks a file.
+                    quotaExhaustedAt = java.time.Instant.now();
                     throw new IllegalStateException(quotaMessage(e), e);
                 }
 
@@ -473,7 +506,7 @@ public class VisionExtractor {
      * Gemini names the quota in the error body; a per-day one contains "PerDay"
      * or the free-tier request metric, while a burst limit is per-minute.
      */
-    private boolean isDailyQuotaExhausted(org.springframework.web.client.HttpClientErrorException e) {
+    private boolean isDailyQuotaResponse(org.springframework.web.client.HttpClientErrorException e) {
         String body = e.getResponseBodyAsString();
         return body.contains("PerDay")
                 || body.contains("generate_content_free_tier_requests")
