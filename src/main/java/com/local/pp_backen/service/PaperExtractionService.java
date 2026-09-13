@@ -66,6 +66,8 @@ public class PaperExtractionService {
         volatile List<Integer> needsReview = List.of();
         /** Populated instead of `questions` when the upload was a marking scheme. */
         volatile List<Map<String, Object>> answers = List.of();
+        /** Set by cancel(); checked between pages so no further call is spent. */
+        volatile boolean cancelled = false;
         String fileName;
         String model;
     }
@@ -121,7 +123,7 @@ public class PaperExtractionService {
     private void runAnswerKey(String jobId, Job job, byte[] pdfBytes) {
         try {
             job.message = "Rendering the marking scheme…";
-            List<PdfRasterizer.RenderedPage> pages = rasterizer.rasterise(pdfBytes, (done, total) -> {
+            List<PdfRasterizer.RenderedPage> pages = rasterizer.rasteriseAny(pdfBytes, job.fileName, (done, total) -> {
                 job.pagesTotal = total;
                 job.message = "Rendered page " + done + " of " + total + "…";
             });
@@ -133,6 +135,10 @@ public class PaperExtractionService {
             // A page at a time: a marking scheme is dense, and one page per call keeps
             // each response inside the token limit.
             for (int i = 0; i < pages.size(); i++) {
+                if (job.cancelled) {
+                    warnings.add("Stopped after page " + i + " of " + pages.size() + ".");
+                    break;
+                }
                 job.message = "Reading page " + (i + 1) + " of " + pages.size() + "…";
                 try {
                     for (VisionExtractor.ExtractedAnswer a
@@ -151,6 +157,10 @@ public class PaperExtractionService {
                     }
                 } catch (Exception e) {
                     warnings.add("Page " + (i + 1) + " could not be read: " + e.getMessage());
+                    // Every later page would fail the same way and spend nothing but time.
+                    if (String.valueOf(e.getMessage()).contains("daily free quota")) {
+                        job.cancelled = true;
+                    }
                 }
                 job.pagesDone = i + 1;
             }
@@ -207,7 +217,23 @@ public class PaperExtractionService {
      *                    now referenced by live questions and must survive, so only the
      *                    full-page renders are cleared. False discards everything.
      */
+    /**
+     * Asks a running job to stop. It cannot interrupt the request already in
+     * flight, but it stops the next page being sent — which is the part that
+     * matters when each page costs one of a small daily quota.
+     */
+    public void cancel(String jobId) {
+        Job job = jobs.get(jobId);
+        if (job == null) {
+            throw new ResourceNotFoundException("Extraction job", "id", jobId);
+        }
+        job.cancelled = true;
+        job.message = "Stopping…";
+    }
+
     public void discard(String jobId, boolean keepFigures) {
+        Job job = jobs.get(jobId);
+        if (job != null) job.cancelled = true;
         jobs.remove(jobId);
         if (keepFigures) {
             media.deletePageRenders(jobId);
@@ -221,7 +247,7 @@ public class PaperExtractionService {
     private void run(String jobId, Job job, byte[] pdfBytes, boolean mock) {
         try {
             job.message = "Rendering pages…";
-            List<PdfRasterizer.RenderedPage> pages = rasterizer.rasterise(pdfBytes, (done, total) -> {
+            List<PdfRasterizer.RenderedPage> pages = rasterizer.rasteriseAny(pdfBytes, job.fileName, (done, total) -> {
                 job.pagesTotal = total;
                 job.message = done == 0
                         ? "Rendering " + total + " pages…"
@@ -250,6 +276,10 @@ public class PaperExtractionService {
                 List<String> failedWindows = new ArrayList<>();
 
                 for (int start = 0; start < pages.size(); start += Math.max(1, windowPages - 1)) {
+                    if (job.cancelled) {
+                        notes.add("Stopped after page " + job.pagesDone + " of " + pages.size() + ".");
+                        break;
+                    }
                     int end = Math.min(pages.size(), start + windowPages);
                     List<PdfRasterizer.RenderedPage> window = pages.subList(start, end);
 
@@ -270,6 +300,12 @@ public class PaperExtractionService {
                         log.warn("Window {} failed: {}", label, e.getMessage());
                         failedWindows.add(label);
                         notes.add("Pages " + label + " could not be read: " + e.getMessage());
+
+                        // The daily allowance is gone; every remaining window would fail
+                        // identically, so stop rather than grinding through the whole PDF.
+                        if (String.valueOf(e.getMessage()).contains("daily free quota")) {
+                            job.cancelled = true;
+                        }
                     }
 
                     job.pagesDone = end;

@@ -413,6 +413,14 @@ public class VisionExtractor {
                 return response;
 
             } catch (org.springframework.web.client.HttpClientErrorException.TooManyRequests e) {
+                // A per-day quota will not clear by waiting a few seconds, and each
+                // retry spends one of the requests that are already gone. Five
+                // attempts a page turns a 2-page paper into 10 wasted calls out of a
+                // 20-a-day allowance. Stop at the first one and say so plainly.
+                if (isDailyQuotaExhausted(e)) {
+                    throw new IllegalStateException(quotaMessage(e), e);
+                }
+
                 last = e;
                 if (attempt == attempts) break;
 
@@ -458,6 +466,38 @@ public class VisionExtractor {
         throw new IllegalStateException(
                 "Gave up after " + attempts + " attempts. Last problem: "
                 + (last == null ? "unknown" : last.getMessage()), last);
+    }
+
+    /**
+     * Whether a 429 is the daily allowance being spent rather than a burst limit.
+     * Gemini names the quota in the error body; a per-day one contains "PerDay"
+     * or the free-tier request metric, while a burst limit is per-minute.
+     */
+    private boolean isDailyQuotaExhausted(org.springframework.web.client.HttpClientErrorException e) {
+        String body = e.getResponseBodyAsString();
+        return body.contains("PerDay")
+                || body.contains("generate_content_free_tier_requests")
+                || body.contains("GenerateRequestsPerDayPerProjectPerModel");
+    }
+
+    /** Something a person can act on, rather than a page of provider JSON. */
+    private String quotaMessage(org.springframework.web.client.HttpClientErrorException e) {
+        String limit = "";
+        try {
+            JsonNode body = mapper.readTree(e.getResponseBodyAsString());
+            for (JsonNode detail : body.path("error").path("details")) {
+                for (JsonNode violation : detail.path("violations")) {
+                    String value = violation.path("quotaValue").asText("");
+                    if (StringUtils.hasText(value)) limit = value + " requests ";
+                }
+            }
+        } catch (Exception ignored) {
+            // The wording below is still useful without the exact number.
+        }
+        return "The vision model's daily free quota is used up (" + limit
+                + "a day on this key, and each page of a PDF costs one). "
+                + "It resets at midnight Pacific time. Until then, tick \"use sample data\" to "
+                + "try the review flow, or add billing to the API key to lift the cap.";
     }
 
     /**

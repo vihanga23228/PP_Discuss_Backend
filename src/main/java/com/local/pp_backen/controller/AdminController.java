@@ -97,9 +97,7 @@ public class AdminController {
             throw new IllegalArgumentException("Choose a PDF to upload.");
         }
         String name = file.getOriginalFilename() == null ? "paper.pdf" : file.getOriginalFilename();
-        if (!name.toLowerCase().endsWith(".pdf")) {
-            throw new IllegalArgumentException("That is not a PDF file.");
-        }
+        requireReadable(name);
 
         String jobId = extractionService.start(file.getBytes(), name, mock);
         return ResponseEntity.accepted().body(Map.of("jobId", jobId));
@@ -117,12 +115,17 @@ public class AdminController {
             throw new IllegalArgumentException("Choose the marking scheme PDF to upload.");
         }
         String name = file.getOriginalFilename() == null ? "answers.pdf" : file.getOriginalFilename();
-        if (!name.toLowerCase().endsWith(".pdf")) {
-            throw new IllegalArgumentException("The marking scheme must be a PDF.");
-        }
+        requireReadable(name);
 
         return ResponseEntity.accepted()
                 .body(Map.of("jobId", extractionService.startAnswerKey(file.getBytes(), name)));
+    }
+
+    /** Stops a running extraction before it spends any more of the daily quota. */
+    @PostMapping("/papers/extract/{jobId}/cancel")
+    public ResponseEntity<Void> cancelExtraction(@PathVariable String jobId) {
+        extractionService.cancel(jobId);
+        return ResponseEntity.accepted().build();
     }
 
     @GetMapping("/papers/extract/{jobId}")
@@ -139,6 +142,17 @@ public class AdminController {
                                                   @RequestParam(defaultValue = "false") boolean keepFigures) {
         extractionService.discard(jobId, keepFigures);
         return ResponseEntity.noContent().build();
+    }
+
+    /** A page of a paper is as often photographed or screenshotted as it is a PDF. */
+    private static void requireReadable(String name) {
+        String lower = name.toLowerCase();
+        boolean ok = lower.endsWith(".pdf") || lower.endsWith(".png") || lower.endsWith(".jpg")
+                || lower.endsWith(".jpeg") || lower.endsWith(".webp");
+        if (!ok) {
+            throw new IllegalArgumentException(
+                    "\"" + name + "\" is not a PDF or an image. Upload a PDF, PNG, JPEG or WebP.");
+        }
     }
 
     @PostMapping("/papers/import")

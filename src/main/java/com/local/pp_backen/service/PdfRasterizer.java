@@ -50,6 +50,41 @@ public class PdfRasterizer {
         void page(int done, int total);
     }
 
+    /**
+     * Accepts an image as a single page, so a photographed or screenshotted paper
+     * can be imported without first being wrapped in a PDF. Detected from the
+     * file's own magic bytes rather than its name, which is easily wrong.
+     */
+    public List<RenderedPage> rasteriseAny(byte[] bytes, String fileName, Progress progress) {
+        if (looksLikePdf(bytes)) {
+            return rasterise(bytes, progress);
+        }
+
+        progress.page(0, 1);
+        try {
+            BufferedImage image = javax.imageio.ImageIO.read(new java.io.ByteArrayInputStream(bytes));
+            if (image == null) {
+                throw new IllegalArgumentException(
+                        "\"" + fileName + "\" is neither a PDF nor an image this server can read. "
+                        + "PDF, PNG, JPEG and WebP are supported.");
+            }
+            // The vision call is billed per page either way, so there is nothing to
+            // gain from splitting an image up; it goes through as one page.
+            List<RenderedPage> pages = List.of(
+                    new RenderedPage(1, toPng(image), image.getWidth(), image.getHeight()));
+            progress.page(1, 1);
+            return pages;
+        } catch (java.io.IOException e) {
+            throw new IllegalArgumentException("That image could not be read: " + e.getMessage(), e);
+        }
+    }
+
+    /** %PDF- at the start of the file. */
+    private static boolean looksLikePdf(byte[] bytes) {
+        return bytes.length > 4
+                && bytes[0] == '%' && bytes[1] == 'P' && bytes[2] == 'D' && bytes[3] == 'F';
+    }
+
     public List<RenderedPage> rasterise(byte[] pdfBytes, Progress progress) {
         try (PDDocument document = Loader.loadPDF(pdfBytes)) {
             int pageCount = document.getNumberOfPages();
